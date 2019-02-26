@@ -1,0 +1,30 @@
+{
+  "name": "turo_clone",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "thunk": "0.0.1",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "start": "webpack --mode=development --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
