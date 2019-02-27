@@ -1,6 +1,6 @@
 import {RECEIVE_CURRENT_USER} from '../actions/session_actions';
 
-const UsersReducer = (oldState = {}, action) => {
+const usersReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch(action.type){
     case RECEIVE_CURRENT_USER:
@@ -10,4 +10,4 @@ const UsersReducer = (oldState = {}, action) => {
   }
 };
 
-export default UsersReducer;
+export default usersReducer;
