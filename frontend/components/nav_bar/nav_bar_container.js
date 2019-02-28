@@ -1,6 +1,7 @@
-import {openModal, closeModal} from "../actions/modal_actions";
-import NavBar from './nav_bar';
+import {openModal, closeModal} from "../../actions/modal_actions";
+import NavBar from '../nav_bar';
 import { connect } from "react-redux";
+
 
 const mapStateToProps = state => ({
   loggedIn: Boolean(state.session.currentUserId)

@@ -22,13 +22,20 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'Signup'){
       return (
         <>
-          <label>Firstname:
-            <input type='text' value={this.state.firstname} onChange={this.update('firstname')} />
-          </label>
-          <label>Lastname:
-            <input type='text' value={this.state.lastname} onChange={this.update('lastname')} />
-          </label>
+          <h4 className="greeting">Let's get started</h4>
+          <div className='name-label'>
+            <label >Firstname</label>
+            <input className='name-input' type='text' value={this.state.firstname} onChange={this.update('firstname')} />
+          </div>
+          <div className='name-label' >
+            <label className='signup-label'>Lastname</label>
+            <input className='name-input' type='text' value={this.state.lastname} onChange={this.update('lastname')} />
+          </div>
         </>
+      )
+    }else {
+      return(
+        <h4 className="greeting">Welcome back</h4>
       )
     }
   }
@@ -42,21 +49,23 @@ class SessionForm extends React.Component {
   
   render(){
       return (
+        <>
           <form onSubmit={this.handleSubmit}>
-            <h2>{this.props.formType}</h2>
-            <label>Email:
-            <input type='text' value={this.state.email} onChange={this.update('email')} />
-            </label>
-            <label>Password:
-            <input type='password' value={this.state.password} onChange={this.update('password')} />
-            </label>
             {this.signupForm()}
-      
-            {this.props.otherForm}
+            <div className='login-div'>
+              <label>Email
+              <input className='login-label' type='email' value={this.state.email} onChange={this.update('email')} />
+              </label>
+              <label>Password
+              <input className='login-label' type='password' value={this.state.password} onChange={this.update('password')} />
+              </label>
+            </div>
             <div onClick={this.props.closeModal} className="close-x">X</div>
       
-            <input type="Submit" />
+            <button className='submit-form' type="Submit"  >{this.props.formType}</button>
           </form>
+          {this.props.otherForm}
+        </>
         )
       }
   

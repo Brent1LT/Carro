@@ -1,9 +1,9 @@
 import React from 'react';
-import SignupFormContainer from './signup_form_container';
-import LoginFormContainer from './login_form_container';
 import {Route, Switch} from 'react-router-dom';
 import Modal from "./modal/modal";
-import NavBarContainer from './nav_bar_container';
+import NavBarContainer from './nav_bar/nav_bar_container';
+import {logout} from '../actions/session_actions';
+
 
 
 
@@ -16,6 +16,8 @@ const App = () => (
 );
 
 export default App;
+
+{/* <button onClick={() => }>Logout</button> */}
 
 
 {/* <Route path='/' component={SignupFormContainer}/>
