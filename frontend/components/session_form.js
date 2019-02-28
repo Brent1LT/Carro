@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
             </label>
             {this.signupForm()}
       
-           {this.props.otherForm}
+            {this.props.otherForm}
             <div onClick={this.props.closeModal} className="close-x">X</div>
       
             <input type="Submit" />
