@@ -32,13 +32,21 @@ class SessionForm extends React.Component {
               <label className='error-parent' >Firstname
                 {this.showIcon('firstname')}
               </label>
-              <input className={'name-input' + this.state.firstnameError} type='text' value={this.state.firstname} onChange={this.update('firstname')} />
+              <input className={'name-input' + this.state.firstnameError} 
+                type='text'  
+                value={this.state.firstname} 
+                onChange={this.update('firstname')} 
+                placeholder='Firstname' />
             </div>
             <div className='name-label' >
               <label className='error-parent'>Lastname
                 {this.showIcon('lastname')}
               </label>
-              <input className={'name-input' + this.state.lastnameError} type='text' value={this.state.lastname} onChange={this.update('lastname')} />
+              <input className={'name-input' + this.state.lastnameError} 
+                type='text' 
+                value={this.state.lastname} 
+                onChange={this.update('lastname')}
+                placeholder='Lastname' />
             </div>
           </div>
         </>
@@ -129,11 +137,20 @@ class SessionForm extends React.Component {
           <div className='login-div'>
             <label className='error-parent'>Email
               {this.showIcon('email')}
-              <input className={'login-label' + this.state.emailError} type='email' value={this.state.email} onChange={this.update('email')} />
+              <input className={'login-label' + this.state.emailError} 
+                type='email' 
+                value={this.state.email} 
+                onChange={this.update('email')} 
+                placeholder='Email'
+                />
             </label>
             <label className='error-parent'>Password
               {this.showIcon('password')}
-              <input className={'login-label' + this.state.passwordError} type='password' value={this.state.password} onChange={this.update('password')} />
+              <input className={'login-label' + this.state.passwordError} 
+                type='password' 
+                value={this.state.password} 
+                onChange={this.update('password')} 
+                placeholder='Password' />
             </label>
           </div>
           {this.renderSignupErrors()}

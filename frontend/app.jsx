@@ -2,7 +2,7 @@ import React from 'react';
 import Root from './components/root';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-import {fetchListings, createListing, updateListing, deleteListing} from './util/listing_api_util'
+import {fetchListings, createListing, updateListing, deleteListing, fetchListing} from './util/listing_api_util'
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -33,4 +33,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createListing = createListing;
   window.updateListing = updateListing;
   window.deleteListing = deleteListing;
+  window.fetchListing = fetchListing;
 });
