@@ -64,13 +64,14 @@ class SessionForm extends React.Component {
   };
 
   loginDemo() {
-    this.setState({ firstname: 'test', lastname: 'test', email: 'test@email.com', password: '123456' },
+    this.setState({ firstname: 'demo', lastname: 'login', email: 'demo@email.com', password: 'password' },
       () => {
         let user = this.state;
         this.props.processForm(user);
         this.props.closeModal();
       })
   }
+
 
   renderLoginErrors() {
     if (this.props.formType === 'Log in' && this.props.errors.length > 0) {
