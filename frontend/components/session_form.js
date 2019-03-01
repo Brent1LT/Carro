@@ -1,99 +1,140 @@
 import React from 'react';
 
 class SessionForm extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       email: '',
       password: '',
       firstname: '',
-      lastname: ''
+      lastname: '',
+      emailError: '',
+      passwordError: '',
+      lastnameError: '',
+      firstnameError: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.loginDemo = this.loginDemo.bind(this);
   }
 
-  update(field){
+  update(field) {
     return e => {
-      this.setState({[field]: e.target.value});
+      this.setState({ [field]: e.target.value });
     };
   }
 
-  signupForm(){
-    if (this.props.formType === 'Sign up'){
+  signupForm() {
+    if (this.props.formType === 'Sign up') {
       return (
         <>
           <h4 className="greeting">Let's get started</h4>
           <div className="names">
             <div className='name-label'>
               <label >Firstname</label>
-              <input className='name-input' type='text' value={this.state.firstname} onChange={this.update('firstname')} />
+              <input className={'name-input' + this.state.firstnameError} type='text' value={this.state.firstname} onChange={this.update('firstname')} />
             </div>
             <div className='name-label' >
               <label className='signup-label'>Lastname</label>
-              <input className='name-input' type='text' value={this.state.lastname} onChange={this.update('lastname')} />
+              <input className={'name-input' + this.state.lastnameError} type='text' value={this.state.lastname} onChange={this.update('lastname')} />
             </div>
           </div>
         </>
       )
-    }else {
-      return(
+    } else {
+      return (
         <h4 className="greeting">Welcome back</h4>
       )
     }
   }
 
-  handleSubmit(e){
+  handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => this.props.closeModal());
   };
 
-  demoUser(){
+  demoUser() {
     if (this.props.formType === 'Log in') {
-      return(
+      return (
         <button className="demo-user"
-        onClick={() => this.loginDemo()} >
+          onClick={() => this.loginDemo()} >
           Demo User!
         </button>
       );
     };
   };
 
-  loginDemo(){
-    this.setState({ firstname: 'test', lastname: 'test', email: 'test@email.com', password: '123456' }, 
+  loginDemo() {
+    this.setState({ firstname: 'test', lastname: 'test', email: 'test@email.com', password: '123456' },
       () => {
         let user = this.state;
         this.props.processForm(user);
         this.props.closeModal();
       })
   }
-  
-  
-  render(){
+
+  renderLoginErrors() {
+    if (this.props.formType === 'Log in' && this.props.errors.length > 0) {
       return (
-        <>
-          <form onSubmit={this.handleSubmit}>
-            {this.signupForm()}
-            <div className='login-div'>
-              <label>Email
-              <input className='login-label' type='email' value={this.state.email} onChange={this.update('email')} />
-              </label>
-              <label>Password
-              <input className='login-label' type='password' value={this.state.password} onChange={this.update('password')} />
-              </label>
-            </div>
-            <div onClick={this.props.closeModal} className="close-x">X</div>
-      
-            <button className='submit-form' type="Submit"  >{this.props.formType}</button>
-          </form>
-          {this.demoUser()}
-          <span>{this.props.otherForm}</span>
-        </>
-        )
-      }
-  
-  
+        <div >
+          <i className="fa fa-times-circle-o" ></i>
+          <span className='login-errors' >Please check your email and password.</span>
+        </div>
+      )
+    }
+  }
+
+  renderSignupErrors() {
+    if (this.props.formType === 'Sign up' && this.props.errors.length > 0) {
+      return (
+        <span className='signup-errors'>Please enter atleast 8 characters</span>
+      )
+    }
+  }
+
+  renderErrors() {
+    if (this.props.errors.length > 0 && this.state.email === '') {
+      this.state.emailError = ' error-box'
+    }
+    if (this.props.errors.length > 0 && this.state.password === '') {
+      this.state.passwordError = ' error-box'
+    }
+    if (this.props.errors.length > 0 && this.state.firstname === '') {
+      this.state.firstnameError = ' error-box'
+    }
+    if (this.props.errors.length > 0 && this.state.lastname === '') {
+      this.state.lastnameError = ' error-box'
+    }
+  }
+
+
+  render() {
+    this.renderErrors()
+    return (
+      <>
+        <form onSubmit={this.handleSubmit}>
+          {this.signupForm()}
+          <div className='login-div'>
+            <label>Email
+              <input className={'login-label' + this.state.emailError} type='email' value={this.state.email} onChange={this.update('email')} />
+            </label>
+            <label>Password
+              <input className={'login-label' + this.state.passwordError} type='password' value={this.state.password} onChange={this.update('password')} />
+            </label>
+          </div>
+          {this.renderSignupErrors()}
+          <div onClick={this.props.closeModal} className="close-x">X</div>
+
+          <button className='submit-form' type="Submit"  >{this.props.formType}</button>
+        </form>
+        {this.demoUser()}
+        <span>{this.props.otherForm}</span>
+
+        {this.renderLoginErrors()}
+      </>
+    )
+  }
+
+
 }
 
 export default SessionForm;

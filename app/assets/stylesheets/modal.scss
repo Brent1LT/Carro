@@ -87,7 +87,7 @@
    border: 1px solid black;
    font-family: BasisGrotesq, Avenir, Helvetica Neue, Helvetica, sans-serif;
    font-size: 16px;
-  //  margin-bottom: 20px;
+   margin-top: 20px;
  }
  
  .names{
@@ -114,10 +114,32 @@
   text-align: center;
   color: #ffffff;
   font-family: BasisGrotesq, Avenir, Helvetica Neue, Helvetica, sans-serif;
-
+  margin-bottom: 10px
  }
 
  .demo-user{
    margin-top: 10px;
  }
  
+ .error-box{
+  border: 1px solid red;
+ }
+
+ .signup-errors{
+   color: #DF4A32;
+   margin-bottom: 10px;
+   font-size: 12px;
+   font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+ }
+
+ .login-errors{
+   color: #DF4A32;
+   font-size: 15px;
+   font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+ }
+
+ .fa.fa-times-circle-o{
+  color: #DF4A32;
+  font-size: 20px;
+  margin-right: 5px;
+ }
