@@ -143,3 +143,13 @@
   font-size: 20px;
   margin-right: 5px;
  }
+
+ .error-parent{
+   position: relative;
+ }
+
+ .input-error{
+  position: absolute;
+  right: 1px;
+  top: 22px;
+ }
