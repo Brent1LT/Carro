@@ -15,7 +15,7 @@ const receiveListing = (listing) => ({
   listing
 });
 
-const removeListings = (listingId) => ({
+const removeListing = (listingId) => ({
   type: REMOVE_LISTING,
   listingId
 });
@@ -32,9 +32,30 @@ export const fetchListings = () => dispatch => (
   )
 );
 
-export const fetchListing = listing => dispatch => (
-  ListingApiUtil.fetchListing(listings)
+export const fetchListing = id => dispatch => (
+  ListingApiUtil.fetchListing(id)
     .then(listing => dispatch(receiveListing(listing)),
     errors => dispatch(receiveErrors(errors.responseJSON))
+    )
+);
+
+export const createListing = listing => dispatch => (
+  ListingApiUtil.createListing(listing)
+    .then(listing => dispatch(receiveListing(listing)),
+      errors => dispatch(receiveErrors(errors.responseJSON))
+    )
+);
+
+export const updateListing = listing => dispatch => (
+  ListingApiUtil.updateListing(listing)
+    .then(listing => dispatch(receiveListing(listing)),
+      errors => dispatch(receiveErrors(errors.responseJSON))
+    )
+);
+
+export const deleteListing = id => dispatch => (
+  ListingApiUtil.deleteListing(id)
+    .then(() => dispatch(removeListing(id)),
+      errors => dispatch(receiveErrors(errors.responseJSON))
     )
 );
