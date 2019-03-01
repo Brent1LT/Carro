@@ -8,14 +8,14 @@ export const fetchListings = () => (
 export const fetchListing = (id) => (
   $.ajax({
     method: 'get',
-    url: `/api/listing/${id}`
+    url: `/api/listings/${id}`
   })
 );
 
 export const createListing = (listing) => (
   $.ajax({
     method: 'post',
-    url: `/api/listing`,
+    url: `/api/listings`,
     data: { listing }
   })
 );
@@ -23,7 +23,7 @@ export const createListing = (listing) => (
 export const updateListing = (listing) => (
   $.ajax({
     method: 'patch',
-    url: `/api/listing/${listing.id}`,
+    url: `/api/listings/${listing.id}`,
     data: { listing }
   })
 );
@@ -31,6 +31,6 @@ export const updateListing = (listing) => (
 export const deleteListing = (id) => (
   $.ajax({
     method: 'delete',
-    url: `/api/listing/${id}`
+    url: `/api/listings/${id}`
   })
 );

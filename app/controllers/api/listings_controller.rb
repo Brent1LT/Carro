@@ -1,6 +1,6 @@
 class Api::ListingsController < ApplicationController
   def create
-    @listings = Listing.new(listing_params)
+    @listing = Listing.new(listing_params)
     if @listing.save
       render :show
     else 
@@ -38,6 +38,6 @@ class Api::ListingsController < ApplicationController
   private 
 
   def listing_params
-    params.require(:listings).permit(:guidelines, :trip_counter, :price, :car_id, :location, :extras)
+    params.require(:listing).permit(:guidelines, :trip_counter, :price, :car_id, :location, :extras, :user_id)
   end 
 end
