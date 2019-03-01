@@ -11,7 +11,7 @@ const LoggedOutNav = ({handleResponse, openModal}) =>{
         href=''
         onClick={(e) => {
           handleResponse(e);
-          openModal("Login")
+          openModal("Log in")
         }}
       >Login</a>
 
@@ -20,7 +20,7 @@ const LoggedOutNav = ({handleResponse, openModal}) =>{
           href=''
           onClick={(e) => {
             handleResponse(e);
-            openModal("Signup")
+            openModal("Sign up")
           }}
         >Signup</a>
     </div >

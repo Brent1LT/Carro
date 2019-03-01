@@ -10,14 +10,17 @@ function Modal ({modal, closeModal}) {
   }
   let component;
   switch(modal){
-    case "Login":
+    case "Log in":
       component = <LoginFormContainer />;
       break;
-    case "Signup":
+    case "Sign up":
       component = <SignupFormContainer />;
       break;
+    // case "Log out":
+    //   component = <ProfileDropdownContainer /> 
     default:
       return null;
+
   }
   return (
     <div className="modal-background" onClick={closeModal}>

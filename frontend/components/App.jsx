@@ -1,15 +1,14 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import Modal from "./modal/modal";
+import SessionModal from "./modal/session_modal";
 import NavBarContainer from './nav_bar/nav_bar_container';
-import {logout} from '../actions/session_actions';
 
 
 
 
 const App = () => (
   <div>
-    <Modal />
+    <SessionModal />
     <NavBarContainer />
     <h1>Turo goes here</h1>
   </div>

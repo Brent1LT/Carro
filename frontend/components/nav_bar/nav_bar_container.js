@@ -1,5 +1,5 @@
 import {openModal, closeModal} from "../../actions/modal_actions";
-import NavBar from '../nav_bar';
+import NavBar from './nav_bar';
 import { connect } from "react-redux";
 
 

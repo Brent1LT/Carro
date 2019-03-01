@@ -18,7 +18,7 @@
   text-decoration: none;
   font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
   align-self: center;
-  font-size: 12px;  
+  font-size: 13px;  
   margin: 10px;
   letter-spacing: 1px;
 
@@ -46,8 +46,10 @@
  .fa.fa-user-circle{
   display: flex;
   margin: 5px;
-  align-items: center
-
+  align-items: center;
+  font-size: 30px;
+  padding-top: 10px; 
+  
  }
 
  .logo{
@@ -58,4 +60,51 @@
  .nav-user-profile{
    display: flex;
    justify-content: center;
+ }
+
+ .profile-image-container{
+   position: relative;
+   
+ }
+
+ .drop-down{
+  position: absolute;
+  top: 60px;
+  border-bottom: 1px solid black
+ }
+/* .arrow{
+  height: 10px;
+  width: 15px;
+  position: absolute;
+  transform: rotate(45deg);
+  top: -5px;
+  left: 10px;
+  background: red
+} */
+
+.d:before {
+    content:"\A";
+    border-style: solid;
+    border-width: 8px 12px 8px 0;
+    border-color: transparent #ffffff transparent transparent;
+    position: absolute;
+    top: -14px;
+    transform: rotate(90deg);
+    left: 2px
+}
+
+  .drop-down-link{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    width: 100px;
+    height: 30px;
+    font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 6px;
+    font-size: 14px
+  }
+
+
+ .drop-down-link:hover{
+  background-color: darkgrey;
  }

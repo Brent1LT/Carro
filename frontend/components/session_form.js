@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       lastname: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.loginDemo = this.loginDemo.bind(this);
   }
 
   update(field){
@@ -19,17 +20,19 @@ class SessionForm extends React.Component {
   }
 
   signupForm(){
-    if (this.props.formType === 'Signup'){
+    if (this.props.formType === 'Sign up'){
       return (
         <>
           <h4 className="greeting">Let's get started</h4>
-          <div className='name-label'>
-            <label >Firstname</label>
-            <input className='name-input' type='text' value={this.state.firstname} onChange={this.update('firstname')} />
-          </div>
-          <div className='name-label' >
-            <label className='signup-label'>Lastname</label>
-            <input className='name-input' type='text' value={this.state.lastname} onChange={this.update('lastname')} />
+          <div className="names">
+            <div className='name-label'>
+              <label >Firstname</label>
+              <input className='name-input' type='text' value={this.state.firstname} onChange={this.update('firstname')} />
+            </div>
+            <div className='name-label' >
+              <label className='signup-label'>Lastname</label>
+              <input className='name-input' type='text' value={this.state.lastname} onChange={this.update('lastname')} />
+            </div>
           </div>
         </>
       )
@@ -44,6 +47,26 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => this.props.closeModal());
+  };
+
+  demoUser(){
+    if (this.props.formType === 'Log in') {
+      return(
+        <button className="demo-user"
+        onClick={() => this.loginDemo()} >
+          Demo User!
+        </button>
+      );
+    };
+  };
+
+  loginDemo(){
+    this.setState({ firstname: 'test', lastname: 'test', email: 'test@email.com', password: '123456' }, 
+      () => {
+        let user = this.state;
+        this.props.processForm(user);
+        this.props.closeModal();
+      })
   }
   
   
@@ -64,7 +87,8 @@ class SessionForm extends React.Component {
       
             <button className='submit-form' type="Submit"  >{this.props.formType}</button>
           </form>
-          {this.props.otherForm}
+          {this.demoUser()}
+          <span>{this.props.otherForm}</span>
         </>
         )
       }

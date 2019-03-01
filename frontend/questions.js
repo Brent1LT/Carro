@@ -1,9 +1,6 @@
 ```
-props/handle response
-icon
-'this' in nav_bar.js
-errors
-matching login block and button
-submit button
-putting pics in
+already have an account?
+css triangle
+more space on the left
+
 ```

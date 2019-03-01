@@ -1,6 +1,6 @@
 import React from 'react';
-import LoggedInNav from './nav_bar/logged_in_nav';
-import LoggedOutNav from './nav_bar/logged_out_nav';
+import LoggedInNav from './logged_in_nav';
+import LoggedOutNav from './logged_out_nav';
 class NavBar extends React.Component {
   constructor(props){
     super(props);
