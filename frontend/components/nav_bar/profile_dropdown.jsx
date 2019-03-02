@@ -17,8 +17,7 @@ class ProfileDropdown extends React.Component{
           <div className='arrow'></div>
           <div href='' className='drop-down-link' >Find a car</div>
           <div href='' className='drop-down-link' >Profile</div>
-          <div href='' className='drop-down-link' onClick={() => this.props.logout()} >Log out</div>
-          
+          <div href='' className='drop-down-link logout' onClick={() => this.props.logout()} >Log out</div>
         </div>
       )
     }

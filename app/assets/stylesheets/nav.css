@@ -49,6 +49,7 @@
   align-items: center;
   font-size: 30px;
   padding-top: 10px; 
+  position: relative;
   
  }
 
@@ -70,8 +71,14 @@
  .drop-down{
   position: absolute;
   top: 60px;
-  border-bottom: 1px solid black;
   text-align: center;
+  right: 6px;
+  width: 100px
+ }
+
+ .logout{
+  border-bottom: 1px solid black;
+
  }
 /* .arrow{
   height: 10px;
@@ -91,7 +98,7 @@
     position: absolute;
     top: -14px;
     transform: rotate(90deg);
-    left: 2px
+    right: 2px
 }
 
   .drop-down-link{

@@ -10,16 +10,10 @@ const App = () => (
   <div>
     <SessionModal />
     <NavBarContainer />
+    {/* <Route exact path='/listings/new' component={ListingsFormContainer} /> */}
     <h1>Turo goes here</h1>
   </div>
 );
 
 export default App;
 
-{/* <button onClick={() => }>Logout</button> */}
-
-
-{/* <Route path='/' component={SignupFormContainer}/>
-<Route path='/' component={LoginFormContainer} /> */}
-{/* <ProtectedRoute component={LoggedInNav} />
-<AuthRoute component={LoggedOutNav} /> */}
