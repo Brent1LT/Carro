@@ -12,19 +12,36 @@ export const fetchListing = (id) => (
   })
 );
 
-export const createListing = (listing) => (
+export const createListing = ({ extras, guidelines, location, price, tripCounter: trip_counter, userId: user_id }) => (
   $.ajax({
     method: 'post',
     url: `/api/listings`,
-    data: { listing }
+    data: { listing: { 
+      extras,
+      guidelines,
+      location,
+      price,
+      trip_counter,
+      user_id
+     }
+    }
   })
 );
 
-export const updateListing = (listing) => (
+export const updateListing = ({ extras, guidelines, location, price, tripCounter: trip_counter, userId: user_id }) => (
   $.ajax({
     method: 'patch',
     url: `/api/listings/${listing.id}`,
-    data: { listing }
+    data: {
+      listing: {
+        extras,
+        guidelines,
+        location,
+        price,
+        trip_counter,
+        user_id
+      }
+    }
   })
 );
 

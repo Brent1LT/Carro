@@ -1,8 +1,22 @@
-export const createCar = car => (
+export const createCar = ({make, model, year, mpg, gas, numOfDoors: num_of_doors, numOfSeats: num_of_seats, transmission, trim, listingId: listing_id, userId: user_id, description}) => (
   $.ajax({
     method: 'post',
     url: `api/cars`,
-    data: {car}
+    data: {car: {
+      make, 
+      model, 
+      year, 
+      mpg, 
+      gas, 
+      num_of_doors,
+      num_of_seats,
+      transmission,
+      trim,
+      listing_id,
+      user_id,
+      description
+    }
+  }
   })
 );
 
