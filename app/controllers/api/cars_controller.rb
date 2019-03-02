@@ -11,7 +11,7 @@ class Api::CarsController < ApplicationController
   end 
 
   def destroy
-    @car = Car.find_by(params[:id])
+    @car = Car.find_by(id: params[:id])
 
     if @car.destroy 
       render :show

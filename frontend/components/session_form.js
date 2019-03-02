@@ -113,17 +113,25 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    if (this.props.errors.length > 0 && this.state.email === '') {
+    if (this.props.errors.length > 0 && this.state['email'] === '') {
       this.state.emailError = ' error-box'
+    }else{
+      this.state.emailError = ''
     }
-    if (this.props.errors.length > 0 && this.state.password === '') {
+    if (this.props.errors.length > 0 && this.state['password'] === '') {
       this.state.passwordError = ' error-box'
+    }else{
+      this.state.passwordError = ''
     }
-    if (this.props.errors.length > 0 && this.state.firstname === '') {
+    if (this.props.errors.length > 0 && this.state['firstname'] === '') {
       this.state.firstnameError = ' error-box'
+    }else {
+      this.state.firstnameError = ''
     }
-    if (this.props.errors.length > 0 && this.state.lastname === '') {
+    if (this.props.errors.length > 0 && this.state['lastname'] === '') {
       this.state.lastnameError = ' error-box'
+    }else {
+      this.state.lastnameError = ''
     }
   }
 

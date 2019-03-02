@@ -2,7 +2,8 @@ import React from 'react';
 import Root from './components/root';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-import {fetchListings, createListing, updateListing, deleteListing, fetchListing} from './util/listing_api_util'
+import { createCar, deleteCar } from './util/car_api_util';
+import {fetchListings, createListing, updateListing, deleteListing, fetchListing} from './actions/listing_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -23,15 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ReactDOM.render(<Root store={store}/>, root)
 
-  // window.dispatch = store.dispatch;
-  // window.getState = store.getState;
-  // window.login = login;
-  // window.logout = logout;
-  // window.signup = signup;
+  window.dispatch = store.dispatch;
+  window.getState = store.getState;
+
 
   window.fetchListings = fetchListings;
   window.createListing = createListing;
   window.updateListing = updateListing;
   window.deleteListing = deleteListing;
   window.fetchListing = fetchListing;
+
+  window.createCar = createCar;
+  window.deleteCar = deleteCar;
 });
