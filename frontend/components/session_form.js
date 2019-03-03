@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
           <h4 className="greeting">Let's get started</h4>
           <div className="names">
             <div className='name-label'>
-              <label className='error-parent' >Firstname
+              <label className='error-parent session-label' >Firstname
                 {this.showIcon('firstname')}
               </label>
               <input className={'name-input' + this.state.firstnameError} 
@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
                 placeholder='Firstname' />
             </div>
             <div className='name-label' >
-              <label className='error-parent'>Lastname
+              <label className='error-parent session-label'>Lastname
                 {this.showIcon('lastname')}
               </label>
               <input className={'name-input' + this.state.lastnameError} 
@@ -143,7 +143,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           {this.signupForm()}
           <div className='login-div'>
-            <label className='error-parent'>Email
+            <label className='error-parent session-label'>Email
               {this.showIcon('email')}
               <input className={'login-label' + this.state.emailError} 
                 type='email' 
@@ -152,7 +152,7 @@ class SessionForm extends React.Component {
                 placeholder='Email'
                 />
             </label>
-            <label className='error-parent'>Password
+            <label className='error-parent session-label'>Password
               {this.showIcon('password')}
               <input className={'login-label' + this.state.passwordError} 
                 type='password' 

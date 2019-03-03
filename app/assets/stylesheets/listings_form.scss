@@ -1,0 +1,41 @@
+.road-banner{
+  max-height: inherit;
+  width: 100%;
+  max-height: 125px;
+  position: relative;
+}
+
+
+.listing-banner{
+  position: absolute;
+  top: 135px;
+  left: 610px;
+  color: #ffffff;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 1px;
+  font-size: 26px;
+}
+
+.parent-background{
+  display: flex;
+  max-width: 700px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.listings-info{
+  margin-top: 10px;
+  border-top: 1px solid red
+}
+
+.test{
+  color:red;
+  font-size: 12px;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  display: block;
+}
+
+.guidelines{
+  height: 120px;
+  width: 100%;
+}
