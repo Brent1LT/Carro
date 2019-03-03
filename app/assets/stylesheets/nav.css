@@ -12,6 +12,7 @@
   grid-template-columns: repeat(4, 25%);
 }
 
+
 .nav-link, .nav-user-links{
   
   color: white;
@@ -73,7 +74,9 @@
   top: 60px;
   text-align: center;
   right: 6px;
-  width: 100px
+  width: 100px;
+  z-index: 999;
+  background: #fff
  }
 
  .logout{
