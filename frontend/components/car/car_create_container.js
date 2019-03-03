@@ -6,17 +6,18 @@ import {createCar} from '../../actions/car_actions';
 const mapStateToProps = state => {
   return ({
     carErrors: state.errors.cars,
-    make: '',
-    model: '',
-    trim: '',
-    description: '',
-    year: '',
-    mpg: '',
-    numOfSeats: 0,
-    numOfDoors: 0,
-    transmission: 'automatic',
-    gas: 'regular',
-
+    car: {
+      make: '',
+      model: '',
+      trim: '',
+      description: '',
+      year: 2000,
+      mpg: 0,
+      numOfSeats: 2,
+      numOfDoors: 4,
+      transmission: 'automatic',
+      gas: 'regular',
+    }
   });
 };
 

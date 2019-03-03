@@ -21,12 +21,16 @@ class ListingForm extends React.Component{
           className='road-banner' />
         <h1 className='listing-banner'>LIST YOUR CAR </h1>
         <div className='parent-background'>
-          <i className="fas fa-angle-down"></i>
           <div className="listings-info">
             <span className='listings-drop-title'>Your listing</span>
+          <i className="fas fa-angle-down listing-caret"></i>
             <ListingPostFormContainer  />
           </div>
-            <CarCreateContainer />
+            <div className='listings-info'>
+              <div className='listings-drop-title' >Your car</div>
+            <i className="fas fa-angle-down listing-caret"></i>
+              <CarCreateContainer />
+            </div>
         </div>
       </div>
     )

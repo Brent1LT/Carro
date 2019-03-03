@@ -21,27 +21,34 @@
   max-width: 700px;
   margin: auto;
   justify-content: space-between;
-
+  flex-direction: column;
 }
-
-.fas.fa-angle-down{
-  margin-top: 40px;
-}
-
 
 .listings-info{
   margin-top: 20px;
   border-top: 1px solid lightgrey;
   display: flex;
   align-content: center;
-  flex-direction: column
+  flex-direction: column;
+  position: relative;
 }
+
+.listing-caret{
+  position: absolute;
+  top: 20px
+}
+
+.listing-form{
+  margin-bottom: 20px;
+}
+
+
 
 .listings-drop-title{
   font-size: 16px;
   font-weight: 700;
   margin-top: 20px;
-  margin-left: 10px;
+  margin-left: 20px;
 
 }
 
@@ -63,6 +70,7 @@
   display: block;
   padding: 10px;
   padding-top: 5px;
+  box-sizing: border-box;
 }
 
 .listings-textarea:focus{
@@ -70,9 +78,19 @@
 
 }
 
+.listings-numbers{
+  display: block;
+  margin-top: 8px;
+  height: 20px;
+  padding: 5px;
+}
+
 .listings-inputs{
   display: block;
   margin-top: 8px;
+  height: 20px;
+  padding: 5px 8px 5px 8px;
+  width: 50%;
 }
 
 .listings-inputs:focus{
@@ -83,9 +101,38 @@
 .location-input{
   width: 100%;
   margin-top: 8px;
-  padding: 5px;
+  padding: 8px 10px 8px 10px;
+  box-sizing: border-box;
 }
 
 .location-input:focus{
   outline: 1px solid rgba(167, 6, 241, 0.877);
+}
+
+// cars 
+
+.cars-info{
+  display: flex;
+  border-top: 1px solid lightgrey;
+  padding-top: 20px;
+  font-size: 16px;
+  font-weight: 700; 
+  position: relative;
+}
+
+.car-caret{
+  margin-right: 10px;
+  position: absolute;
+  left: -10px
+}
+.car-form{
+  
+}
+.car-form-contents{
+  margin-left: none
+
+}
+
+.your-car{
+  display: block;
 }
