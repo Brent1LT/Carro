@@ -23,12 +23,12 @@ class ListingForm extends React.Component{
         <div className='parent-background'>
           <div className="listings-info">
             <span className='listings-drop-title'>Your listing</span>
-          <i className="fas fa-angle-down listing-caret"></i>
+            <i className="fas fa-angle-down listing-caret"></i>
             <ListingPostFormContainer  />
           </div>
             <div className='listings-info'>
               <div className='listings-drop-title' >Your car</div>
-            <i className="fas fa-angle-down listing-caret"></i>
+              <i className="fas fa-angle-down listing-caret"></i>
               <CarCreateContainer />
             </div>
         </div>

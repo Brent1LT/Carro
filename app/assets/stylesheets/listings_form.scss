@@ -35,7 +35,7 @@
 
 .listing-caret{
   position: absolute;
-  top: 20px
+  top: 20px;
 }
 
 .listing-form{
@@ -121,18 +121,10 @@
 }
 
 .car-caret{
-  margin-right: 10px;
   position: absolute;
-  left: -10px
+  top: 20px;
 }
 .car-form{
-  
-}
-.car-form-contents{
-  margin-left: none
-
-}
-
-.your-car{
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
 }
