@@ -45,7 +45,7 @@ class ListingPostForm extends React.Component {
             onChange={this.update('extras')}
             placeholder="Any additional info you would like to add that wasn't listed" ></textarea>
         </label>
-        <button>Next</button>
+        <button className="next-form">Next</button>
       </form>
     )
   }

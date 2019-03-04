@@ -69,7 +69,7 @@ class ListingForm extends React.Component{
             <i className="fas fa-angle-down listing-caret" onClick={() => this.handleListingDrop()} ></i>
             {this.checkListingDrop()}
           </div>
-            <div className='listings-info'>
+            <div className='parent-car-info'>
               <div className='listings-drop-title' onClick={() => this.handleCarDrop()} >Your car</div>
               <i className="fas fa-angle-down listing-caret" onClick={() => this.handleCarDrop()}></i>
               {this.checkCarDrop()}

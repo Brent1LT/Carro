@@ -28,15 +28,15 @@ class CarPostForm extends React.Component{
   render(){
     return (
       <form className='car-form'>
-        <label className="listings-labels">Make
+        <label className="listings-labels">What is the make of your car?
           <input type="text" className='listings-inputs'
             value={this.state.make} onChange={this.update('make')} />
         </label>
-        <label className="listings-labels">Model
+        <label className="listings-labels">What is the model of your car?
           <input type="text" className='listings-inputs'
             value={this.state.model} onChange={this.update('model')} />
         </label>
-        <label className="listings-labels">Trim
+        <label className="listings-labels">What is the trim of your car?<span className='optional-span'>optional</span>
           <input type="text" className='listings-inputs'
             value={this.state.trim} onChange={this.update('trim')} />
         </label>
@@ -60,14 +60,17 @@ class CarPostForm extends React.Component{
             value={this.state.numOfDoors}
             onChange={this.update('numOfDoors')} />
         </label>
-        <div className='transmission-input'>Transmission
-          <input type="radio" value='automatic' onChange={this.update('transmission')}  checked/>Automatic
-          <input type="radio" value='manual' onChange={this.update('transmission')}  />Manual
+        <label className='transmission-label'>Transmission</label>
+        <div className='transmission-input'>
+          <input className='listing-radios1' type="radio" name='transmission' value='manual' onChange={this.update('transmission')}  checked/>Manual
+          <input className='listing-radios2' type="radio" name='transmission' value='automatic' onChange={this.update('transmission')}  />Automatic
         </div>
-        <div className='gas-input'>Gas
-          <input type="radio" value='regular' onChange={this.update('gas')}  checked/>Regular
-          <input type="radio" value='premium' onChange={this.update('gas')}  />Premium
+        <label className='gas-label'>Gas</label>
+        <div className='gas-input'>
+            <input className='listing-radios1' type="radio" name='gas' value='regular' onChange={this.update('gas')}  checked/>Regular
+            <input className='listing-radios2' type="radio" name='gas' value='premium' onChange={this.update('gas')}  />Premium
         </div>
+        <button className="next-form">Next</button>
         </form>
     )
   }

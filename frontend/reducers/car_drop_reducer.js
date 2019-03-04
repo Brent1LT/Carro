@@ -1,9 +1,9 @@
 import {OPEN_CAR_DROP, CLOSE_CAR_DROP} from '../actions/listing_drop_actions';
 
-const carDropReducer = (oldState = false, action) => {
+const carDropReducer = (oldState = true, action) => {
   switch (action.type) {
     case OPEN_CAR_DROP:
-      return true;
+      return false;
     case CLOSE_CAR_DROP:
       return false;
     default:

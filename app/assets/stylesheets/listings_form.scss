@@ -41,10 +41,8 @@
 }
 
 .listing-form{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
-
-
 
 .listings-drop-title{
   font-size: 16px;
@@ -62,8 +60,6 @@
   font-weight: 500;
   margin-top: 20px;
 }
-
-
 
 .listings-textarea{
   height: 120px;
@@ -112,6 +108,13 @@
 }
 
 // cars 
+.parent-car-info{
+  margin-top: 10px;
+  border-top: 1px solid lightgrey;
+  flex-direction: column;
+  position: relative;
+}
+
 
 .cars-info{
   display: flex;
@@ -122,6 +125,12 @@
   position: relative;
 }
 
+.optional-span{
+  margin-left: 8px;
+  color: lightgrey;
+  font-size: 12px;
+}
+
 .car-caret{
   position: absolute;
   top: 20px;
@@ -130,4 +139,48 @@
 .car-form{
   display: flex;
   flex-wrap: wrap;
+}
+
+.transmission-label{
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+}
+
+.transmission-input{
+  width: 100%;
+}
+
+.listing-radios1{
+  margin-right: 10px;
+}
+
+.listing-radios2{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.gas-label{
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.gas-input{
+  width: 100%
+}
+
+.next-form{
+  margin-top: 30px;
+  background: none;
+  height: 35px;
+  width: 90px;
+  font-size: 15px;
+  border: 2px solid black;
+  cursor: pointer;
 }
