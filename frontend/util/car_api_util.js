@@ -1,7 +1,7 @@
 export const createCar = ({make, model, year, mpg, gas, numOfDoors: num_of_doors, numOfSeats: num_of_seats, transmission, trim, listingId: listing_id, userId: user_id, description}) => (
   $.ajax({
     method: 'post',
-    url: `api/cars`,
+    url: `/api/cars`,
     data: {car: {
       make, 
       model, 
@@ -23,6 +23,6 @@ export const createCar = ({make, model, year, mpg, gas, numOfDoors: num_of_doors
 export const deleteCar = id => (
   $.ajax({
     method: 'delete',
-    url: `api/cars/${id}`
+    url: `/api/cars/${id}`
   })
 );

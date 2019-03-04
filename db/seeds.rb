@@ -13,3 +13,14 @@ demo = User.create!(
   firstname: 'demo',
   lastname: 'login'
 )
+
+listing1 = Listing.create!(
+ guidelines: "no eating in the car plz",
+ location: "here",
+ extras: nil,
+ trip_counter: 12,
+ price: 57,
+ user_id: demo[:id],
+)
+
+# listing.photos.attach(io: File.open("/Users/brentbumann/Downloads/IMG_0093.JPG"), filename: "camaro.jpg")

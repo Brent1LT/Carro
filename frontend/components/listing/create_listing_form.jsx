@@ -4,32 +4,38 @@ class ListingPostForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      listingErrors: this.props.listingErrors,
+    this.state = {anotherKey: {
       guidelines: this.props.listing.guidelines,
-      tripCounter: this.props.tripCounter,
+      tripCounter: this.props.listing.tripCounter,
       price: this.props.listing.price,
       extras: this.props.listing.extras,
       location: this.props.listing.location
-    };
+    }};
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
     return e => {
-      this.setState({ [field]: e.target.value });
+      // let newState = Object.assign({}, this.props.listingFormData, { [field]: e.target.value });
+      // this.setState({listingFormData: newState });
+      this.setState({[field]: e.target.value});
     };
   }
 
   handleSubmit(e){
     e.preventDefault();
-    
+    // debugger
+    // let thing = Object.assign({}, this.state);
+    // listing = Object.assign({[userId]: this.props.userId}, listing);
+    this.props.createListing(Object.assign({}, this.state, {userId: this.props.userId})).then(() => this.props.closeListingDrop());
   }
 
   render() {
 
-
+    
     return (
-      <form className='listing-form'>
+      <form onSubmit={this.handleSubmit} className='listing-form'>
         <label className="listings-labels">Where is your car located?
           <input className='location-input'
             type='text' value={this.state.location}
@@ -41,7 +47,7 @@ class ListingPostForm extends React.Component {
             placeholder='Some guidelines for people using your vechicle' ></textarea>
         </label>
         <label className='listings-labels'>What is the price per day for your car?
-          <input className='listings-numbers' type='number' step='1'
+          <input className='listings-numbers' type='number' step='1' min='0'
             value={this.state.price}
             onChange={this.update('price')} />
         </label>
@@ -50,7 +56,7 @@ class ListingPostForm extends React.Component {
             onChange={this.update('extras')}
             placeholder="Any additional info you would like to add that wasn't listed" ></textarea>
         </label>
-        <button className="next-form">Next</button>
+        <button className="next-form" type='submit'>Next</button>
       </form>
     )
   }

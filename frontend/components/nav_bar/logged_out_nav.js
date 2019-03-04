@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const LoggedOutNav = ({handleResponse, openModal}) =>{
   return(
     <div className="nav-bar-links">
-      <label className="nav-link" >List Your Car</label>
+      <Link className='nav-link' to="/listings/new" >List Your Car</Link>
       <label className="nav-link" >Learn More</label>
 
       <a

@@ -3,7 +3,7 @@ import Root from './components/root';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { createCar, deleteCar } from './actions/car_actions';
-import { createListing, updateListing } from './actions/listing_actions';
+import { createListing, updateListing, fetchListings } from './actions/listing_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.createListing = createListing;
   window.updateListing = updateListing;
+  window.fetchListings = fetchListings;
 
   window.createCar = createCar;
   window.deleteCar = deleteCar;

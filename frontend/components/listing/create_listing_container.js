@@ -13,7 +13,8 @@ const mapStateToProps = state => {
       extras: '',
       location: ''
     },
-    formType: "create listing"
+    formType: "create listing",
+    userId: state.session.currentUserId
   });
 };
 
