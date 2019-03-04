@@ -7,11 +7,7 @@ class SessionForm extends React.Component {
       email: '',
       password: '',
       firstname: '',
-      lastname: '',
-      emailError: '',
-      passwordError: '',
-      lastnameError: '',
-      firstnameError: ''
+      lastname: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -32,7 +28,7 @@ class SessionForm extends React.Component {
               <label className='error-parent session-label' >Firstname
                 {this.showIcon('firstname')}
               </label>
-              <input className={'name-input' + this.state.firstnameError} 
+              <input className={'name-input' + this.renderErrors('firstname')} 
                 type='text'  
                 value={this.state.firstname} 
                 onChange={this.update('firstname')} 
@@ -42,7 +38,7 @@ class SessionForm extends React.Component {
               <label className='error-parent session-label'>Lastname
                 {this.showIcon('lastname')}
               </label>
-              <input className={'name-input' + this.state.lastnameError} 
+              <input className={'name-input' + this.renderErrors('lastname')} 
                 type='text' 
                 value={this.state.lastname} 
                 onChange={this.update('lastname')}
@@ -60,7 +56,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
+    let user = Object.assign({}, this.state );
     this.props.processForm(user).then(() => this.props.closeModal());
   };
 
@@ -112,32 +108,17 @@ class SessionForm extends React.Component {
     }
   }
 
-  renderErrors() {
-    if (this.props.errors.length > 0 && this.state['email'] === '') {
-      this.state.emailError = ' error-box'
-    }else{
-      this.state.emailError = ''
-    }
-    if (this.props.errors.length > 0 && this.state['password'] === '') {
-      this.state.passwordError = ' error-box'
-    }else{
-      this.state.passwordError = ''
-    }
-    if (this.props.errors.length > 0 && this.state['firstname'] === '') {
-      this.state.firstnameError = ' error-box'
+  renderErrors(field) {
+    if (this.props.errors.length > 0 && this.state[field] === '') {
+      return ' error-box'
     }else {
-      this.state.firstnameError = ''
-    }
-    if (this.props.errors.length > 0 && this.state['lastname'] === '') {
-      this.state.lastnameError = ' error-box'
-    }else {
-      this.state.lastnameError = ''
+      return ''
     }
   }
 
 
   render() {
-    this.renderErrors()
+    
     return (
       <>
         <form onSubmit={this.handleSubmit}>
@@ -145,7 +126,7 @@ class SessionForm extends React.Component {
           <div className='login-div'>
             <label className='error-parent session-label'>Email
               {this.showIcon('email')}
-              <input className={'login-label' + this.state.emailError} 
+              <input className={'login-label' + this.renderErrors('email')} 
                 type='email' 
                 value={this.state.email} 
                 onChange={this.update('email')} 
@@ -154,7 +135,7 @@ class SessionForm extends React.Component {
             </label>
             <label className='error-parent session-label'>Password
               {this.showIcon('password')}
-              <input className={'login-label' + this.state.passwordError} 
+              <input className={'login-label' + this.renderErrors('password')} 
                 type='password' 
                 value={this.state.password} 
                 onChange={this.update('password')} 

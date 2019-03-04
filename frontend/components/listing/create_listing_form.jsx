@@ -7,7 +7,7 @@ class ListingPostForm extends React.Component {
     this.state = {
       listingErrors: this.props.listingErrors,
       guidelines: this.props.listing.guidelines,
-      tripCounter: 0,
+      tripCounter: this.props.tripCounter,
       price: this.props.listing.price,
       extras: this.props.listing.extras,
       location: this.props.listing.location
@@ -18,6 +18,11 @@ class ListingPostForm extends React.Component {
     return e => {
       this.setState({ [field]: e.target.value });
     };
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    
   }
 
   render() {
