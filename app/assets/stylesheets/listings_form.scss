@@ -3,6 +3,7 @@
   width: 100%;
   max-height: 125px;
   position: relative;
+
 }
 
 
@@ -36,6 +37,7 @@
 .listing-caret{
   position: absolute;
   top: 20px;
+  cursor: pointer;
 }
 
 .listing-form{
@@ -49,7 +51,7 @@
   font-weight: 700;
   margin-top: 20px;
   margin-left: 20px;
-
+  cursor: pointer;
 }
 
 .listings-labels{
@@ -123,6 +125,7 @@
 .car-caret{
   position: absolute;
   top: 20px;
+  cursor: pointer;
 }
 .car-form{
   display: flex;

@@ -8,11 +8,54 @@ class ListingForm extends React.Component{
   constructor(props){
     super(props);
 
-
-
+    // this.handleDrop = this.handleDrop.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // update(field){
+  //   if (this.state[field] === false){
+  //     this.setState({[field]: true});
+  //     this.handleDrop();
+  //   }else {
+  //     this.setState({[field]: false});
+  //     this.handleDrop();
+  //   }
+  // }
+
+  handleListingDrop(){
+    if(this.props.listingDrop ){
+      this.props.closeListingDrop();
+    }else {
+      this.props.closeCarDrop();
+      this.props.openListingDrop();
+    }
+  }
+
+  checkListingDrop(){
+    if (this.props.listingDrop){
+      return (
+        <ListingPostFormContainer />
+      )
+    }
+  }
+
+  handleCarDrop(){
+    if (this.props.carDrop) {
+      this.props.closeCarDrop();
+    } else {
+      this.props.closeListingDrop();
+      this.props.openCarDrop();
+
+    }
+  }
+
+  checkCarDrop(){
+    if (this.props.carDrop) {
+      return (
+        <CarCreateContainer />
+      )
+    } 
+  }
 
   render(){
     return (
@@ -22,14 +65,14 @@ class ListingForm extends React.Component{
         <h1 className='listing-banner'>LIST YOUR CAR </h1>
         <div className='parent-background'>
           <div className="listings-info">
-            <span className='listings-drop-title'>Your listing</span>
-            <i className="fas fa-angle-down listing-caret"></i>
-            <ListingPostFormContainer  />
+            <span className='listings-drop-title' onClick={() => this.handleListingDrop()}>Your listing</span>
+            <i className="fas fa-angle-down listing-caret" onClick={() => this.handleListingDrop()} ></i>
+            {this.checkListingDrop()}
           </div>
             <div className='listings-info'>
-              <div className='listings-drop-title' >Your car</div>
-              <i className="fas fa-angle-down listing-caret"></i>
-              <CarCreateContainer />
+              <div className='listings-drop-title' onClick={() => this.handleCarDrop()} >Your car</div>
+              <i className="fas fa-angle-down listing-caret" onClick={() => this.handleCarDrop()}></i>
+              {this.checkCarDrop()}
             </div>
         </div>
       </div>

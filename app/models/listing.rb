@@ -17,6 +17,8 @@
 class Listing < ApplicationRecord
   validates :guidelines, :trip_counter, :price, :location, presence: true 
 
+  has_many_attached :photos
+
   belongs_to :user, 
   foreign_key: :user_id,
   class_name: 'User'
