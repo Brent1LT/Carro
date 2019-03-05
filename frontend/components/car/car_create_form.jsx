@@ -8,7 +8,7 @@ class CarPostForm extends React.Component{
   }
 
   formClasses(){
-    if (this.props.carDropDown){
+    if (this.props.carDrop){
       return 'car-form';
     }else {
       return 'car-form hidden-form';
@@ -19,6 +19,11 @@ class CarPostForm extends React.Component{
     return e => {
       this.props.updateState({ [field]: e.target.value });
     };
+  }
+
+  openNextDrop(){
+    this.props.openPhotoDrop();
+    this.props.closeCarDrop();
   }
 
 
@@ -72,7 +77,7 @@ class CarPostForm extends React.Component{
             onChange={this.update('description')}
             placeholder='A description for people using your vechicle' ></textarea>
         </label>
-        <button className="next-form">Next</button>
+        <button onClick={() => this.openNextDrop()} className="next-form">Next</button>
       </form>
     )
   }

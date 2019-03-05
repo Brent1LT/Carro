@@ -1,18 +1,19 @@
 import { connect } from 'react-redux';
 import ListingPostForm from './create_listing_form';
-import { createListing } from '../../actions/listing_actions';
+import { openCarDrop, closeListingDrop } from '../../actions/listing_drop_actions';
 
 
 const mapStateToProps = state => {
   return ({
-    listingDropDown: state.ui.listingDrop,
+    listingDrop: state.ui.listingDrop,
     listingErrors: state.errors.listing,
     formType: "create listing",
   });
 };
 
 const mapDispatchToProps = dispatch => ({
-  // createListing: listing=> dispatch(createListing(listing))
+  openCarDrop: () => dispatch(openCarDrop()),
+  closeListingDrop: () => dispatch(closeListingDrop())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListingPostForm);

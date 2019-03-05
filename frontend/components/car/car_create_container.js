@@ -1,10 +1,10 @@
 import {connect } from 'react-redux';
 import CarPostForm from './car_create_form';
-
+import { closeCarDrop, openPhotoDrop } from '../../actions/listing_drop_actions';
 
 const mapStateToProps = state => {
   return ({
-    carDropDown: state.ui.carDrop,
+    carDrop: state.ui.carDrop,
     carErrors: state.errors.cars,
     car: {
       make: '',
@@ -22,7 +22,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  // createCar: (car) => dispatch(createCar(car))
+  closeCarDrop: () => dispatch(closeCarDrop()),
+  openPhotoDrop: () => dispatch(openPhotoDrop())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CarPostForm);

@@ -34,10 +34,11 @@
   position: relative;
 }
 
-.listing-caret{
+.caret{
   position: absolute;
   top: 20px;
   cursor: pointer;
+  transition: transform 0.25s;
 }
 
 .listing-form{
@@ -45,7 +46,7 @@
   height: 526px;
   overflow: hidden;
   visibility: visible;
-  transition: visibility 1s, height 1s; 
+  transition: visibility 0.5s, height 0.5s; 
 }
 
 .listings-drop-title{
@@ -146,7 +147,7 @@
   height: 866px;
   overflow: hidden;
   visibility: visible;
-  transition: visibility 1s, height 1s;     
+  transition: visibility 0.5s, height 0.5s;     
 }
 
 .transmission-label{
@@ -193,11 +194,14 @@
   cursor: pointer;
 }
 
-
-
 .hidden-form{
   height: 0;
-  transition: visibility 1s, height 1s;     
+  transition: visibility 0.5s, height 0.5s;     
   visibility: hidden;
   overflow: hidden;
+}
+
+.rotated{
+  transform: rotate(180deg);
+  transition: transform 0.25s
 }

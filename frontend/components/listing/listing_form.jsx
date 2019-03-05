@@ -38,6 +38,7 @@ class ListingForm extends React.Component{
       this.props.closeListingDrop();
     }else {
       this.props.closeCarDrop();
+      this.props.closePhotoDrop();
       this.props.openListingDrop();
     }
   }
@@ -48,8 +49,21 @@ class ListingForm extends React.Component{
       this.props.closeCarDrop();
     } else {
       this.props.closeListingDrop();
+      this.props.closePhotoDrop();
       this.props.openCarDrop();
 
+    }
+  }
+
+  handlePhotoDrop(){
+
+  }
+
+  arrowClasses(dropValue){
+    if (dropValue){
+      return "fas fa-angle-down caret rotated";
+    }else {
+      return "fas fa-angle-down caret";
     }
   }
 
@@ -68,7 +82,7 @@ class ListingForm extends React.Component{
         <div className='parent-background'>
           <div className="listings-info">
             <span className='listings-drop-title' onClick={() => this.handleListingDrop()}>Your listing</span>
-            <i className="fas fa-angle-down listing-caret" onClick={() => this.handleListingDrop()} ></i>
+            <i className={this.arrowClasses(this.props.listingDrop)} onClick={() => this.handleListingDrop()} ></i>
             <ListingPostFormContainer
               updateState={(data) => {
                 let newState = Object.assign({}, this.state.listingFormData, data);
@@ -78,7 +92,7 @@ class ListingForm extends React.Component{
           </div>
           <div className='parent-car-info'>
             <div className='listings-drop-title' onClick={() => this.handleCarDrop()} >Your car</div>
-            <i className="fas fa-angle-down listing-caret" onClick={() => this.handleCarDrop()}></i>
+            <i className={this.arrowClasses(this.props.carDrop)} onClick={() => this.handleCarDrop()}></i>
             <CarCreateContainer
               updateState={(data) => {
                 let newState = Object.assign({}, this.state.carFormData, data);
@@ -88,7 +102,7 @@ class ListingForm extends React.Component{
           </div>
           <div className='parent-car-info'>
             <div className='listings-drop-title' >Listing photos</div>
-            <i className="fas fa-angle-down listing-caret" onClick={() => this.handleCarDrop()}></i>
+            <i className={this.arrowClasses(this.props.photoDrop)} onClick={() => this.handleCarDrop()}></i>
 
           </div>
         </div>

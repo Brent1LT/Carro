@@ -17,9 +17,21 @@ class ListingPostForm extends React.Component {
     };
   }
 
+  handleListingDrop() {
+    if (this.props.listingDrop) {
+      this.props.closeListingDrop();
+    } else {
+      this.props.closeCarDrop();
+      this.props.openListingDrop();
+    }
+  }
+
+
+
+
 
   formClasses() {
-    if (this.props.listingDropDown) {
+    if (this.props.listingDrop) {
       return 'listing-form';
 
     } else {
@@ -30,6 +42,11 @@ class ListingPostForm extends React.Component {
   // componentDidUpdate(){
   //   console.log(this.form.getBoundingClientRect());
   // }
+
+  openNextDrop() {
+    this.props.openCarDrop();
+    this.props.closeListingDrop();
+  }
 
   render() {
 
@@ -56,7 +73,7 @@ class ListingPostForm extends React.Component {
             onChange={this.update('extras')}
             placeholder="Any additional info you would like to add that wasn't listed" ></textarea>
         </label>
-        <button className="next-form" >Next</button>
+        <button onClick={() => this.openNextDrop()} className="next-form" >Next</button>
       </form>
     )
   }
