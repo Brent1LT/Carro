@@ -4,6 +4,10 @@ import React from 'react';
 class FileUpload extends React.Component{
   constructor(props){
     super(props);
+    
+    this.state = {
+     photos: []
+    };
   }
 
   openNextDrop(){
@@ -13,17 +17,16 @@ class FileUpload extends React.Component{
   }
 
   update(field) {
-    return e => {
       // let newState = Object.assign({}, this.props.listingFormData, { [field]: e.target.value });
       // this.setState({listingFormData: newState });
 
-      this.props.updateState({ [field]: e.target.value });
-    };
+    return this.props.updateState({ [field]: this.state.photos });
   }
 
 
   handleFile(e){
-    this.props.updateState({})
+    this.state.photos.push(e.currentTarget.files[0]);
+    this.update('photosData');
   }
 
   formClasses() {

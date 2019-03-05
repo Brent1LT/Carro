@@ -28,9 +28,7 @@ class ListingForm extends React.Component{
         transmission: 'automatic',
         gas: 'regular',
       },
-      photos: {
-        photoUrl: []
-      }
+      photos: {}
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -84,7 +82,10 @@ class ListingForm extends React.Component{
     this.props.createListing(this.state.listingFormData, this.state.carFormData);
   }
 
+  
+
   render(){
+    debugger
     return (
       <div className="banner-background">
         <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/1-dirt-road-through-wheat-field-kamiak-panoramic-images.jpg" 
