@@ -22,7 +22,7 @@ class CarPostForm extends React.Component{
     };
   }
 
-  handleTranisitionEnd(e) {
+  handleTranisitionEnd() {
     if (!this.props.carDrop && this.nextClicked) {
       this.props.openPhotoDrop();
       this.nextClicked = false;

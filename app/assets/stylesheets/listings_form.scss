@@ -115,6 +115,7 @@
 // cars 
 .parent-car-info{
   margin-top: 10px;
+  margin-bottom: 10px;
   border-top: 1px solid lightgrey;
   flex-direction: column;
   position: relative;
@@ -188,7 +189,7 @@
   margin-top: 30px;
   background: none;
   height: 35px;
-  width: 90px;
+  width: 60px;
   font-size: 15px;
   border: 2px solid black;
   cursor: pointer;
@@ -208,5 +209,41 @@
 
 .photo-form{
   visibility: visible;
+}
 
+.photo-form-text{
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 500px;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+}
+.image-preview{
+  width: 100%;
+  display: flex;
+}
+
+.upload-input{
+  margin: 20px 0px 20px 0px;
+  width: 100%
+}
+
+.previewed-image{
+
+}
+
+.finish-button-container{
+  width: 100%;
+  margin-top: 10px;
+  border-top: 1px solid lightgrey;
+}
+
+.finish-form-button{
+  margin: 20px 0px 20px 0px;
+  width: 70px;
+  height: 35px;
+  background-color: #8f63f4;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-weight: 500;
 }

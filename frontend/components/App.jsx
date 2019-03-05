@@ -14,7 +14,6 @@ const App = () => (
     <NavBarContainer />
     <Route exact path='/listings/new' component={ListingsFormContainer} />
     <Route exact path='/' component={SplashPageContainer} />
-    <h1>Turo goes here</h1>
   </div>
 );
 

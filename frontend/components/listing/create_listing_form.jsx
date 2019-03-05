@@ -32,7 +32,7 @@ class ListingPostForm extends React.Component {
   // }
 
   // is called when tranition is over
-  handleTranisitionEnd(e){
+  handleTranisitionEnd(){
     if(!this.props.listingDrop && this.nextClicked){
       this.props.openCarDrop();
       this.nextClicked = false;

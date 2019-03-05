@@ -147,8 +147,10 @@ class ListingForm extends React.Component{
             }}
               {...this.state.photos} />
           </div>
+          <div className='finish-button-container' >
+            <button className='finish-form-button' onClick={this.handleSubmit}>Finish</button>
+          </div>
         </div>
-        <button  onClick={this.handleSubmit}>Finish</button>
       </div>
     )
   }
