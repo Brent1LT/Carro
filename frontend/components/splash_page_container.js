@@ -3,7 +3,6 @@ import {fetchListings} from '../actions/listing_actions';
 import SplashPage from './splash_page';
 
 const mapStateToProps = state => {
-  
   return ({
     listings: Object.values(state.entities.listings)
   });

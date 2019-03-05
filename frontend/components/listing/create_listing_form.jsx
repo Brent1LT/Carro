@@ -17,18 +17,6 @@ class ListingPostForm extends React.Component {
     };
   }
 
-  handleListingDrop() {
-    if (this.props.listingDrop) {
-      this.props.closeListingDrop();
-    } else {
-      this.props.closeCarDrop();
-      this.props.openListingDrop();
-    }
-  }
-
-
-
-
 
   formClasses() {
     if (this.props.listingDrop) {

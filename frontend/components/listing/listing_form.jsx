@@ -1,7 +1,7 @@
 import React from 'react';
 import ListingPostFormContainer from './create_listing_container';
 import CarCreateContainer from '../car/car_create_container';
-
+import FileUploadContainer from './file_upload_container';
 
 
 class ListingForm extends React.Component{
@@ -55,9 +55,17 @@ class ListingForm extends React.Component{
     }
   }
 
-  handlePhotoDrop(){
+  handlePhotoDrop() {
+    if (this.props.photoDrop) {
+      this.props.closePhotoDrop();
+    } else {
+      this.props.closeListingDrop();
+      this.props.closeCarDrop();
+      this.props.openPhotoDrop();
 
-  }
+    }
+  }  
+
 
   arrowClasses(dropValue){
     if (dropValue){
@@ -101,9 +109,9 @@ class ListingForm extends React.Component{
               {...this.state.carFormData} />
           </div>
           <div className='parent-car-info'>
-            <div className='listings-drop-title' >Listing photos</div>
-            <i className={this.arrowClasses(this.props.photoDrop)} onClick={() => this.handleCarDrop()}></i>
-
+            <div className='listings-drop-title' onClick={() => this.handlePhotoDrop()} >Add photos</div>
+            <i className={this.arrowClasses(this.props.photoDrop)} onClick={() => this.handlePhotoDrop()}></i>
+            <FileUploadContainer />
           </div>
         </div>
         <button  onClick={this.handleSubmit}>Finish</button>
@@ -111,35 +119,6 @@ class ListingForm extends React.Component{
     )
   }
 }
-
-
-{/* <div>
-  <label className="listings-labels">Where is your car located?
-                <input className='location-input'
-      type='text' value={this.state.location}
-      onChange={this.update('location')} />
-  </label>
-  <label className='listings-labels'>What are some guidelines for your car?
-                <textarea className='listings-textarea' value={this.state.guidelines}
-      onChange={this.update('guidelines')}
-      placeholder='Some guidelines for people using your vechicle' ></textarea>
-  </label>
-  <label className='listings-labels'>What is the price per day for your car?
-                <input className='listings-inputs' type='number' step='1'
-      value={this.state.price}
-      onChange={this.update('price')} />
-  </label>
-  <label className='listings-labels'>Any extra information about your listing?
-                <textarea className='listings-textarea' value={this.state.extras}
-      onChange={this.update('extras')}
-      placeholder="Any additional info you would like to add that wasn't listed" ></textarea>
-  </label>
-  <button>Next</button>
-</div> */}
-
-
-
-
 
 
 
