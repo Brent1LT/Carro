@@ -32,14 +32,17 @@ class CarPostForm extends React.Component{
       <form ref={(ele) => this.form = ele } className={this.formClasses()}>
         <label className="listings-labels">What is the make of your car?
           <input type="text" className='listings-inputs'
+            placeholder="Make"
             value={this.props.make} onChange={this.update('make')} />
         </label>
         <label className="listings-labels">What is the model of your car?
           <input type="text" className='listings-inputs'
+            placeholder="Model"
             value={this.props.model} onChange={this.update('model')} />
         </label>
         <label className="listings-labels">What is the trim of your car?<span className='optional-span'>optional</span>
           <input type="text" className='listings-inputs'
+            placeholder="Trim"
             value={this.props.trim} onChange={this.update('trim')} />
         </label>
         <label className='listings-labels'>What is the year of your car?
@@ -75,7 +78,7 @@ class CarPostForm extends React.Component{
         <label className='listings-labels'>Desc
           <textarea className='listings-textarea' value={this.props.description}
             onChange={this.update('description')}
-            placeholder='A description for people using your vechicle' ></textarea>
+            placeholder='A brief description of your vechicle' ></textarea>
         </label>
         <button onClick={() => this.openNextDrop()} className="next-form">Next</button>
       </form>

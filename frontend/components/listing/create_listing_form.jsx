@@ -44,6 +44,7 @@ class ListingPostForm extends React.Component {
         <label className="listings-labels">Where is your car located?
           <input className='location-input'
             type='text' value={this.props.location}
+            placeholder="Enter your location"
             onChange={this.update('location')} />
         </label>
         <label className='listings-labels'>What are some guidelines for your car?

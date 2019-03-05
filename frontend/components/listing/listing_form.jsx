@@ -27,6 +27,9 @@ class ListingForm extends React.Component{
         numOfDoors: 4,
         transmission: 'automatic',
         gas: 'regular',
+      },
+      photos: {
+        photoUrl: []
       }
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -111,7 +114,12 @@ class ListingForm extends React.Component{
           <div className='parent-car-info'>
             <div className='listings-drop-title' onClick={() => this.handlePhotoDrop()} >Add photos</div>
             <i className={this.arrowClasses(this.props.photoDrop)} onClick={() => this.handlePhotoDrop()}></i>
-            <FileUploadContainer />
+            <FileUploadContainer 
+            updateState={(data) => {
+              let newState = Object.assign({}, this.state.photos, data);
+              this.setState({ photos: newState })
+            }}
+              {...this.state.photos} />
           </div>
         </div>
         <button  onClick={this.handleSubmit}>Finish</button>

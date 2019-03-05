@@ -12,8 +12,18 @@ class FileUpload extends React.Component{
     this.props.closePhotoDrop();
   }
 
-  handleFile(e){
+  update(field) {
+    return e => {
+      // let newState = Object.assign({}, this.props.listingFormData, { [field]: e.target.value });
+      // this.setState({listingFormData: newState });
 
+      this.props.updateState({ [field]: e.target.value });
+    };
+  }
+
+
+  handleFile(e){
+    this.props.updateState({})
   }
 
   formClasses() {

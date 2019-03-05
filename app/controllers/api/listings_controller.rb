@@ -46,7 +46,7 @@ class Api::ListingsController < ApplicationController
   private 
 
   def listing_params
-    params.require(:listing).permit(:guidelines, :trip_counter, :price, :location, :extras)
+    params.require(:listing).permit(:guidelines, :trip_counter, :price, :location, :extras, photos: [])
   end 
 
   def car_params
