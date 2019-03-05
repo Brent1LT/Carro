@@ -42,18 +42,6 @@ class ListingForm extends React.Component{
     }
   }
 
-  checkListingDrop(){
-    if (this.props.listingDrop){
-      return (
-        <ListingPostFormContainer 
-          updateState={(data) => {
-            let newState = Object.assign({}, this.state.listingFormData, data);
-            this.setState({listingFormData: newState})}} 
-          closeListingDrop={this.props.closeListingDrop}
-          {...this.state.listingFormData} />
-      )
-    }
-  }
 
   handleCarDrop(){
     if (this.props.carDrop) {
@@ -65,17 +53,6 @@ class ListingForm extends React.Component{
     }
   }
 
-  // checkCarDrop(){
-  //   if (this.props.carDrop) {
-  //     return (
-  //       <CarCreateContainer
-  //         updateState={(data) => {
-  //           let newState = Object.assign({}, this.state.carFormData, data);
-  //           this.setState({carFormData: newState})}}
-  //         {...this.state.carFormData} />
-  //     )
-  //   } 
-  // }
 
   handleSubmit(e){
     e.preventDefault();
@@ -92,12 +69,16 @@ class ListingForm extends React.Component{
           <div className="listings-info">
             <span className='listings-drop-title' onClick={() => this.handleListingDrop()}>Your listing</span>
             <i className="fas fa-angle-down listing-caret" onClick={() => this.handleListingDrop()} ></i>
-            {this.checkListingDrop()}
+            <ListingPostFormContainer
+              updateState={(data) => {
+                let newState = Object.assign({}, this.state.listingFormData, data);
+                this.setState({ listingFormData: newState })
+              }}
+              {...this.state.listingFormData} />
           </div>
           <div className='parent-car-info'>
             <div className='listings-drop-title' onClick={() => this.handleCarDrop()} >Your car</div>
             <i className="fas fa-angle-down listing-caret" onClick={() => this.handleCarDrop()}></i>
-            {/* {this.checkCarDrop()} */}
             <CarCreateContainer
               updateState={(data) => {
                 let newState = Object.assign({}, this.state.carFormData, data);

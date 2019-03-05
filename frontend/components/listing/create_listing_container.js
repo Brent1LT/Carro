@@ -5,6 +5,7 @@ import { createListing } from '../../actions/listing_actions';
 
 const mapStateToProps = state => {
   return ({
+    listingDropDown: state.ui.listingDrop,
     listingErrors: state.errors.listing,
     formType: "create listing",
   });

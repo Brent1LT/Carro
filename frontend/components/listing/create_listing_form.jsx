@@ -4,15 +4,8 @@ class ListingPostForm extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state =  {
-    //   guidelines: this.props.listing.guidelines,
-    //   tripCounter: this.props.listing.tripCounter,
-    //   price: this.props.listing.price,
-    //   extras: this.props.listing.extras,
-    //   location: this.props.listing.location
-    // };
 
-    // this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   update(field) {
@@ -24,19 +17,25 @@ class ListingPostForm extends React.Component {
     };
   }
 
-  // handleSubmit(e){
-  //   e.preventDefault();
-    // debugger
-    // let thing = Object.assign({}, this.state);
-    // listing = Object.assign({[userId]: this.props.userId}, listing);
-  //   this.props.createListing(Object.assign({}, this.state, {userId: this.props.userId})).then(() => this.props.closeListingDrop());
+
+  formClasses() {
+    if (this.props.listingDropDown) {
+      return 'listing-form';
+
+    } else {
+      return 'listing-form hidden-form';
+    }
+  }
+
+  // componentDidUpdate(){
+  //   console.log(this.form.getBoundingClientRect());
   // }
 
   render() {
 
     
     return (
-      <form className='listing-form'>
+      <form ref={(ele) => this.form = ele} className={this.formClasses()}>
         <label className="listings-labels">Where is your car located?
           <input className='location-input'
             type='text' value={this.props.location}

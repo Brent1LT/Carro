@@ -42,6 +42,10 @@
 
 .listing-form{
   margin-bottom: 10px;
+  height: 526px;
+  overflow: hidden;
+  visibility: visible;
+  transition: visibility 1s, height 1s; 
 }
 
 .listings-drop-title{

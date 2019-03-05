@@ -10,7 +10,6 @@ class CarPostForm extends React.Component{
   formClasses(){
     if (this.props.carDropDown){
       return 'car-form';
-      
     }else {
       return 'car-form hidden-form';
     }
@@ -74,7 +73,7 @@ class CarPostForm extends React.Component{
             placeholder='A description for people using your vechicle' ></textarea>
         </label>
         <button className="next-form">Next</button>
-        </form>
+      </form>
     )
   }
 }

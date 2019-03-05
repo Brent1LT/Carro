@@ -1,6 +1,5 @@
 import {connect } from 'react-redux';
 import CarPostForm from './car_create_form';
-import {createCar} from '../../actions/car_actions';
 
 
 const mapStateToProps = state => {
@@ -23,7 +22,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createCar: (car) => dispatch(createCar(car))
+  // createCar: (car) => dispatch(createCar(car))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CarPostForm);
