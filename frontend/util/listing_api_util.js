@@ -12,32 +12,43 @@ export const fetchListing = (id) => (
   })
 );
 
-export const createListing = ({ extras, guidelines, location, price, tripCounter: trip_counter }, { make, model, year, mpg, gas, numOfDoors: num_of_doors, numOfSeats: num_of_seats, transmission, trim, description }) => (
+// export const createListing = ({ extras, guidelines, location, price, tripCounter: trip_counter }, { make, model, year, mpg, gas, numOfDoors: num_of_doors, numOfSeats: num_of_seats, transmission, trim, description }) => (
+//   $.ajax({
+//     method: 'post',
+//     url: `/api/listings`,
+//     data: { listing: { 
+//       extras,
+//       guidelines,
+//       location,
+//       price,
+//       trip_counter
+//      }, 
+//     car: {
+//       make,
+//       model,
+//       year,
+//       mpg,
+//       gas,
+//       num_of_doors,
+//       num_of_seats,
+//       transmission,
+//       trim,
+//       description
+//     }
+//     }
+//   })
+// );
+
+export const createListing = (formData) => (
   $.ajax({
     method: 'post',
-    url: `/api/listings`,
-    data: { listing: { 
-      extras,
-      guidelines,
-      location,
-      price,
-      trip_counter
-     }, 
-    car: {
-      make,
-      model,
-      year,
-      mpg,
-      gas,
-      num_of_doors,
-      num_of_seats,
-      transmission,
-      trim,
-      description
-    }
-    }
+    url: '/api/listings',
+    data: formData,
+    contentType: false,
+    processData: false
+
   })
-);
+)
 
 export const updateListing = ({ extras, guidelines, location, price, tripCounter: trip_counter, userId: user_id }) => (
   $.ajax({

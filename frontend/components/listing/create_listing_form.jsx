@@ -4,7 +4,7 @@ class ListingPostForm extends React.Component {
   constructor(props) {
     super(props);
 
-
+    this.handleTranisitionEnd = this.handleTranisitionEnd.bind(this);
 
   }
 
@@ -31,8 +31,16 @@ class ListingPostForm extends React.Component {
   //   console.log(this.form.getBoundingClientRect());
   // }
 
+  // is called when tranition is over
+  handleTranisitionEnd(e){
+    if(!this.props.listingDrop && this.nextClicked){
+      this.props.openCarDrop();
+      this.nextClicked = false;
+    }
+  }
+
   openNextDrop() {
-    this.props.openCarDrop();
+    this.nextClicked = true;
     this.props.closeListingDrop();
   }
 
@@ -40,7 +48,8 @@ class ListingPostForm extends React.Component {
 
     
     return (
-      <form ref={(ele) => this.form = ele} className={this.formClasses()}>
+      <form ref={(ele) => this.form = ele} className={this.formClasses()}
+      onTransitionEnd={this.handleTranisitionEnd} >
         <label className="listings-labels">Where is your car located?
           <input className='location-input'
             type='text' value={this.props.location}

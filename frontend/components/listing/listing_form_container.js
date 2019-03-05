@@ -15,7 +15,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createListing: (listing, car) => dispatch(createListing(listing, car)),
+  createListing: (formData) => dispatch(createListing(formData)),
   openListingDrop: () => dispatch(openListingDrop()),
   closeListingDrop: () => dispatch(closeListingDrop()),
   openCarDrop: () => dispatch(openCarDrop()),

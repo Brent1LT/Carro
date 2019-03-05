@@ -25,10 +25,6 @@ class Car < ApplicationRecord
 
   after_rollback :test, on: :create
 
-  def test
-    debugger
-  end 
-
   belongs_to :listing,
   foreign_key: :listing_id,
   class_name: 'Listing'
