@@ -15,7 +15,13 @@
 #
 
 class Listing < ApplicationRecord
-  validates :guidelines, :trip_counter, :price, :location, presence: true 
+  validates :guidelines, :trip_counter, :price, :location, presence: true
+  
+  # after_rollback :test, on: :create
+
+  # def test
+  #   debugger
+  # end 
 
   has_many_attached :photos
 

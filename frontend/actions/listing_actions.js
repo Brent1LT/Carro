@@ -10,9 +10,10 @@ const receiveListings = (listings) => ({
   listings
 });
 
-const receiveListing = (listing) => ({
+const receiveListing = ({listing, car}) => ({
   type: RECEIVE_LISTING,
-  listing
+  listing,
+  car
 });
 
 const removeListing = (listingId) => ({
@@ -40,9 +41,9 @@ export const fetchListing = id => dispatch => (
     )
 );
 
-export const createListing = listing => dispatch => (
-  ListingApiUtil.createListing(listing)
-    .then(listing => dispatch(receiveListing(listing)),
+export const createListing = (listing, car) => dispatch => (
+  ListingApiUtil.createListing(listing, car)
+    .then(payload => dispatch(receiveListing(payload)),
       errors => dispatch(receiveErrors(errors.responseJSON))
     )
 );

@@ -8,19 +8,30 @@ class ListingForm extends React.Component{
   constructor(props){
     super(props);
 
-    // this.handleDrop = this.handleDrop.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      listingFormData: {
+          guidelines: '',
+          tripCounter: 0,
+          price: 0,
+          extras: '',
+          location: ''
+        },
+      carFormData: {
+        make: '',
+        model: '',
+        trim: '',
+        description: '',
+        year: 2000,
+        mpg: 0,
+        numOfSeats: 2,
+        numOfDoors: 4,
+        transmission: 'automatic',
+        gas: 'regular',
+      }
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // update(field){
-  //   if (this.state[field] === false){
-  //     this.setState({[field]: true});
-  //     this.handleDrop();
-  //   }else {
-  //     this.setState({[field]: false});
-  //     this.handleDrop();
-  //   }
-  // }
 
   handleListingDrop(){
     if(this.props.listingDrop ){
@@ -34,7 +45,12 @@ class ListingForm extends React.Component{
   checkListingDrop(){
     if (this.props.listingDrop){
       return (
-        <ListingPostFormContainer  closeListingDrop={this.props.closeListingDrop} />
+        <ListingPostFormContainer 
+          updateState={(data) => {
+            let newState = Object.assign({}, this.state.listingFormData, data);
+            this.setState({listingFormData: newState})}} 
+          closeListingDrop={this.props.closeListingDrop}
+          {...this.state.listingFormData} />
       )
     }
   }
@@ -49,12 +65,21 @@ class ListingForm extends React.Component{
     }
   }
 
-  checkCarDrop(){
-    if (this.props.carDrop) {
-      return (
-        <CarCreateContainer />
-      )
-    } 
+  // checkCarDrop(){
+  //   if (this.props.carDrop) {
+  //     return (
+  //       <CarCreateContainer
+  //         updateState={(data) => {
+  //           let newState = Object.assign({}, this.state.carFormData, data);
+  //           this.setState({carFormData: newState})}}
+  //         {...this.state.carFormData} />
+  //     )
+  //   } 
+  // }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.createListing(this.state.listingFormData, this.state.carFormData);
   }
 
   render(){
@@ -70,20 +95,28 @@ class ListingForm extends React.Component{
             {this.checkListingDrop()}
           </div>
           <div className='parent-car-info'>
+            <div className='listings-drop-title' onClick={() => this.handleCarDrop()} >Your car</div>
+            <i className="fas fa-angle-down listing-caret" onClick={() => this.handleCarDrop()}></i>
+            {/* {this.checkCarDrop()} */}
+            <CarCreateContainer
+              updateState={(data) => {
+                let newState = Object.assign({}, this.state.carFormData, data);
+                this.setState({ carFormData: newState })
+              }}
+              {...this.state.carFormData} />
+          </div>
+          <div className='parent-car-info'>
             <div className='listings-drop-title' >Listing photos</div>
             <i className="fas fa-angle-down listing-caret" onClick={() => this.handleCarDrop()}></i>
 
           </div>
-          <div className='parent-car-info'>
-            <div className='listings-drop-title' onClick={() => this.handleCarDrop()} >Your car</div>
-            <i className="fas fa-angle-down listing-caret" onClick={() => this.handleCarDrop()}></i>
-            {this.checkCarDrop()}
-          </div>
         </div>
+        <button  onClick={this.handleSubmit}>Finish</button>
       </div>
     )
   }
 }
+
 
 {/* <div>
   <label className="listings-labels">Where is your car located?

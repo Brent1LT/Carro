@@ -10,11 +10,12 @@ const mapStateToProps = state => {
     listingErrors: state.errors.listing,
     carErrors: state.errors.car,
     listingDrop: state.ui.listingDrop,
-    carDrop: state.ui.carDrop
+    carDrop: state.ui.carDrop,
   });
 };
 
 const mapDispatchToProps = dispatch => ({
+  createListing: (listing, car) => dispatch(createListing(listing, car)),
   openListingDrop: () => dispatch(openListingDrop()),
   closeListingDrop: () => dispatch(closeListingDrop()),
   openCarDrop: () => dispatch(openCarDrop()),

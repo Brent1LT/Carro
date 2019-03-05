@@ -1,1 +1,2 @@
-json.partial! 'listing', listing: @listing
+json.partial! 'listing', listing: @listing, car: @car
+ 

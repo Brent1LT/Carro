@@ -5,6 +5,7 @@ import {createCar} from '../../actions/car_actions';
 
 const mapStateToProps = state => {
   return ({
+    carDropDown: state.ui.carDrop,
     carErrors: state.errors.cars,
     car: {
       make: '',

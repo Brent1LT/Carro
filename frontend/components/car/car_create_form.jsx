@@ -5,59 +5,57 @@ class CarPostForm extends React.Component{
   constructor(props) {
     super(props);
 
-    this.state = {
-      carErrors: this.props.carErrors,
-      make: this.props.car.make,
-      trim: this.props.car.trim,
-      year: this.props.car.year,
-      numOfSeats: 0,
-      numOfDoors: 0,
-      mpg: this.props.car.mpg,
-      gas: this.props.car.gas,
-      transmission: this.props.car.transmission,
-      description: this.props.car.description
-    };
+  }
+
+  formClasses(){
+    if (this.props.carDropDown){
+      return 'car-form';
+      
+    }else {
+      return 'car-form hidden-form';
+    }
   }
 
   update(field) {
     return e => {
-      this.setState({ [field]: e.target.value });
+      this.props.updateState({ [field]: e.target.value });
     };
   }
 
+
   render(){
     return (
-      <form className='car-form'>
+      <form ref={(ele) => this.form = ele } className={this.formClasses()}>
         <label className="listings-labels">What is the make of your car?
           <input type="text" className='listings-inputs'
-            value={this.state.make} onChange={this.update('make')} />
+            value={this.props.make} onChange={this.update('make')} />
         </label>
         <label className="listings-labels">What is the model of your car?
           <input type="text" className='listings-inputs'
-            value={this.state.model} onChange={this.update('model')} />
+            value={this.props.model} onChange={this.update('model')} />
         </label>
         <label className="listings-labels">What is the trim of your car?<span className='optional-span'>optional</span>
           <input type="text" className='listings-inputs'
-            value={this.state.trim} onChange={this.update('trim')} />
+            value={this.props.trim} onChange={this.update('trim')} />
         </label>
         <label className='listings-labels'>What is the year of your car?
           <input className='listings-numbers' type='number' step='1'
-            value={this.state.year}
+            value={this.props.year}
             onChange={this.update('year')} />
         </label>
         <label className='listings-labels'>What is your car's average mpg?
           <input className='listings-numbers' type='number' step='1'
-            value={this.state.mpg}
+            value={this.props.mpg}
             onChange={this.update('mpg')} />
         </label>
         <label className='listings-labels'>How many seats does your car have?
           <input className='listings-numbers' type='number' step='1'
-            value={this.state.numOfSeats}
+            value={this.props.numOfSeats}
             onChange={this.update('numOfSeats')} />
         </label>
         <label className='listings-labels'>How many doors does your car have?
           <input className='listings-numbers' type='number' step='1'
-            value={this.state.numOfDoors}
+            value={this.props.numOfDoors}
             onChange={this.update('numOfDoors')} />
         </label>
         <label className='transmission-label'>Transmission</label>
@@ -70,6 +68,11 @@ class CarPostForm extends React.Component{
             <input className='listing-radios1' type="radio" name='gas' value='regular' onChange={this.update('gas')}  checked/>Regular
             <input className='listing-radios2' type="radio" name='gas' value='premium' onChange={this.update('gas')}  />Premium
         </div>
+        <label className='listings-labels'>Desc
+          <textarea className='listings-textarea' value={this.props.description}
+            onChange={this.update('description')}
+            placeholder='A description for people using your vechicle' ></textarea>
+        </label>
         <button className="next-form">Next</button>
         </form>
     )

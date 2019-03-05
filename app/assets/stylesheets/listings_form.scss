@@ -139,6 +139,10 @@
 .car-form{
   display: flex;
   flex-wrap: wrap;
+  height: 866px;
+  overflow: hidden;
+  visibility: visible;
+  transition: visibility 1s, height 1s;     
 }
 
 .transmission-label{
@@ -183,4 +187,13 @@
   font-size: 15px;
   border: 2px solid black;
   cursor: pointer;
+}
+
+
+
+.hidden-form{
+  height: 0;
+  transition: visibility 1s, height 1s;     
+  visibility: hidden;
+  overflow: hidden;
 }

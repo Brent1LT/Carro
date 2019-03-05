@@ -12,7 +12,7 @@ export const fetchListing = (id) => (
   })
 );
 
-export const createListing = ({ extras, guidelines, location, price, tripCounter: trip_counter, userId: user_id }) => (
+export const createListing = ({ extras, guidelines, location, price, tripCounter: trip_counter }, { make, model, year, mpg, gas, numOfDoors: num_of_doors, numOfSeats: num_of_seats, transmission, trim, description }) => (
   $.ajax({
     method: 'post',
     url: `/api/listings`,
@@ -21,9 +21,20 @@ export const createListing = ({ extras, guidelines, location, price, tripCounter
       guidelines,
       location,
       price,
-      trip_counter,
-      user_id
-     }
+      trip_counter
+     }, 
+    car: {
+      make,
+      model,
+      year,
+      mpg,
+      gas,
+      num_of_doors,
+      num_of_seats,
+      transmission,
+      trim,
+      description
+    }
     }
   })
 );
