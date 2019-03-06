@@ -5,15 +5,16 @@ export const RECEIVE_LISTING = 'RECEIVE_LISTING';
 export const REMOVE_LISTING = 'REMOVE_LISTING';
 export const RECEIVE_LISTING_ERRORS ='RECEIVE_LISTING_ERRORS';
 
-const receiveListings = (listings) => ({
+const receiveListings = ({listings, cars}) => ({
   type: RECEIVE_ALL_LISTINGS,
-  listings
+  listings,
+  cars
 });
 
-const receiveListing = ({listing, car}) => ({
+const receiveListing = ({listings, cars}) => ({
   type: RECEIVE_LISTING,
-  listing,
-  car
+  listings,
+  cars
 });
 
 const removeListing = (listingId) => ({
@@ -29,7 +30,7 @@ const receiveErrors = (errors) => ({
 
 export const fetchListings = () => dispatch => (
   ListingApiUtil.fetchListings()
-    .then(listings => dispatch(receiveListings(listings)),
+    .then(payload => dispatch(receiveListings(payload)),
     errors => dispatch(receiveErrors(errors.responseJSON))
   )
 );

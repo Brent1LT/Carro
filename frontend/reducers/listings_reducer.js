@@ -6,8 +6,7 @@ const listingsReducer = (oldState = {}, action) => {
     case RECEIVE_ALL_LISTINGS:
       return Object.assign({}, oldState, action.listings);
     case RECEIVE_LISTING:
-      let listing = Object.values(action.listing)[0];
-      return Object.assign({}, oldState, {[listing.id]: listing});
+      return Object.assign({}, oldState, action.listings);
     case REMOVE_LISTING:
       let newState = Object.assign({}, oldState);
       delete newState[action.listingId];

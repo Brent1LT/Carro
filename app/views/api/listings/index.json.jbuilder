@@ -1,3 +1,4 @@
 @listings.each do |listing|
-  json.partial! 'listing', listing: listing
+  car = listing.car
+  json.partial! 'listing', listing: listing, car: car
 end 

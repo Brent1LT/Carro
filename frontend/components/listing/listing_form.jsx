@@ -100,7 +100,10 @@ class ListingForm extends React.Component{
       this.state.photos.photosData.forEach(photo => {
         formData.append('listing[photos][]', photo);
       });
-      this.props.createListing(formData);
+      this.props.createListing(formData).then(payload => {
+        let listing = Object.values(payload.listing);
+        this.props.history.push(`/listings/${listing[0].id}`);
+      });
     }else {
       this.props.openModal('Sign up');
     }
@@ -108,7 +111,6 @@ class ListingForm extends React.Component{
   
 
   render(){
-    // debugger
     return (
       <div className="banner-background">
         <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/1-dirt-road-through-wheat-field-kamiak-panoramic-images.jpg" 
@@ -139,10 +141,10 @@ class ListingForm extends React.Component{
             <div className='listings-drop-title' onClick={() => this.handlePhotoDrop()} >Add photos</div>
             <i className={this.arrowClasses(this.props.photoDrop)} onClick={() => this.handlePhotoDrop()}></i>
             <FileUploadContainer 
-            updateState={(data) => {
-              let newState = Object.assign({}, this.state.photos, data);
-              this.setState({ photos: newState })
-            }}
+              updateState={(data) => {
+                let newState = Object.assign({}, this.state.photos, data);
+                this.setState({ photos: newState })
+                }}
               {...this.state.photos} />
           </div>
           <div className='finish-button-container' >

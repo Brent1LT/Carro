@@ -37,6 +37,10 @@ class Api::ListingsController < ApplicationController
 
   def show
     @listing = Listing.find_by(id: params[:id])
+    if @listing 
+      @car = @listing.car
+      @user = @listing.user
+    end 
   end 
   
   def index

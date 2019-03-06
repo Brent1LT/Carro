@@ -23,7 +23,7 @@ class Car < ApplicationRecord
   validates :make, :model, :description, :year, :mpg, :num_of_seats, presence: true
   validates :num_of_doors, :transmission, :gas, presence: true
 
-  after_rollback :test, on: :create
+  # after_rollback :test, on: :create
 
   belongs_to :listing,
   foreign_key: :listing_id,

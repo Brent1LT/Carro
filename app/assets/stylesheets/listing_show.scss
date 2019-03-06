@@ -1,0 +1,36 @@
+.carousel-image{
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+}
+
+.carousel-container{
+  position: relative;
+}
+
+.left-change{
+  position: absolute;
+  top: 300px;
+  left:200px
+}
+
+.right-change{
+  position: absolute;
+  top: 300px;
+  right: 300px;
+}
+
+.carousel-counter{
+  height: 10px;
+  width: 60px;
+  font-size: 10px;
+  border-radius: 25px;
+  background: gray;
+  color: #ffffff;
+  text-align: center;
+  border: 2px solid white;
+  position: absolute;
+  bottom: 50px;
+  left: 300px;
+  padding: 5px;
+}

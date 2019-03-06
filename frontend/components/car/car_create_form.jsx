@@ -5,7 +5,7 @@ class CarPostForm extends React.Component{
   constructor(props) {
     super(props);
 
-    this.handleTranisitionEnd = this.handleTranisitionEnd.bind(this);
+    this.openPhotoDrop = this.props.openPhotoDrop.bind(this);
   }
 
   formClasses(){
@@ -22,23 +22,18 @@ class CarPostForm extends React.Component{
     };
   }
 
-  handleTranisitionEnd() {
-    if (!this.props.carDrop && this.nextClicked) {
-      this.props.openPhotoDrop();
-      this.nextClicked = false;
-    }
-  }
+ 
 
   openNextDrop(){
-    this.nextClicked = true;
     this.props.closeCarDrop();
+    // setTimeout(() => this.openPhotoDrop(), 1);
+
   }
 
 
   render(){
     return (
-      <form ref={(ele) => this.form = ele } className={this.formClasses()}
-      onTransitionEnd={this.handleTranisitionEnd} >
+      <form ref={(ele) => this.form = ele } className={this.formClasses()} >
         <label className="listings-labels">What is the make of your car?
           <input type="text" className='listings-inputs'
             placeholder="Make"

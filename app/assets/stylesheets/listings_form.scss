@@ -1,3 +1,9 @@
+// .photo-form{
+//   height: 500px;
+//   overflow: hidden;
+//   transition: visibility 0.5s, height 0.5s;
+// }
+
 .road-banner{
   max-height: inherit;
   width: 100%;
@@ -5,7 +11,6 @@
   position: relative;
 
 }
-
 
 .listing-banner{
   position: absolute;
@@ -78,7 +83,7 @@
 
 .listings-textarea:focus{
   outline: 1px solid rgba(167, 6, 241, 0.877);
-
+  
 }
 
 .listings-numbers{
@@ -98,7 +103,7 @@
 
 .listings-inputs:focus{
   outline: 1px solid rgba(167, 6, 241, 0.877);
-
+  
 }
 
 .location-input{
@@ -142,6 +147,7 @@
   top: 20px;
   cursor: pointer;
 }
+
 .car-form{
   display: flex;
   flex-wrap: wrap;
@@ -151,13 +157,14 @@
   transition: visibility 0.5s, height 0.5s;     
 }
 
+
 .transmission-label{
   font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 14px;
   margin-top: 20px;
   margin-bottom: 10px;
-
+  
 }
 
 .transmission-input{
@@ -195,12 +202,6 @@
   cursor: pointer;
 }
 
-.hidden-form{
-  height: 0;
-  transition: visibility 0.5s, height 0.5s;     
-  visibility: hidden;
-  overflow: hidden;
-}
 
 .rotated{
   transform: rotate(180deg);
@@ -208,7 +209,9 @@
 }
 
 .photo-form{
-  visibility: visible;
+  height: 100%;
+  overflow: hidden;
+  transition: visibility 0.25s, height 0.25s;
 }
 
 .photo-form-text{
@@ -217,18 +220,26 @@
   font-weight: 500px;
   font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
 }
+
 .image-preview{
   width: 100%;
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: hidden;
+  max-height: 100%;
 }
 
 .upload-input{
   margin: 20px 0px 20px 0px;
-  width: 100%
+  width: 100%;
+  display: inline-block;
+  
 }
 
 .previewed-image{
-
+  max-height: 300px;
+  max-width: 300px; 
 }
 
 .finish-button-container{
@@ -247,4 +258,18 @@
   font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
   font-weight: 500;
   cursor: pointer;
+}
+
+.hidden-form{
+  height: 0;
+  transition: visibility 0.5s, height 0.5s;     
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.new-hidden{
+  height: 0;
+  transition: visibility 0.25s, height 0.25s;     
+  visibility: hidden;
+  overflow: hidden;
 }

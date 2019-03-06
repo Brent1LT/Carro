@@ -9,12 +9,21 @@ class FileUpload extends React.Component{
      photos: [],
      photosUrl: []
     };
+
+    this.handleTranisitionEnd = this.handleTranisitionEnd.bind(this);
   }
 
   openNextDrop(){
     this.props.closeListingDrop();
     this.props.closeCarDrop();
     this.props.closePhotoDrop();
+  }
+
+  handleTranisitionEnd() {
+    if (!this.props.photoDrop && this.nextClicked) {
+      this.props.openCarDrop();
+      this.nextClicked = false;
+    }
   }
 
   update(field) {
@@ -47,7 +56,17 @@ class FileUpload extends React.Component{
       return 'photo-form';
 
     } else {
-      return 'photo-form hidden-form';
+      return 'photo-form new-hidden';
+    }
+  }
+
+  checkHeight(){
+    // debugger
+    if (this.form === undefined){
+      return 0;
+    }else {
+      return this.form.getBoundingClientRect().height;
+
     }
   }
 
@@ -61,16 +80,23 @@ class FileUpload extends React.Component{
   //     });
   //   }
   // }
+componentDidUpdate(){
+  console.log(this.form.getBoundingClientRect().height);
 
+}
 
+// style={`height: ${this.form.getBoundingClientRect().height}`}
+  // style = { 'height: ' + this.checkHeight() }
   render(){
+    // debugger
     return (
-      <div className={this.formClasses()}>
+      <div ref={(ele) => this.form = ele}  className={this.formClasses()}
+        onTransitionEnd={this.handleTranisitionEnd} >
         <div className='photo-form-text'>It’s important for travelers to see your car before they request it. 
           Once you have a good photo that shows the whole car, add more photos displaying the car’s details and interior.</div>
           <div className='image-preview'>
             <input className='upload-input' onChange={this.handleFile.bind(this)} type="file" />
-            {this.state.photosUrl.map(url => <img src={url} />)}
+            {this.state.photosUrl.map(url => <img className='previewed-image' src={url} />)}
           </div>
         <button onClick={() => this.openNextDrop()} className="next-form" >Next</button>
       </div>

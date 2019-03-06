@@ -9,6 +9,8 @@ protected routes?
 validations for listing photos
 
 transition in listing form drop downs
-carousel/displaying multiple images 
-photos in the background
+
+shifting between listings not loading
+
+
 ```

@@ -4,15 +4,11 @@ class ListingPostForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleTranisitionEnd = this.handleTranisitionEnd.bind(this);
-
+    this.openCarDrop = this.props.openCarDrop.bind(this);
   }
 
   update(field) {
     return e => {
-      // let newState = Object.assign({}, this.props.listingFormData, { [field]: e.target.value });
-      // this.setState({listingFormData: newState });
-
       this.props.updateState({[field]: e.target.value});
     };
   }
@@ -31,25 +27,18 @@ class ListingPostForm extends React.Component {
   //   console.log(this.form.getBoundingClientRect());
   // }
 
-  // is called when tranition is over
-  handleTranisitionEnd(){
-    if(!this.props.listingDrop && this.nextClicked){
-      this.props.openCarDrop();
-      this.nextClicked = false;
-    }
-  }
 
   openNextDrop() {
-    this.nextClicked = true;
     this.props.closeListingDrop();
+
+    setTimeout(() => this.openCarDrop(), 0.75);
   }
 
   render() {
 
     
     return (
-      <form ref={(ele) => this.form = ele} className={this.formClasses()}
-      onTransitionEnd={this.handleTranisitionEnd} >
+      <form ref={(ele) => this.form = ele}  className={this.formClasses()} >
         <label className="listings-labels">Where is your car located?
           <input className='location-input'
             type='text' value={this.props.location}

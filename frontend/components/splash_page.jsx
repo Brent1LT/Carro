@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class SplashPage extends React.Component {
   constructor(props){
@@ -11,9 +12,10 @@ class SplashPage extends React.Component {
   }
 
   render(){
-    if (this.props.listings.length === 0){
+    if (this.props.listings === undefined || this.props.listings.length === 0){
       return null
     }
+    console.log(this.props.listings);
     return(
       <div className='main-splash' >
         <div className="splash-image"  >
@@ -23,9 +25,9 @@ class SplashPage extends React.Component {
         <div className='splash-carousel' >
           <span className='carousel-small-text'>You might like</span>
           <div className="splash-carousel-child">
-            <img className="splash-listing-photo" 
+            <Link to={`/listings/${this.props.listings[0].id}`} className='splash-listing-photo' ><img className="splash-listing-photo" 
             src={this.props.listings[0].photos[0].imageUrl} 
-            />
+            /></Link>
 
           </div>
 
