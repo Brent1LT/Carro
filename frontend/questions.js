@@ -6,7 +6,9 @@ logo
 'list your car'
 protected routes?
 
-transition in listing form drop downs
 validations for listing photos
-carousel
+
+transition in listing form drop downs
+carousel/displaying multiple images 
+photos in the background
 ```

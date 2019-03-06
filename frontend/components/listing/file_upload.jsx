@@ -6,7 +6,8 @@ class FileUpload extends React.Component{
     super(props);
     
     this.state = {
-     photos: []
+     photos: [],
+     photosUrl: []
     };
   }
 
@@ -25,7 +26,19 @@ class FileUpload extends React.Component{
 
 
   handleFile(e){
-    this.state.photos.push(e.currentTarget.files[0]);
+    const fileReader = new FileReader();
+    const file = e.currentTarget.files[0];
+
+    fileReader.onloadend = () => {
+      let photos = this.state.photos;
+      photos.push(file);
+      let photosUrl = this.state.photosUrl;
+      photosUrl.push(fileReader.result);
+      this.setState({photos, photosUrl });
+    };
+    if(file){
+      fileReader.readAsDataURL(file);
+    }
     this.update('photosData');
   }
 
@@ -38,29 +51,26 @@ class FileUpload extends React.Component{
     }
   }
 
-  loadImagePreview(){
-    // debugger
-    if(this.state.photos.length > 0){
-      const fileReader = new FileReader();
-      this.state.photos.forEach(photo => {
-        // return (
-        //   <img src={fileReader.readAsDataURL(photo)} />
-        // )
-        console.log(photo);
-      });
-    }
-  }
+  // loadImagePreview(){
+  //   if(this.state.photos.length > 0){
+  //     const fileReader = new FileReader();
+  //     this.state.photos.forEach(photo => {
+  //       // return (
+  //       //   <img src={fileReader.readAsDataURL(photo)} />
+  //       // )
+  //     });
+  //   }
+  // }
 
 
   render(){
-    // debugger
     return (
       <div className={this.formClasses()}>
         <div className='photo-form-text'>It’s important for travelers to see your car before they request it. 
           Once you have a good photo that shows the whole car, add more photos displaying the car’s details and interior.</div>
           <div className='image-preview'>
             <input className='upload-input' onChange={this.handleFile.bind(this)} type="file" />
-            {this.loadImagePreview()}
+            {this.state.photosUrl.map(url => <img src={url} />)}
           </div>
         <button onClick={() => this.openNextDrop()} className="next-form" >Next</button>
       </div>

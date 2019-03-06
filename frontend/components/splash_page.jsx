@@ -16,9 +16,10 @@ class SplashPage extends React.Component {
     }
     return(
       <div className='main-splash' >
-        <img className="splash-image" src="https://pictures.topspeed.com/IMG/crop/201804/2019-subaru-forester_1600x0w.jpg" />
-        <h1 className='splash-header' >Way better than a rental car</h1>
-        <h6 className='splash-small-header'>Book unforgettable cars from local hosts around the world</h6>
+        <div className="splash-image"  >
+          <h1 className='splash-header' >Way better than a rental car</h1>
+          <h6 className='splash-small-header'>Book unforgettable cars from local hosts around the world</h6>
+        </div>
         <div className='splash-carousel' >
           <span className='carousel-small-text'>You might like</span>
           <div className="splash-carousel-child">
