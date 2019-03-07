@@ -7,12 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-demo = User.create!(
-  email: 'demo@email.com',
-  password: '12345678',
-  firstname: 'demo',
-  lastname: 'login'
-)
 
 brent = User.create!(
   email: 'brent@email.com',
@@ -21,6 +15,37 @@ brent = User.create!(
   lastname: 'Bumann'
 )
 
+demo = User.create!(
+  email: 'demo@email.com',
+  password: '12345678',
+  firstname: 'demo',
+  lastname: 'login'
+)
+
+dom = User.create!(
+  email: 'toretto@email.com',
+  password: '12345678',
+  firstname: 'Dom',
+  lastname: 'Toretto'
+)
+
+doc = User.create!(
+  email: 'tothefuture@email.com',
+  password: '12345678',
+  firstname: 'Dr. Emmett',
+  lastname: 'Brown'
+)
+
+flash = User.create!(
+  email: 'flash@email.com',
+  password: '12345678',
+  firstname: 'Flash',
+  lastname: 'Sloth'
+)
+
+
+
+  
 listing1 = Listing.create!(
  guidelines: "no eating in the car plz",
  location: "San Francisco",

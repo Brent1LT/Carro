@@ -19,7 +19,12 @@ class Api::ListingsController < ApplicationController
 
   def update
     @listing = Listing.find_by(id: params[:id])
-    if @listing.update(listing_params)
+
+    # if ( logged_in? == false  || @listing.user_id != current_user.id)
+    #   return 
+    # end 
+
+    if(@listing.update(listing_params))
       @user = @listing.user
       @car = @listing.car
       render :show
