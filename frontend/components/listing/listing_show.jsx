@@ -130,14 +130,22 @@ class ListingShow extends React.Component{
             <div className='insurance-provider'>insurance provided via</div> 
             <div className='liberty'>Liberty Mutual</div> 
             <div className='show-user-info'>
-              <div className='car-owner'>OWNED BY
+              <div className='owner-box'>
+                <div className='owned-by' >OWNED BY</div>
                 <div className='side-ownername'>{listing.ownerName}</div>
-                <i className="fa fa-star review-stars"></i>
-                <i className="fa fa-star review-stars"></i>
-                <i className="fa fa-star review-stars"></i>
-                <i className="fa fa-star review-stars"></i>
-                <i className="fa fa-star review-stars"></i>
+                <div className='star-section' >
+                  <i className="fa fa-star review-stars"></i>
+                  <i className="fa fa-star review-stars"></i>
+                  <i className="fa fa-star review-stars"></i>
+                  <i className="fa fa-star review-stars"></i>
+                  <i className="fa fa-star review-stars"></i>
+                </div>
               </div>
+              <div className='profile-circle' ></div>
+            </div>
+            <div className='response-rate'>
+              <div>Response rate</div>
+              <div>100 %</div>
             </div>
           </div>
           </div>

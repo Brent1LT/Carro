@@ -88,7 +88,7 @@
 .review-stars{
   color: rgb(120, 11, 245);
   font-size: 24px;
-  margin-right: 8px;
+  margin-right: 5px;
 }
 
 .parent-icons-div{
@@ -213,8 +213,53 @@
 }
 
 .show-user-info{
+  display: grid;
+  grid-template-columns: 65% 45%;
+  grid-template-rows: 150px;
+}
+
+.owner-box{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.owned-by{
+  padding-top: 25px;
+  margin-bottom: 20px;
+  color: #5d5d5d;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
 
 }
 
+.side-ownername{
+  margin-bottom: 15px;
+  color: rgb(120, 11, 245);
+  font-size: 18px;
+  font-weight: 600;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+
+}
+.star-section{
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-circle{
+  height: 100%;
+  width: 100%;
+  background-image: url('hire-me.jpg');
+  background-size: cover;
+}
+
+.response-rate{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-weight: 800;
+  padding-bottom: 30px;
+  border-bottom: 1px solid lightgrey;
+}
