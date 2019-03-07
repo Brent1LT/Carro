@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class ListingShow extends React.Component{
   constructor(props){
@@ -8,17 +9,10 @@ class ListingShow extends React.Component{
       currentIndex: 0,
       translateValue: 0
     };
+
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
-  // setupCarousel(){
-  //   this.setState({ photoCarousel: this.props.listing.photos });
-  // }
-
-  // componentDidUpdate(){
-  //   if(this.props.listing !== undefined && !this.state.photoCarousel){
-  //     this.setupCarousel();
-  //   }
-  // }
   carouselImage(){
     return (
       <img className='carousel-image' src={this.props.listing.photos[this.state.currentIndex].imageUrl} />
@@ -61,6 +55,11 @@ class ListingShow extends React.Component{
         </>
       )
     }
+  }
+
+  handleDelete(listing){
+    this.props.deleteListing(listing.id)
+      .then(() => this.props.history.push(`/`))
   }
 
   render(){
@@ -147,8 +146,10 @@ class ListingShow extends React.Component{
               <div>Response rate</div>
               <div>100 %</div>
             </div>
-            <button className='update-listing-button'>Update Listing</button>
-            <button className='delete-listing-button'>Delete Listing</button>
+              <Link to={`/listings/${listing.id}/edit`} >
+              <button className='update-listing-button'>Update Listing</button>
+            </Link>
+            <button onClick={() => this.handleDelete(listing) } className='delete-listing-button'>Delete Listing</button>
           </div>
           </div>
         </div>

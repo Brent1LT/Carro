@@ -113,9 +113,9 @@ class ListingForm extends React.Component{
   render(){
     return (
       <div className="banner-background">
-        <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/1-dirt-road-through-wheat-field-kamiak-panoramic-images.jpg" 
-          className='road-banner' />
-        <h1 className='listing-banner'>LIST YOUR CAR </h1>
+        <div className='road-banner' >
+          <h1 className='listing-banner'>LIST YOUR CAR </h1>
+        </div>
         <div className='parent-background'>
           <div className="listings-info">
             <span className='listings-drop-title' onClick={() => this.handleListingDrop()}>Your listing</span>

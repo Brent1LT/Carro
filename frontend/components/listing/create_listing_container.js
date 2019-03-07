@@ -6,8 +6,7 @@ import { openCarDrop, closeListingDrop } from '../../actions/listing_drop_action
 const mapStateToProps = state => {
   return ({
     listingDrop: state.ui.listingDrop,
-    listingErrors: state.errors.listing,
-    formType: "create listing",
+    listingErrors: state.errors.listing
   });
 };
 

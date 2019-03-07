@@ -19,8 +19,9 @@ class Api::ListingsController < ApplicationController
 
   def update
     @listing = Listing.find_by(id: params[:id])
-
     if @listing.update(listing_params)
+      @user = @listing.user
+      @car = @listing.car
       render :show
     else 
       render json: @listing.errors.full_messages, status: 422
@@ -30,7 +31,7 @@ class Api::ListingsController < ApplicationController
   def destroy
     @listing = Listing.find_by(id: params[:id])
     if @listing.destroy
-      render :show
+      render json: {listingId: @listing.id}
     else 
       render json: @listing.errors.full_messages, status: 422
     end 

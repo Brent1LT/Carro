@@ -50,10 +50,10 @@ export const createListing = (formData) => (
   })
 )
 
-export const updateListing = ({ extras, guidelines, location, price, tripCounter: trip_counter, userId: user_id }) => (
+export const updateListing = ({ id, extras, guidelines, location, price, tripCounter: trip_counter, userId: user_id }) => (
   $.ajax({
     method: 'patch',
-    url: `/api/listings/${listing.id}`,
+    url: `/api/listings/${id}`,
     data: {
       listing: {
         extras,

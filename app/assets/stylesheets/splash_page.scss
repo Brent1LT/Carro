@@ -71,3 +71,53 @@
   width: 400px;
   height: 225px;
 }
+
+.rental-counter{
+  text-align: center;
+  font-size: 60px;
+  font-family: Freight, HoeflerText-Black, Times New Roman, serif;
+  margin-bottom: 30px;
+}
+
+.rental-grid{
+  width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+}
+
+.rental-grid-item{
+  margin-top: 10px;
+  text-align: center;
+  font-size: 24px;
+  color: #59d389;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.rental-grid-info{
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 14px;
+  color: black;
+  font-weight: 600;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.book-button-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.book-button{
+  width: 200px;
+  height: 50px;
+  color: white;
+  background-color: #59d389;
+  font-size: 16px;
+}

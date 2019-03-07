@@ -42,6 +42,20 @@ class SplashPage extends React.Component {
           </div>
 
         </div>
+
+        <h3 className='rental-counter'>Skip the rental counter</h3>
+        <div className='rental-grid'>
+          <div className='rental-grid-item'>the car you want
+            <p className='rental-grid-info'>Choose from over 800 unique makes and models, from affordable daily drivers to rare specialty cars
+            </p>
+          </div>
+          <div className='rental-grid-item'>where you want it
+            <p className='rental-grid-info'>Pick up the car or get it delivered, wherever you need it, up to 35% less than traditional agencies</p>
+          </div>
+        </div>
+        <div className='book-button-container'>
+          <button className='book-button' >Book the perfect car</button>
+        </div>
       </div>
     )
   }

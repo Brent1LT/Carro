@@ -1,25 +1,23 @@
-// .photo-form{
-//   height: 500px;
-//   overflow: hidden;
-//   transition: visibility 0.5s, height 0.5s;
-// }
 
 .road-banner{
-  max-height: inherit;
   width: 100%;
-  max-height: 125px;
-  position: relative;
+  height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-image: url('panoramic-background.jpg');
+  display: flex;
 
 }
 
 .listing-banner{
-  position: absolute;
-  top: 135px;
-  left: 610px;
+  align-self: flex-end;
   color: #ffffff;
   font-family: 'Times New Roman', Times, serif;
   letter-spacing: 1px;
-  font-size: 26px;
+  font-size: 30px;
+  padding-left: 32%;
+  padding-bottom: 20px;
 }
 
 .parent-background{
