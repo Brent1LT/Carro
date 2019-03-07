@@ -114,8 +114,31 @@ class ListingShow extends React.Component{
           <div className='heading-tags'>Guidelines</div>
           <div className='show-text-boxes' >{listing.guidelines}</div>
           {this.handleExtras()}
-          <div className='sidebar'>Side
-            <div className='price-per-day'>{`${listing.price} per day`}</div>
+          <div className='sidebar'>
+            <div className='price-per-day'>
+              <div className='inner-dollar'>$</div>
+              <div className='inner-price'>{listing.price}</div>
+              <div className='inner-day'>per day</div>
+            </div>
+            <div className='mileage-section'>
+              <div className='mileage'>
+                <div>Distance included</div>
+                <div>750 mi</div>
+              </div>
+              <div className='random-mileage' >{Math.random().toFixed(2)}/mi fee for additional miles driven</div>
+            </div> 
+            <div className='insurance-provider'>insurance provided via</div> 
+            <div className='liberty'>Liberty Mutual</div> 
+            <div className='show-user-info'>
+              <div className='car-owner'>OWNED BY
+                <div className='side-ownername'>{listing.ownerName}</div>
+                <i className="fa fa-star review-stars"></i>
+                <i className="fa fa-star review-stars"></i>
+                <i className="fa fa-star review-stars"></i>
+                <i className="fa fa-star review-stars"></i>
+                <i className="fa fa-star review-stars"></i>
+              </div>
+            </div>
           </div>
           </div>
         </div>
@@ -126,33 +149,3 @@ class ListingShow extends React.Component{
 
 
 export default ListingShow;
-
-{/* <div className='heading-tags'>THE CAR
-            <span className='ownername'>Ownername
-              <div className='show-car-name'>Make Model</div>
-  </span>
-</div> */}
-
-{/* 
-            <div className='car-details'>
-              <span>Owner Name</span>
-              <span>Car make model year</span>
-              <div>star icons</div>
-              <span>trips counter</span>
-              <div className='mpg' >
-                <span>mpg</span>
-              </div>
-              <div className='door'>
-                <span>doors</span>
-              </div>
-              <div className='seat'>
-                <span>seats</span>
-              </div>
-            </div>
-          </div>
-          <div>Description
-            <div>car description</div>
-          </div>
-          <div>Guidelines
-            <div>listing guidelines</div>
-          </div> */}

@@ -148,6 +148,73 @@
 }
 
 .price-per-day{
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgray;
   height: 150px;
+  display: grid;
+  grid-template-columns: 33% 23% 33%;
+  align-items: center;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
 }
+
+.inner-dollar{
+  justify-self: flex-end;
+  padding-right: 5px;
+  padding-bottom: 40px;
+  font-size: 24px;
+  font-weight: 300
+}
+
+.inner-price{
+  font-size: 66px;
+}
+
+.inner-day{
+  font-size: 16px;
+  font-weight: 500
+}
+
+.mileage-section{
+  color: #5d5d5d;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  border-bottom: 1px solid lightgrey;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mileage{
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.random-mileage{
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.insurance-provider{
+  color: #5d5d5d;
+  padding-top: 20px;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+
+}
+
+.liberty{
+  color: #59d389;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  padding-bottom: 20px;
+  font-size: 16px;
+  border-bottom: 1px solid lightgrey;
+  font-weight: 700;
+}
+
+.show-user-info{
+  display: flex;
+  justify-content: space-between;
+
+}
+
