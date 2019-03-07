@@ -147,6 +147,8 @@ class ListingShow extends React.Component{
               <div>Response rate</div>
               <div>100 %</div>
             </div>
+            <button className='update-listing-button'>Update Listing</button>
+            <button className='delete-listing-button'>Delete Listing</button>
           </div>
           </div>
         </div>

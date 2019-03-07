@@ -3,7 +3,7 @@ import React from 'react';
 class ListingPostForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { nextAction: false }
+    this.state = { nextAction: false };
     this.openCarDrop = this.props.openCarDrop.bind(this);
   }
 
@@ -41,7 +41,6 @@ class ListingPostForm extends React.Component {
     this.setState({ nextAction: true }, () => {
       this.props.closeListingDrop();
     });
-    // setTimeout(() => this.openCarDrop(), 0.75);
   }
 
   render() {

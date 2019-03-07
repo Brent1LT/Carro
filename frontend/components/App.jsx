@@ -13,6 +13,7 @@ const App = () => (
     <SessionModal />
     <NavBarContainer />
     <Switch>
+      
       <Route exact path='/listings/new' component={ListingsFormContainer} />
       <Route exact path ='/listings/:listingId' component={ListingShowContainer} />
     </Switch>

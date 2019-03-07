@@ -157,8 +157,4 @@ class ListingForm extends React.Component{
 }
 
 
-
-
 export default ListingForm;
-
-// render a creatcar form and pass down create car as props nevermind it has a container
