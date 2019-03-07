@@ -4,18 +4,24 @@ import {Link} from 'react-router-dom';
 class SplashPage extends React.Component {
   constructor(props){
     super(props);
-    
+
+    this.state = {
+      loading: true
+    };
   }
 
   componentDidMount(){
-    this.props.fetchListings();
+    this.props.fetchListings()
+      .then(() => this.setState({
+        loading: false
+      }));
   }
 
   render(){
-    if (this.props.listings === undefined || this.props.listings.length === 0){
-      return null
+    if (this.state.loading){
+      return null;
     }
-    console.log(this.props.listings);
+    let {listings} = this.props;
     return(
       <div className='main-splash' >
         <div className="splash-image"  >
@@ -25,8 +31,12 @@ class SplashPage extends React.Component {
         <div className='splash-carousel' >
           <span className='carousel-small-text'>You might like</span>
           <div className="splash-carousel-child">
-            <Link to={`/listings/${this.props.listings[0].id}`} className='splash-listing-photo' ><img className="splash-listing-photo" 
-            src={this.props.listings[0].photos[0].imageUrl} 
+            <Link to={`/listings/${listings[0].id}`} className='splash-listing-photo' ><img className="splash-listing-photo" 
+            src={listings[0].photos[0].imageUrl} 
+            /></Link>
+
+            <Link to={`/listings/${listings[1].id}`} className='splash-listing-photo' ><img className="splash-listing-photo" 
+            src={listings[1].photos[0].imageUrl} 
             /></Link>
 
           </div>

@@ -11,10 +11,11 @@ const receiveListings = ({listings, cars}) => ({
   cars
 });
 
-const receiveListing = ({listings, cars}) => ({
+const receiveListing = ({listings, cars, users}) => ({
   type: RECEIVE_LISTING,
   listings,
-  cars
+  cars,
+  users
 });
 
 const removeListing = (listingId) => ({

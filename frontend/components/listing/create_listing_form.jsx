@@ -3,8 +3,16 @@ import React from 'react';
 class ListingPostForm extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = { nextAction: false }
     this.openCarDrop = this.props.openCarDrop.bind(this);
+  }
+
+  componentDidUpdate() {
+    if (this.state.nextAction) {
+      this.setState({ nextAction: false }, () => {
+        this.openCarDrop();
+      });
+    }
   }
 
   update(field) {
@@ -28,10 +36,12 @@ class ListingPostForm extends React.Component {
   // }
 
 
-  openNextDrop() {
-    this.props.closeListingDrop();
-
-    setTimeout(() => this.openCarDrop(), 0.75);
+  openNextDrop(e) {
+    e.preventDefault();
+    this.setState({ nextAction: true }, () => {
+      this.props.closeListingDrop();
+    });
+    // setTimeout(() => this.openCarDrop(), 0.75);
   }
 
   render() {
@@ -60,7 +70,7 @@ class ListingPostForm extends React.Component {
             onChange={this.update('extras')}
             placeholder="Any additional info you would like to add that wasn't listed" ></textarea>
         </label>
-        <button onClick={() => this.openNextDrop()} className="next-form" >Next</button>
+        <button onClick={this.openNextDrop.bind(this)} className="next-form" >Next</button>
       </form>
     )
   }

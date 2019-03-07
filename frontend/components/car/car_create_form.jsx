@@ -4,7 +4,7 @@ import React from 'react';
 class CarPostForm extends React.Component{
   constructor(props) {
     super(props);
-
+    this.state = { nextAction: false };
     this.openPhotoDrop = this.props.openPhotoDrop.bind(this);
   }
 
@@ -22,12 +22,21 @@ class CarPostForm extends React.Component{
     };
   }
 
- 
+ componentDidUpdate(){
+   if(this.state.nextAction){
+     this.setState({ nextAction: false }, () => {
+       console.log(this.state);
+       this.openPhotoDrop();
+     })
+   }
+ }
 
-  openNextDrop(){
-    this.props.closeCarDrop();
+  openNextDrop(e){
+    e.preventDefault();
+    this.setState({ nextAction: true }, () => {
+      this.props.closeCarDrop();
+    })
     // setTimeout(() => this.openPhotoDrop(), 1);
-
   }
 
 
@@ -84,7 +93,7 @@ class CarPostForm extends React.Component{
             onChange={this.update('description')}
             placeholder='A brief description of your vechicle' ></textarea>
         </label>
-        <button onClick={() => this.openNextDrop()} className="next-form">Next</button>
+        <button onClick={this.openNextDrop.bind(this)} className="next-form">Next</button>
       </form>
     )
   }

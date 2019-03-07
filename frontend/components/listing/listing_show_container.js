@@ -3,9 +3,14 @@ import ListingShow from './listing_show';
 import { fetchListing, deleteListing, updateListing } from '../../actions/listing_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  let listing = state.entities.listings[ownProps.match.params.listingId];
+  let car;
+  if (listing){
+    car = state.entities.cars[listing.carId];
+  }
   return({
-    listing: state.entities.listings[ownProps.match.params.listingId],
-    // car: state.entities.cars.listingId?
+    listing,
+    car
   });
 };
 

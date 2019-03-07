@@ -101,7 +101,7 @@ class ListingForm extends React.Component{
         formData.append('listing[photos][]', photo);
       });
       this.props.createListing(formData).then(payload => {
-        let listing = Object.values(payload.listing);
+        let listing = Object.values(payload.listings);
         this.props.history.push(`/listings/${listing[0].id}`);
       });
     }else {

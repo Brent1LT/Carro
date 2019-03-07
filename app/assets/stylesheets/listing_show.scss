@@ -8,16 +8,17 @@
   position: relative;
 }
 
+
 .left-change{
   position: absolute;
-  top: 300px;
-  left:200px
+  top: 50%;
+  left: 5%
 }
 
 .right-change{
   position: absolute;
-  top: 300px;
-  right: 300px;
+  top: 50%;
+  right: 5%;
 }
 
 .carousel-counter{
@@ -33,4 +34,120 @@
   bottom: 50px;
   left: 300px;
   padding: 5px;
+}
+
+.listing-details{
+  width: 800px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+
+.car-show-details{
+  display: grid;
+  grid-template-columns: 10% 60%;
+  position: relative;
+}
+
+.heading-tags{
+  color: grey;
+  font-size: 14px;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.ownername{
+  font-size: 16px;
+  font-weight: 600;
+  font-family: BasisGrotesque,Avenir,Helvetica Neue,Helvetica,sans-serif;
+  margin-bottom: 20px;
+}
+
+.car-make-model{
+  font-size: 40px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  font-family: Freight, HoeflerText-Black, Times New Roman, serif;
+  text-transform: uppercase;
+}
+
+.show-car-name{
+  font-size: 28px;
+}
+
+.car-year {
+  margin-left: 10px;
+  font-size: 24px;
+
+}
+
+
+.review-stars{
+  color: rgb(120, 11, 245);
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.parent-icons-div{
+  margin-top: 20px;
+}
+
+.icons-grid{
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 50px 50px;
+  
+}
+
+.icons-name{
+  padding-left: 50px;
+}
+
+.mpg-icon{
+  background-image: url('mpg-icon.png');
+  height: 30px;
+  width: 30px;
+}
+
+.gas-icon{
+  background-image: url('gas-icon.png');
+  height: 30px;
+  width: 30px;
+}
+
+.door-icon{
+  background-image: url('door.png');
+  height: 30px;
+  width: 30px;
+}
+
+.seat-icon{
+  background-image: url('seat-icon.png');
+  height: 30px;
+  width: 25px;
+}
+
+.show-text-boxes{
+  font-size: 14px;
+  font-weight: 600;
+  font-family: BasisGrotesque,Avenir,Helvetica Neue,Helvetica,sans-serif;
+  margin-bottom: 20px;
+}
+
+.sidebar{
+  width: 300px;
+  height: 600px;
+  position: absolute;
+  right: -20%;
+  top: -20%;
+  background: #ffffff;
+  border-radius: 30px 30px 0 0;
+}
+
+.price-per-day{
+  border-bottom: 1px solid gray;
+  height: 150px;
 }

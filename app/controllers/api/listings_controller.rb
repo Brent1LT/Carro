@@ -9,6 +9,7 @@ class Api::ListingsController < ApplicationController
         @car.user_id = current_user.id
         @car.listing_id = @listing.id
         @car.save!
+        @user = @listing.user
         render :create
       else 
         render json: @listing.errors.full_messages, status: 422

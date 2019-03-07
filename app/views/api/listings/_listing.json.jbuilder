@@ -1,11 +1,13 @@
 json.listings do 
   json.set! listing.id do 
     json.extract! listing, :id, :guidelines, :user_id, :trip_counter, :price, :extras, :location
-      json.photos do 
-        json.array!(listing.photos) do |photo|
-          json.image_url url_for(photo)
-        end   
-      end  
+    json.photos do 
+      json.array!(listing.photos) do |photo|
+        json.image_url url_for(photo)
+      end   
+    end  
+    json.owner_name "#{user.firstname} #{user.lastname}"
+    json.carId car.id
   end
 end 
 
@@ -15,5 +17,8 @@ json.cars do
   end
 end 
 
-#FIX ME 
-#add a user slice of state for the show
+json.users do 
+  json.set! user.id do 
+    json.extract! user, :id, :firstname, :lastname
+  end 
+end 
