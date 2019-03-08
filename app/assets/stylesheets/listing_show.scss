@@ -187,7 +187,8 @@
 
 .inner-day{
   font-size: 16px;
-  font-weight: 500
+  font-weight: 500;
+  justify-self: center
 }
 
 .mileage-section{
@@ -265,10 +266,19 @@
 }
 
 .profile-circle{
-  height: 100%;
-  width: 100%;
+  margin-top: 15px;
+  height: 125px;
+  width: 125px;
   background-image: url(image_path('hire-me.jpg'));
   background-size: cover;
+}
+
+.profile-circle-opt{
+  height: 80%;
+  width: 80%;
+  background-size: cover;
+  border-radius: 50%;
+  margin-top: 15px;
 }
 
 .response-rate{

@@ -303,4 +303,9 @@ listing8.photos.attach(io: open("https://s3-us-west-1.amazonaws.com/carro-dev/my
 
 
 flash.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/carro-dev/flashProfile.jpg"), filename: "flashprofile.jpg")
+dom.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/carro-dev/Dominic_Toretto_profile.jpg"), filename: "domprofile.jpg")
+batman.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/carro-dev/batman_profile.jpg"), filename: "batmanprofile.jpg")
+doc.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/carro-dev/doc_profile.jpg"), filename: "docprofile.jpg")
+paul.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/carro-dev/paul_walker_profile.jpg"), filename: "paulprofile.jpg")
+shaggy.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/carro-dev/shaggy_profile.png"), filename: "shaggyprofile.jpg")
 

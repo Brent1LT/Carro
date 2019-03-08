@@ -13,6 +13,15 @@ class ListingShow extends React.Component{
     this.handleDelete = this.handleDelete.bind(this);
   }
 
+
+  profilePicture(){
+    if(this.props.listing.profilePicture){
+      return <img className='profile-circle-opt' src={this.props.listing.profilePicture} />
+    }else{
+      return <div className='profile-circle' ></div>
+    }
+  }
+
   carouselImage(){
     return (
       <img className='carousel-image' src={this.props.listing.photos[this.state.currentIndex].imageUrl} />
@@ -140,7 +149,7 @@ class ListingShow extends React.Component{
                   <i className="fa fa-star review-stars"></i>
                 </div>
               </div>
-              <div className='profile-circle' ></div>
+              {this.profilePicture()}
             </div>
             <div className='response-rate'>
               <div>Response rate</div>

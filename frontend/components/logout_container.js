@@ -3,7 +3,9 @@ import { logout } from '../actions/session_actions';
 import ProfileDropdown from './nav_bar/profile_dropdown';
 const mapStateToProps = state => {
   return ({
-    errors: []
+    errors: [],
+    users: state.entities.users,
+    currentUserId: state.session.currentUserId
   });
 };
 

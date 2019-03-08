@@ -24,14 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ReactDOM.render(<Root store={store}/>, root)
 
-  window.dispatch = store.dispatch;
-  window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.getState = store.getState;
 
-  window.createListing = createListing;
-  window.fetchListing = fetchListing;
-  window.updateListing = updateListing;
-  window.fetchListings = fetchListings;
+  // window.createListing = createListing;
+  // window.fetchListing = fetchListing;
+  // window.updateListing = updateListing;
+  // window.fetchListings = fetchListings;
 
-  window.createCar = createCar;
-  window.deleteCar = deleteCar;
+  // window.createCar = createCar;
+  // window.deleteCar = deleteCar;
 });

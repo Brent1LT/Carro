@@ -13,6 +13,58 @@ class SplashPage extends React.Component {
       carousel4: 3
     };
   }
+//    {
+//   listings.map((ele, i) => {
+//     if (i > 3) return null;
+//     return <Link to={`/listings/${ele.id}`} className='splash-listing-photo' >
+//       <img className="splash-listing-photo"
+//         src={ele.photos[0].imageUrl}
+//       />
+//     </Link>
+//   })
+// }
+
+  slideLeft(){
+    
+  }
+
+  slideRight(){
+    console.log('up');
+  }
+
+  loadCarousel(){
+    let {listings} = this.props;
+    
+    return (
+      <div className='relative-carousel' >
+        <div className='splash-carousel-left' onClick={this.slideLeft}></div>
+        <div className='splash-carousel-right' onClick={this.slideRight}></div>
+        <Link to={`/listings/${listings[this.state.carousel1].id}`} className='splash-listing-photo' >
+          <img className="splash-listing-photo"
+            src={listings[this.state.carousel1].photos[0].imageUrl}
+          />
+        </Link>
+
+        <Link to={`/listings/${listings[this.state.carousel2].id}`} className='splash-listing-photo' >
+          <img className="splash-listing-photo"
+            src={listings[this.state.carousel2].photos[0].imageUrl}
+          />
+        </Link>
+
+        <Link to={`/listings/${listings[this.state.carousel3].id}`} className='splash-listing-photo' >
+          <img className="splash-listing-photo"
+            src={listings[this.state.carousel3].photos[0].imageUrl}
+          />
+        </Link>
+
+        <Link to={`/listings/${listings[this.state.carousel4].id}`} className='splash-listing-photo' >
+          <img className="splash-listing-photo"
+            src={listings[this.state.carousel4].photos[0].imageUrl}
+          />
+        </Link>
+      </div>
+    )
+  }
 
   componentDidMount(){
     this.props.fetchListings()
@@ -35,15 +87,7 @@ class SplashPage extends React.Component {
         <div className='splash-carousel' >
           <span className='carousel-small-text'>You might like</span>
           <div className="splash-carousel-child">
-
-            {listings.map((ele, i) => {
-              if(i > 3) return null;
-              return <Link to={`/listings/${ele.id}`} className='splash-listing-photo' >
-                <img className="splash-listing-photo"
-                  src={ele.photos[0].imageUrl}
-                />
-               </Link>
-             } )}
+            {this.loadCarousel()}
           </div>
         </div>
         <h3 className='rental-counter'>Skip the rental counter</h3>

@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 
 const mapStateToProps = state => ({
   loggedIn: Boolean(state.session.currentUserId)
+  
 });
 
 const mapDispatchToProps = dispatch => ({

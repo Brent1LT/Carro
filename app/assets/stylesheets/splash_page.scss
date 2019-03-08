@@ -38,9 +38,38 @@
   margin-bottom: 60px;
   width: 100%;
 }
+
+.relative-carousel{
+  position: relative;
+}
+
+.splash-carousel-left{
+  position: absolute;
+  background-image: url(image_path('carousel-arrow.png'));
+  height: 25px;
+  width: 25px;
+  top: 50%;
+  left: 10px;
+  background-size: cover;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+.splash-carousel-right{
+  position: absolute;
+  background-image: url(image_path('carousel-arrow.png'));
+  height: 25px;
+  width: 25px;
+  background-size: cover;
+  transform: rotate(-90deg);
+  top: 50%;
+  right: -50px;
+  cursor: pointer;
+}
+
 .splash-carousel-child{
   a{
-    padding-left:60px;
+    margin-left:60px;
     width: 400px;
     height: 225px;
     display: inline-block;

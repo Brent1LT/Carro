@@ -8,6 +8,11 @@ json.listings do
     end  
     json.owner_name "#{user.firstname} #{user.lastname}"
     json.carId car.id
+    if user.photo.attached?
+      json.profile_picture url_for(user.photo)
+    else
+      json.profile_picture false
+    end 
   end
 end 
 
@@ -17,8 +22,4 @@ json.cars do
   end
 end 
 
-json.users do 
-  json.set! user.id do 
-    json.extract! user, :id, :firstname, :lastname
-  end 
-end 
+

@@ -23,6 +23,15 @@ class ProfileDropdown extends React.Component{
     }
   }
 
+  profilePicture(){
+    let user = this.props.users[this.props.currentUserId];
+    if (user.profilePicture){
+      return <img src={user.profilePicture} className='nav-profile-pic' />
+    }else {
+      return <i className="fa fa-user-circle"></i>
+    }
+  }
+
   render(){
     return (
     <div 
@@ -30,7 +39,7 @@ class ProfileDropdown extends React.Component{
       onMouseLeave={() => this.setState({dropdown: false})}
       className="profile-image-container"
       >
-      <i className="fa fa-user-circle"></i>
+      {this.profilePicture()}
       {this.releaseDropdown()}
     </div>
     )
