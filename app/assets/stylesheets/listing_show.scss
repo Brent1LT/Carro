@@ -7,6 +7,9 @@
 
 .carousel-container{
   position: relative;
+  transform: translateX();
+  transition: transform ease-out 0.45s;
+
 }
 
 
