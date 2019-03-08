@@ -48,9 +48,3 @@ render(){
 }
 
 export default NavBar;
-
-{/* <a href='' onClick={(e) => { e.preventDefault(); props.openModal("Signup") }} >signup</a> */}
-
-// const mdp = dispatch => ({
-//   openModal: (modal) => dispatch(openModal(modal))
-// })
