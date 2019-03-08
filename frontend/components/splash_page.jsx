@@ -22,6 +22,7 @@ class SplashPage extends React.Component {
       return null;
     }
     let {listings} = this.props;
+    debugger
     return(
       <div className='main-splash' >
         <div className="splash-image"  >

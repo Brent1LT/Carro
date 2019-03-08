@@ -24,7 +24,8 @@ class Listing < ApplicationRecord
   foreign_key: :user_id,
   class_name: 'User'
 
-  has_one :car,
+  has_one :car, 
   foreign_key: :listing_id,
-  class_name: 'Car'
+  class_name: 'Car',
+  dependent: :destroy
 end
