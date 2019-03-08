@@ -111,25 +111,25 @@
 }
 
 .mpg-icon{
-  background-image: url('mpg-icon.png');
+  background-image: url(image_url('mpg-icon.png'));
   height: 30px;
   width: 30px;
 }
 
 .gas-icon{
-  background-image: url('gas-icon.png');
+  background-image: url(image_url('gas-icon.png'));
   height: 30px;
   width: 30px;
 }
 
 .door-icon{
-  background-image: url('door.png');
+  background-image: url(image_url('door.png'));
   height: 30px;
   width: 30px;
 }
 
 .seat-icon{
-  background-image: url('seat-icon.png');
+  background-image: url(image_url('seat-icon.png'));
   height: 30px;
   width: 25px;
 }

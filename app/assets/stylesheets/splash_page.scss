@@ -124,7 +124,7 @@
 
 .porsche-program-parent{
   margin-top: 30px;
-  background-image: url('porsche_turo.jpg');
+  background-image: url(image_url('porsche_turo.jpg'));
   background-repeat: no-repeat;
   background-position-y: center;
   text-align: center;
@@ -176,7 +176,7 @@
 }
 
 .book-n-image{
-  background-image: url('book-turo.jpg');
+  background-image: url(image_url('book-turo.jpg'));
   justify-content: flex-end;
   width: 480px;
   margin-left: 400px;
@@ -217,7 +217,7 @@
 }
 
 .carculator{
-  background-image: url('carculator.jpg');
+  background-image: url(image_url('carculator.jpg'));
   width: 700px;
   height: 450px;
   background-repeat: no-repeat;
@@ -248,7 +248,7 @@
 }
 
 .good-good{
-  background-image: url('good-good.jpg');
+  background-image: url(image_url('good-good.jpg'));
   width: 700px;
   height: 450px;
   background-repeat: no-repeat;
@@ -270,7 +270,7 @@
 }
 
 .purple-footer{
-  background-image: url('purple_footer.png');
+  background-image: url(image_url('purple_footer.png'));
   height: 400px;
   padding-top: 160px;
   text-align: center;
