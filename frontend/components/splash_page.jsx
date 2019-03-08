@@ -22,7 +22,6 @@ class SplashPage extends React.Component {
       return null;
     }
     let {listings} = this.props;
-    debugger
     return(
       <div className='main-splash' >
         <div className="splash-image"  >
@@ -32,13 +31,15 @@ class SplashPage extends React.Component {
         <div className='splash-carousel' >
           <span className='carousel-small-text'>You might like</span>
           <div className="splash-carousel-child">
-            <Link to={`/listings/${listings[0].id}`} className='splash-listing-photo' ><img className="splash-listing-photo" 
-            src={listings[0].photos[0].imageUrl} 
-            /></Link>
 
-            <Link to={`/listings/${listings[1].id}`} className='splash-listing-photo' ><img className="splash-listing-photo" 
-            src={listings[1].photos[0].imageUrl} 
-            /></Link>
+            {listings.map((ele, i) => {
+              if(i > 3) return null;
+              return <Link to={`/listings/${ele.id}`} className='splash-listing-photo' >
+                <img className="splash-listing-photo"
+                  src={ele.photos[0].imageUrl}
+                />
+               </Link>
+             } )}
 
           </div>
 
@@ -63,3 +64,14 @@ class SplashPage extends React.Component {
 }
 
 export default SplashPage;
+
+
+{/* <Link to={`/listings/${listings[0].id}`} className='splash-listing-photo' ><img className="splash-listing-photo" 
+            src={listings[0].photos[0].imageUrl} 
+            /></Link>
+
+
+
+            <Link to={`/listings/${listings[1].id}`} className='splash-listing-photo' ><img className="splash-listing-photo" 
+            src={listings[1].photos[0].imageUrl} 
+            /></Link> */}
