@@ -46,8 +46,10 @@
  }
 
  .logo{
-   max-width: 60px;
-   max-height: 60px;
+   width: 60px;
+   height: 60px;
+   background-image: url(image_path('new_logo.png'));
+   background-size: cover
  }
 
  .nav-user-profile{
@@ -74,15 +76,6 @@
   border-bottom: 1px solid black;
 
  }
-/* .arrow{
-  height: 10px;
-  width: 15px;
-  position: absolute;
-  transform: rotate(45deg);
-  top: -5px;
-  left: 10px;
-  background: red
-} */
 
 .d:before {
     content:"\A";

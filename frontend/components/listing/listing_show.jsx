@@ -72,8 +72,8 @@ class ListingShow extends React.Component{
       <div className='listing-show-container'>
         <div className='carousel-container' >
           {this.carouselImage()}
-          <button onClick={() => this.previousImage()} className='left-change' >left icon here</button>
-          <button onClick={() => this.nextImage()} className='right-change' >right icon here</button>
+          <div onClick={() => this.previousImage()} className='left-change' ></div>
+          <div onClick={() => this.nextImage()} className='right-change' ></div>
           <div className='carousel-counter' >{`${this.state.currentIndex + 1} of ${this.props.listing.photos.length}`}</div>
         </div>
         <div className='listing-details'>

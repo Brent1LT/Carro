@@ -6,7 +6,11 @@ class SplashPage extends React.Component {
     super(props);
 
     this.state = {
-      loading: true
+      loading: true,
+      carousel1: 0,
+      carousel2: 1,
+      carousel3: 2,
+      carousel4: 3
     };
   }
 

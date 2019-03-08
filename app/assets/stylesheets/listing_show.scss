@@ -14,15 +14,28 @@
 
 
 .left-change{
+  background-image: url(image_path('carousel-arrow.png'));
   position: absolute;
   top: 50%;
-  left: 5%
+  left: 5%;
+  height: 30px;
+  width: 30px;
+  background-size: cover;
+  transform: rotate(90deg);
+  cursor: pointer;
 }
 
 .right-change{
   position: absolute;
   top: 50%;
   right: 5%;
+  height: 30px;
+  width: 30px;
+  background-size: cover;
+  transform: rotate(-90deg);
+  cursor: pointer;
+  background-image: url(image_path('carousel-arrow.png'));
+
 }
 
 .carousel-counter{
