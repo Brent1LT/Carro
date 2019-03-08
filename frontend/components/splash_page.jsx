@@ -12,6 +12,8 @@ class SplashPage extends React.Component {
       carousel3: 2,
       carousel4: 3
     };
+    
+    this.slide = this.slide.bind(this);
   }
 //    {
 //   listings.map((ele, i) => {
@@ -24,12 +26,28 @@ class SplashPage extends React.Component {
 //   })
 // }
 
-  slideLeft(){
+  slide(value){
     
-  }
+    let listings = this.props.listings.length;
+    let state = this.state;
 
-  slideRight(){
-    console.log('up');
+    if(value === 'down'){
+      this.setState({
+        carousel1: (listings + state.carousel1 - 1) % listings,
+        carousel2: (listings + state.carousel2 - 1) % listings,
+        carousel3: (listings + state.carousel3 - 1) % listings,
+        carousel4: (listings + state.carousel4 - 1) % listings 
+      });
+    }
+
+    if(value === 'up'){
+      this.setState({
+        carousel1: (state.carousel1 + 1) % listings,
+        carousel2: (state.carousel2 + 1) % listings,
+        carousel3: (state.carousel3 + 1) % listings,
+        carousel4: (state.carousel4 + 1) % listings
+      });
+    }
   }
 
   loadCarousel(){
@@ -37,8 +55,8 @@ class SplashPage extends React.Component {
     
     return (
       <div className='relative-carousel' >
-        <div className='splash-carousel-left' onClick={this.slideLeft}></div>
-        <div className='splash-carousel-right' onClick={this.slideRight}></div>
+        <div className='splash-carousel-left' onClick={() => this.slide('down')}></div>
+        <div className='splash-carousel-right' onClick={() => this.slide('up')}></div>
         <Link to={`/listings/${listings[this.state.carousel1].id}`} className='splash-listing-photo' >
           <img className="splash-listing-photo"
             src={listings[this.state.carousel1].photos[0].imageUrl}
@@ -151,14 +169,3 @@ class SplashPage extends React.Component {
 }
 
 export default SplashPage;
-
-
-{/* <Link to={`/listings/${listings[0].id}`} className='splash-listing-photo' ><img className="splash-listing-photo" 
-            src={listings[0].photos[0].imageUrl} 
-            /></Link>
-
-
-
-            <Link to={`/listings/${listings[1].id}`} className='splash-listing-photo' ><img className="splash-listing-photo" 
-            src={listings[1].photos[0].imageUrl} 
-            /></Link> */}
