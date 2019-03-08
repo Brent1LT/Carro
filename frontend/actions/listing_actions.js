@@ -12,7 +12,6 @@ const receiveListings = ({listings, cars}) => ({
 });
 
 const receiveListing = ({listings, cars, users}) => {
-  debugger
   return ({
     type: RECEIVE_LISTING,
     listings,

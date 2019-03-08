@@ -26,18 +26,19 @@ demo = User.create!(
 )
 
 dom = User.create!(
+  email: 'toretto@email.com',
+  password: '12345678',
+  firstname: 'Dom',
+  lastname: 'Toretto'
+)
+
+paul = User.create!(
   email: '2f2f@email.com',
   password: '12345678',
   firstname: 'Paul',
   lastname: 'Walker'
 )
 
-paul = User.create!(
-  email: 'toretto@email.com',
-  password: '12345678',
-  firstname: 'Dom',
-  lastname: 'Toretto'
-)
 
 doc = User.create!(
   email: 'tothefuture@email.com',
