@@ -70,25 +70,13 @@ class FileUpload extends React.Component{
     }
   }
 
-  // loadImagePreview(){
-  //   if(this.state.photos.length > 0){
-  //     const fileReader = new FileReader();
-  //     this.state.photos.forEach(photo => {
-  //       // return (
-  //       //   <img src={fileReader.readAsDataURL(photo)} />
-  //       // )
-  //     });
-  //   }
-  // }
-componentDidUpdate(){
-  console.log(this.form.getBoundingClientRect().height);
-
-}
+// componentDidUpdate(){
+//   console.log(this.form.getBoundingClientRect().height);
+// }
 
 // style={`height: ${this.form.getBoundingClientRect().height}`}
   // style = { 'height: ' + this.checkHeight() }
   render(){
-    // debugger
     return (
       <div ref={(ele) => this.form = ele}  className={this.formClasses()}
         onTransitionEnd={this.handleTranisitionEnd} >

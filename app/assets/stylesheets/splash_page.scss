@@ -1,7 +1,3 @@
-.main-splash{
-
-
-}
 
 .splash-image{
   width: 100%;
@@ -39,9 +35,15 @@
   width: 100%;
 }
 
-.relative-carousel{
-  position: relative;
+.splash-carousel-child{
+  a{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  overflow: hidden;
 }
+
 
 .splash-carousel-left{
   position: absolute;
@@ -49,7 +51,7 @@
   height: 25px;
   width: 25px;
   top: 50%;
-  left: 10px;
+  left: 5%;
   background-size: cover;
   transform: rotate(90deg);
   cursor: pointer;
@@ -63,23 +65,21 @@
   background-size: cover;
   transform: rotate(-90deg);
   top: 50%;
-  right: -50px;
+  right: 5%;
   cursor: pointer;
 }
 
-.splash-carousel-child{
-  a{
-    margin-left:60px;
-    width: 400px;
-    height: 225px;
-    display: inline-block;
-  }
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
+.arrow-relative{
+  position: relative;
 }
 
-
+.relative-carousel{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 85%;
+  height: 250px;
+}
 
 .carousel-small-text{
   color: grey;
@@ -92,12 +92,11 @@
   display: inline-block;
   overflow: hidden;
   transition: transform 0.3s;
+  background-size: cover;
 }
 
 .splash-listing-photo:hover{
-  transform: scale(1.1);
-  width: 400px;
-  height: 225px;
+  transform: scale(1.05);
 }
 
 .rental-counter{
@@ -147,8 +146,10 @@
   height: 50px;
   color: white;
   background-color: #59d389;
+  font-weight: 300;
   font-size: 16px;
   cursor: pointer;
+  border: none;
 }
 
 .porsche-program-parent{
@@ -208,37 +209,39 @@
   background-image: url(image_path('book-turo.jpg'));
   justify-content: flex-end;
   width: 480px;
-  margin-left: 400px;
+  margin-left: auto;
+  margin-right: 5%;
 }
 
 .book-title{
   font-size: 50px;
   font-family: Freight, HoeflerText-Black, "Times New Roman", serif;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .splash-book-info{
   font-size: 14px;
   font-weight: 600;
   font-family: BasisGrotesque, Avenir, "Helvetica Neue", Helvetica, sans-serif;
-  padding-top: 35px;
 }
 
 .splash-green-button{
-  margin-top: 67px;
   height: 40px;
   width: 105px;
   font-family: BasisGrotesque, Avenir, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 300;
   color: #ffffff;
   background-color: rgb(89, 211, 137);
   cursor: pointer;
+  border: none;
 }
 
 .bottom-photo-container{
   display: grid;
-  grid-template-columns: 50% 40%;
+  grid-template-columns: 50% 50%;
   margin-top: 80px;
   text-align: center;
   color: #ffffff;
@@ -247,13 +250,12 @@
 
 .carculator{
   background-image: url(image_path('carculator.jpg'));
-  width: 700px;
-  height: 450px;
+  width: 90%;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: -50px;
-  margin-left: 200px;
-  padding-right: 80px;
+  margin-left: auto;
   font-weight: 700;
 }
 
@@ -278,11 +280,10 @@
 
 .good-good{
   background-image: url(image_path('good-good.jpg'));
-  width: 700px;
+  width: 90%;
   height: 450px;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-right: 80px;
   font-weight: 700;
 }
 
@@ -327,7 +328,7 @@
 
 .purple-footer-button{
   margin-top: 30px;
-  height: 50px;
+  height: 45px;
   width: 130px;
   font-family: BasisGrotesque, Avenir, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 18px;
@@ -335,4 +336,5 @@
   color: #ffffff;
   background-color: #8F63F4;
   cursor: pointer;
+  border: none;
 }

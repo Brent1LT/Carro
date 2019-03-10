@@ -54,9 +54,10 @@ class SplashPage extends React.Component {
     let {listings} = this.props;
     
     return (
-      <div className='relative-carousel' >
+      <div className='arrow-relative' >
         <div className='splash-carousel-left' onClick={() => this.slide('down')}></div>
         <div className='splash-carousel-right' onClick={() => this.slide('up')}></div>
+        <div className='relative-carousel'>
         <Link to={`/listings/${listings[this.state.carousel1].id}`} className='splash-listing-photo' >
           <img className="splash-listing-photo"
             src={listings[this.state.carousel1].photos[0].imageUrl}
@@ -75,11 +76,7 @@ class SplashPage extends React.Component {
           />
         </Link>
 
-        <Link to={`/listings/${listings[this.state.carousel4].id}`} className='splash-listing-photo' >
-          <img className="splash-listing-photo"
-            src={listings[this.state.carousel4].photos[0].imageUrl}
-          />
-        </Link>
+        </div>
       </div>
     )
   }
@@ -95,7 +92,6 @@ class SplashPage extends React.Component {
     if (this.state.loading){
       return null;
     }
-    let {listings} = this.props;
     return(
       <div className='main-splash' >
         <div className="splash-image"  >
