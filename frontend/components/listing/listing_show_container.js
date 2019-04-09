@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
   }
   return({
     listing,
-    car
+    car,
+    currUser: state.session.currentUserId
   });
 };
 

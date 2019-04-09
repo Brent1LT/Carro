@@ -68,7 +68,22 @@ class ListingShow extends React.Component{
 
   handleDelete(listing){
     this.props.deleteListing(listing.id)
-      .then(() => this.props.history.push(`/`))
+      .then(() => this.props.history.push(`/`));
+  }
+
+  authComponents(){
+    let listing = this.props.listing;
+    let currUser = this.props.currUser;
+    if(currUser === listing.userId){
+      return (
+        <div>
+          <Link to={`/listings/${listing.id}/edit`} >
+            <button className='update-listing-button'>Update Listing</button>
+          </Link>
+          <button onClick={() => this.handleDelete(listing)} className='delete-listing-button'>Delete Listing</button>
+        </div>
+      )
+    }else return null;
   }
 
   render(){
@@ -155,10 +170,7 @@ class ListingShow extends React.Component{
               <div>Response rate</div>
               <div>100 %</div>
             </div>
-              <Link to={`/listings/${listing.id}/edit`} >
-              <button className='update-listing-button'>Update Listing</button>
-            </Link>
-            <button onClick={() => this.handleDelete(listing) } className='delete-listing-button'>Delete Listing</button>
+            {this.authComponents()}
           </div>
           </div>
         </div>
