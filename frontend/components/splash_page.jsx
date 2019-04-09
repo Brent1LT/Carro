@@ -134,16 +134,16 @@ class SplashPage extends React.Component {
         </div>
         <div className='bottom-photo-container'>
           <div className='carculator'>
-             <div className='carculator-top-text'>ask the</div>
-             <div className='carculator-middle-text'>Carculator</div>
-             <div className='carculator-ending-text'>Find out how much your car could earn for you.</div>
-             <button className='splash-green-button estimate' >Get an Estimate</button>
+            <div className='carculator-top-text'>ask the</div>
+            <div className='carculator-middle-text'>Carculator</div>
+            <div className='carculator-ending-text'>Find out how much your car could earn for you.</div>
+            <button className='splash-green-button estimate' >Get an Estimate</button>
           </div>
           <div className='good-good'>
-             <div className='carculator-top-text'>read up on</div>
-             <div className='carculator-middle-text'>That good-good</div>
-             <div className='carculator-ending-text'>Peruse cool cars and good stories on the Carro blog.</div>
-             <button className='splash-green-button readup'>Check it out</button>
+            <div className='carculator-top-text'>read up on</div>
+            <div className='carculator-middle-text'>That good-good</div>
+            <div className='carculator-ending-text'>Peruse cool cars and good stories on the Carro blog.</div>
+            <button className='splash-green-button readup'>Check it out</button>  
           </div>
         </div>
         <div className='purple-footer'>
