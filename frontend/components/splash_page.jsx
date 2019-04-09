@@ -122,7 +122,7 @@ class SplashPage extends React.Component {
             <h5 className='porsche-first-header'>driving at its finest</h5>
             <h3 className='porsche-second-header'>Discover the Porsche Host Program</h3>
             <p className='porsche-paragraph'>Carro and Porsche are proud to introduce the Porsche Host Program, a pilot program in San Francisco and Los Angeles that combines curated Porsche vehicles with top Turo hosts to give you the complete Porsche experience.</p>
-            <button className='porsche-button'>Explore the program</button>
+            {/* <button className='porsche-button'>Explore the program</button> */}
           </div>
           </div>
         <div className='book-n-go'>
