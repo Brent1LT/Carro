@@ -109,11 +109,9 @@
 }
 
 .rental-grid{
-  width: 1000px;
+  width: 65%;
   margin: auto;
-  display: grid;
-  grid-template-columns: 50% 50%;
-
+  display: flex;
 }
 
 .rental-grid-item{
@@ -123,8 +121,9 @@
   color: #59d389;
   text-transform: uppercase;
   padding-top: 10px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 100%;
 }
 
 .rental-grid-info{
@@ -135,6 +134,7 @@
   font-weight: 600;
   font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
   line-height: 1.5;
+  margin: auto;
 }
 
 .book-button-container{
@@ -319,7 +319,7 @@
   height: 400px;
   padding-top: 160px;
   text-align: center;
-
+  background-position-x: center;
 }
 
 .purple-footer1{
