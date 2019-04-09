@@ -48,7 +48,7 @@ export const createListing = (formData) => (
     processData: false
 
   })
-)
+);
 
 export const updateListing = ({ id, extras, guidelines, location, price, tripCounter: trip_counter, userId: user_id }) => (
   $.ajax({

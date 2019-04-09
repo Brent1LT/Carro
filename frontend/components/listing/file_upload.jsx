@@ -61,7 +61,6 @@ class FileUpload extends React.Component{
   }
 
   checkHeight(){
-    // debugger
     if (this.form === undefined){
       return 0;
     }else {
