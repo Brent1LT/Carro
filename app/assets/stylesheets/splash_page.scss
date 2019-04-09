@@ -163,9 +163,10 @@
   text-align: center;
   font-family: Freight, HoeflerText-Black, Times New Roman, serif;
   color: #ffffff;
-  padding: 55px;
+  padding: 5%;
   background-size: cover;
   margin-bottom: 60px;
+  width: 100%
 }
 
 .porsche-info{
@@ -205,17 +206,17 @@
 }
 
 .book-n-go{
-  display: grid;
-  grid-template-columns: 50% 25%;
-  grid-template-rows: 270px;
+  display: flex;
+  justify-content: center;
+
 }
 
 .book-n-image{
   background-image: url(image_path('book-turo.jpg'));
-  justify-content: flex-end;
   width: 480px;
-  margin-left: auto;
   margin-right: 5%;
+  height: 300px;
+  background-size: cover;
 }
 
 .book-title{
@@ -224,6 +225,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 480px;
 }
 
 .splash-book-info{
