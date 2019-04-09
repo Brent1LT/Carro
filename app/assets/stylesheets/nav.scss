@@ -8,7 +8,7 @@
  }
  
 
- .nav-bar-links{
+.nav-bar-links{
   display: flex;
   grid-template-columns: repeat(4, 25%);
 }
@@ -23,11 +23,11 @@
   font-size: 13px;  
   margin: 10px;
   letter-spacing: 1px;
-
 }
 
 .nav-link:hover, .nav-user-links:hover{
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .parent-nav{
@@ -36,44 +36,43 @@
   display: flex;
  }
 
- .nav-profile-pic{
-   padding-top: 5px;
-   height: 45px;
-   width: 45px;
-   background-size: cover;
-   border-radius: 50%;
-   position: relative;
-   display: flex;
- }
+.nav-profile-pic{
+  padding-top: 5px;
+  height: 45px;
+  width: 45px;
+  background-size: cover;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+}
 
- .fa.fa-user-circle{
+.fa.fa-user-circle{
   display: flex;
   margin: 5px;
   align-items: center;
   font-size: 30px;
   padding-top: 10px; 
   position: relative;
-  
- }
 
- .logo{
-   width: 60px;
-   height: 60px;
-   background-image: url(image_path('new_logo.png'));
-   background-size: cover
- }
+}
 
- .nav-user-profile{
-   display: flex;
-   justify-content: center;
- }
+.logo{
+  width: 100px;
+  height: 60px;
+  background-image: url(image_path('new_logo.png'));
+  background-size: cover
+}
 
- .profile-image-container{
-   position: relative;
-   
- }
+.nav-user-profile{
+  display: flex;
+  justify-content: center;
+}
 
- .drop-down{
+.profile-image-container{
+  position: relative;
+}
+
+.drop-down{
   position: absolute;
   top: 60px;
   text-align: center;
@@ -81,40 +80,40 @@
   width: 100px;
   z-index: 999;
   background: #fff
- }
-
- .logout{
-  border-bottom: 1px solid black;
-
- }
-
-.d:before {
-    content:"\A";
-    border-style: solid;
-    border-width: 8px 12px 8px 0;
-    border-color: transparent #ffffff transparent transparent;
-    position: absolute;
-    top: -14px;
-    transform: rotate(90deg);
-    right: 2px
 }
 
-  .drop-down-link{
-    background: #ffffff;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    width: 100px;
-    height: 30px;
-    font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
-    font-weight: bold;
-    padding: 6px;
-    font-size: 14px;
-    cursor: pointer;
-    padding-top: 25px;
+.logout{
+  border-bottom: 1px solid black;
 
-  }
+}
+
+.d:before {
+  content:"\A";
+  border-style: solid;
+  border-width: 8px 12px 8px 0;
+  border-color: transparent #ffffff transparent transparent;
+  position: absolute;
+  top: -14px;
+  transform: rotate(90deg);
+  right: 2px
+}
+
+.drop-down-link{
+  background: #ffffff;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  width: 100px;
+  height: 30px;
+  font-family: BasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  padding-top: 25px;
+
+}
 
 
- .drop-down-link:hover{
-  background-color: darkgrey;
- }
+.drop-down-link:hover{
+background-color: darkgrey;
+}
