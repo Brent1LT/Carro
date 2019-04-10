@@ -2,14 +2,12 @@
   width: 100%;
   height: 800px;
   object-fit: cover;
-
 }
 
 .carousel-container{
   position: relative;
   transform: translateX();
   transition: transform ease-out 0.45s;
-
 }
 
 
