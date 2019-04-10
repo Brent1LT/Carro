@@ -28,4 +28,8 @@ class Listing < ApplicationRecord
   foreign_key: :listing_id,
   class_name: 'Car',
   dependent: :destroy
+
+  has_many :bookings,
+  foreign_key: :listing_id,
+  class_name: 'Booking'
 end

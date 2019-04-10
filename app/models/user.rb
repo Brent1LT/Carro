@@ -27,6 +27,10 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: 'Car'
 
+  has_many :bookings,
+  foreign_key: :user_id,
+  class_name: 'Booking'
+
   has_one_attached :photo
 
   def self.find_by_credentials(email, password)
