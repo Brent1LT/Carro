@@ -275,9 +275,9 @@
 .profile-circle-opt{
   height: 80%;
   width: 80%;
-  background-size: cover;
   border-radius: 50%;
   margin-top: 15px;
+  object-fit: cover;
 }
 
 .response-rate{

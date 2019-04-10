@@ -37,13 +37,11 @@
  }
 
 .nav-profile-pic{
-  padding-top: 5px;
+  padding-top: 7px;
   height: 45px;
   width: 45px;
-  background-size: cover;
   border-radius: 50%;
-  position: relative;
-  display: flex;
+  object-fit: cover;
 }
 
 .fa.fa-user-circle{
@@ -53,7 +51,6 @@
   font-size: 30px;
   padding-top: 10px; 
   position: relative;
-
 }
 
 .logo{
