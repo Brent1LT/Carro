@@ -36,35 +36,35 @@ This proved to be an integral optimization of the app. It helps with scalability
 //listing_form.jsx
 
 handleSubmit(e){
-    e.preventDefault();
-    if (this.props.currentUser){
-      const formData = new FormData();
-      formData.append('listing[extras]', this.state.listingFormData.extras);
-      formData.append('listing[guidelines]', this.state.listingFormData.guidelines);
-      formData.append('listing[location]', this.state.listingFormData.location);
-      formData.append('listing[price]', this.state.listingFormData.price);
-      formData.append('listing[trip_counter]', this.state.listingFormData.tripCounter);
-      formData.append('car[make]', this.state.carFormData.make);
-      formData.append('car[model]', this.state.carFormData.model);
-      formData.append('car[year]', this.state.carFormData.year);
-      formData.append('car[mpg]', this.state.carFormData.mpg);
-      formData.append('car[gas]', this.state.carFormData.gas);
-      formData.append('car[transmission]', this.state.carFormData.transmission);
-      formData.append('car[trim]', this.state.carFormData.trim);
-      formData.append('car[description]', this.state.carFormData.description);
-      formData.append('car[num_of_doors]', this.state.carFormData.numOfDoors);
-      formData.append('car[num_of_seats]', this.state.carFormData.numOfSeats);
-      this.state.photos.photosData.forEach(photo => {
-        formData.append('listing[photos][]', photo);
-      });
-      this.props.createListing(formData).then(payload => {
-        let listing = Object.values(payload.listings);
-        this.props.history.push(`/listings/${listing[0].id}`);
-      });
-    }else {
-      this.props.openModal('Sign up');
-    }
+  e.preventDefault();
+  if (this.props.currentUser){
+    const formData = new FormData();
+    formData.append('listing[extras]', this.state.listingFormData.extras);
+    formData.append('listing[guidelines]', this.state.listingFormData.guidelines);
+    formData.append('listing[location]', this.state.listingFormData.location);
+    formData.append('listing[price]', this.state.listingFormData.price);
+    formData.append('listing[trip_counter]', this.state.listingFormData.tripCounter);
+    formData.append('car[make]', this.state.carFormData.make);
+    formData.append('car[model]', this.state.carFormData.model);
+    formData.append('car[year]', this.state.carFormData.year);
+    formData.append('car[mpg]', this.state.carFormData.mpg);
+    formData.append('car[gas]', this.state.carFormData.gas);
+    formData.append('car[transmission]', this.state.carFormData.transmission);
+    formData.append('car[trim]', this.state.carFormData.trim);
+    formData.append('car[description]', this.state.carFormData.description);
+    formData.append('car[num_of_doors]', this.state.carFormData.numOfDoors);
+    formData.append('car[num_of_seats]', this.state.carFormData.numOfSeats);
+    this.state.photos.photosData.forEach(photo => {
+      formData.append('listing[photos][]', photo);
+    });
+    this.props.createListing(formData).then(payload => {
+      let listing = Object.values(payload.listings);
+      this.props.history.push(`/listings/${listing[0].id}`);
+    });
+  }else {
+    this.props.openModal('Sign up');
   }
+}
 
 ```
 ## Dropdown Menus
@@ -97,7 +97,6 @@ componentDidUpdate() {
   }
 }
 
-
 ```
 
 ## User Permissions
@@ -129,6 +128,7 @@ authComponents(){
     )
   }else return null;
 }
+
 ```
 
 ## Future Features & Tasks
