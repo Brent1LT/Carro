@@ -31,7 +31,7 @@ Adding Amazon Web Services was a core part of the application and allowed our us
 
 This proved to be an integral optimization of the app. It helps with scalability as the server doesn't need to host all of the images in the database, which would subsequently increase server-load.
 
-![AWS Image]()
+![AWS Image](https://github.com/Brent1LT/Carro/blob/master/app/assets/images/readme1.png)
 ```
 //listing_form.jsx
 
@@ -67,6 +67,8 @@ handleSubmit(e){
   }
 
 ```
+
+
 ## Future Features & Tasks
 * Add a bookings calendar, booking index page
 * Add map API, with searchable function for listing index
