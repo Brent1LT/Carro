@@ -67,7 +67,9 @@ handleSubmit(e){
   }
 
 ```
+## Carousel
 
+![Carousel Readme](https://github.com/Brent1LT/Carro/blob/master/app/assets/images/carousel_readme.gif)
 
 ## Future Features & Tasks
 * Add a bookings calendar, booking index page
