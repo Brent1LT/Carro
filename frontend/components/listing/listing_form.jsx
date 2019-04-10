@@ -63,7 +63,6 @@ class ListingForm extends React.Component{
       this.props.closeListingDrop();
       this.props.closeCarDrop();
       this.props.openPhotoDrop();
-
     }
   }  
 
@@ -78,9 +77,8 @@ class ListingForm extends React.Component{
 
 
   handleSubmit(e){
-
+    e.preventDefault();
     if (this.props.currentUser){
-      e.preventDefault();
       const formData = new FormData();
       formData.append('listing[extras]', this.state.listingFormData.extras);
       formData.append('listing[guidelines]', this.state.listingFormData.guidelines);
