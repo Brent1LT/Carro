@@ -6,8 +6,7 @@ class ListingShow extends React.Component{
     super(props);
 
     this.state = {
-      currentIndex: 0,
-      translateValue: 0
+      currentIndex: 0
     };
 
     this.handleDelete = this.handleDelete.bind(this);
@@ -41,7 +40,7 @@ class ListingShow extends React.Component{
 
   previousImage(){
     if(this.state.currentIndex === 0){
-      return null;
+      this.setState({currentIndex: (this.props.listing.photos.length - 1)});
     }else{
       this.setState({currentIndex: (this.state.currentIndex - 1)});
     }
