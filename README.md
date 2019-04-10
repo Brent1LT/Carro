@@ -68,12 +68,41 @@ handleSubmit(e){
 
 ```
 ## Dropdown Menus
+Mimicing the dropdown menu from Turo's website was especially difficult. Each form is 
+it's own component and when one is clicked, the other forms must collapse. This was handled
+in Redux global state so that different actions could be dispatched.
+
+However there was an initial issue when setting local state since the className would need to change 
+and use the transform effect. The issue was that I was setting state and dispatching an action which would 
+cause the application to crash. After discovering that 'setState' is asynchronous, the remedy to this issue
+was to dispatch the action in a callback to 'setState', which now maintains a fluid design.
 
 ![Dropdown](https://github.com/Brent1LT/Carro/blob/master/app/assets/images/dropdown_readme.gif)
 
-## Carousel
+```
+//create_listing_form.jsx
 
-![](https://github.com/Brent1LT/Carro/blob/master/app/assets/images/carousel_readme.gif)
+openNextDrop(e) {
+  e.preventDefault();
+  this.setState({ nextAction: true }, () => {
+    this.props.closeListingDrop();
+  });
+}
+
+componentDidUpdate() {
+  if (this.state.nextAction) {
+    this.setState({ nextAction: false }, () => {
+      this.openCarDrop();
+    });
+  }
+}
+
+
+```
+
+## User Permissions
+
+![Permissions Image](https://github.com/Brent1LT/Carro/blob/master/app/assets/images/CRUD_readme.png)
 
 ## Future Features & Tasks
 * Add a bookings calendar, booking index page

@@ -7,6 +7,13 @@ class ListingPostForm extends React.Component {
     this.openCarDrop = this.props.openCarDrop.bind(this);
   }
 
+  openNextDrop(e) {
+    e.preventDefault();
+    this.setState({ nextAction: true }, () => {
+      this.props.closeListingDrop();
+    });
+  }
+
   componentDidUpdate() {
     if (this.state.nextAction) {
       this.setState({ nextAction: false }, () => {
@@ -34,14 +41,6 @@ class ListingPostForm extends React.Component {
   // componentDidUpdate(){
   //   console.log(this.form.getBoundingClientRect());
   // }
-
-
-  openNextDrop(e) {
-    e.preventDefault();
-    this.setState({ nextAction: true }, () => {
-      this.props.closeListingDrop();
-    });
-  }
 
   render() {
 

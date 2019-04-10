@@ -26,7 +26,7 @@ class CarPostForm extends React.Component{
    if(this.state.nextAction){
      this.setState({ nextAction: false }, () => {
        this.openPhotoDrop();
-     })
+     });
    }
  }
 
