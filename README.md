@@ -101,8 +101,35 @@ componentDidUpdate() {
 ```
 
 ## User Permissions
+Since Turo has its website laid out in a way that a user can essentially access almost
+any part of the website without being logged in, I had to adjust my React components to 
+render in a specific manor as to not allow a user to access a piece of information that they
+weren't supposed to. 
+
+In order to do this, certain buttons or actions are only rendered to a user if they are creator of
+a listing. Carro checks the current session user ID to ensure it is the same as the creator of the 
+listing. If the IDs are the same, the user is allowed to update or delete their post.
 
 ![Permissions Image](https://github.com/Brent1LT/Carro/blob/master/app/assets/images/CRUD_readme.png)
+
+```
+// listing_show.jsx
+
+authComponents(){
+  let listing = this.props.listing;
+  let currUser = this.props.currUser;
+  if(currUser === listing.userId){
+    return (
+      <div>
+        <Link to={`/listings/${listing.id}/edit`} >
+          <button className='update-listing-button'>Update Listing</button>
+        </Link>
+        <button onClick={() => this.handleDelete(listing)} className='delete-listing-button'>Delete Listing</button>
+      </div>
+    )
+  }else return null;
+}
+```
 
 ## Future Features & Tasks
 * Add a bookings calendar, booking index page
