@@ -67,6 +67,10 @@ handleSubmit(e){
   }
 
 ```
+## Dropdown Menus
+
+![Dropdown](https://github.com/Brent1LT/Carro/blob/master/app/assets/images/dropdown_readme.gif)
+
 ## Carousel
 
 ![Carousel Readme](https://github.com/Brent1LT/Carro/blob/master/app/assets/images/carousel_readme.gif)
