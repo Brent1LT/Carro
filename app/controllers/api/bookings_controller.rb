@@ -13,12 +13,16 @@ class Api::BookingsController < ApplicationController
     end_date = DateTime.new(*end_dates)
     # debugger 
     @booking = Booking.new(start_time: start_date, end_time: end_date)
-    @booking.user_id = 1
-    @booking.listing_id = params[:listing_id].to_i
-    if(@booking.save)
-      render :create
-    else 
-      render json: @booking.errors.full_messages, status: 422
+    if(!@booking.is_valid?(params[:listing_id]))
+      render json: "Overlap in booking schedule"
+    else
+      @booking.user_id = 1
+      @booking.listing_id = params[:listing_id].to_i
+      if(@booking.save)
+        render :create
+      else 
+        render json: @booking.errors.full_messages, status: 422
+      end 
     end 
   end 
 
