@@ -8,12 +8,13 @@ class Api::BookingsController < ApplicationController
     start_dates = booking_params[:start_date].split(',')
     end_dates = booking_params[:end_date].split(',')
     start_dates = start_dates.map {|el| el.to_i}
+    end_dates = end_dates.map {|el| el.to_i}
     start_date = DateTime.new(*start_dates)
     end_date = DateTime.new(*end_dates)
-     
-    @booking.user_id = current_user.id
-    @booking.listing_id = params[:id]
-    @booking = Booking.new(start_date: start_date, end_date: end_date)
+    # debugger 
+    @booking = Booking.new(start_time: start_date, end_time: end_date)
+    @booking.user_id = 1
+    @booking.listing_id = params[:listing_id].to_i
     if(@booking.save)
       render :create
     else 

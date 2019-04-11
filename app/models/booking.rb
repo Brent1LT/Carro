@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  validates :start_date, :end_date, presence: true
+  validates :start_time, :end_time, presence: true
   # after_initialize :is_valid?
 
   belongs_to :listing, 
@@ -10,17 +10,17 @@ class Booking < ApplicationRecord
   foreign_key: :user_id,
   class_name: 'User'
 
-  def is_valid?
+  def is_valid?(listing_id)
     listing = Listing.find_by_id(listing_id)
     return false if(!listing)
     current_bookings = listing.bookings
     current_bookings.each do |booking|
-      return false if(self.start_date == booking.start_date || self.start_date == booking.end_date)
-      return false if(self.end_date == booking.start_date || self.end_date == booking.end_date)
+      return false if(self.start_time == booking.start_time || self.start_time == booking.end_time)
+      return false if(self.end_time == booking.start_time || self.end_time == booking.end_time)
 
-      if(self.start_date <= booking.end_date && (self.end_date > booking.start_date))
+      if(self.start_time <= booking.end_time && (self.end_time > booking.start_time))
         return false
-      elsif(self.start_date >= booking.start_date && self.end_date <= booking.end_date)
+      elsif(self.start_time >= booking.start_time && self.end_time <= booking.end_time)
         return false
       end 
     end 
