@@ -5,13 +5,13 @@ class Api::BookingsController < ApplicationController
   end 
 
   def create
+    # will probably need to fix once react/ajax is sending down info
     start_dates = booking_params[:start_date].split(',')
     end_dates = booking_params[:end_date].split(',')
     start_dates = start_dates.map {|el| el.to_i}
     end_dates = end_dates.map {|el| el.to_i}
     start_date = DateTime.new(*start_dates)
     end_date = DateTime.new(*end_dates)
-    # debugger 
     @booking = Booking.new(start_time: start_date, end_time: end_date)
     if(!@booking.is_valid?(params[:listing_id]))
       render json: "Overlap in booking schedule"
@@ -19,6 +19,7 @@ class Api::BookingsController < ApplicationController
       @booking.user_id = 1
       @booking.listing_id = params[:listing_id].to_i
       if(@booking.save)
+        # might need to change in jbuilder to have user id on outside of booking state
         render :create
       else 
         render json: @booking.errors.full_messages, status: 422
