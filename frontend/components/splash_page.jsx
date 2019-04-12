@@ -115,7 +115,7 @@ class SplashPage extends React.Component {
           </div>
         </div>
         <div className='book-button-container'>
-          <button className='book-button' >Book the perfect car</button>
+          {/* <button className='book-button' >Book the perfect car</button> */}
         </div>
         <div className='porsche-program-parent'>
           <div className='porsche-info'>
@@ -137,13 +137,13 @@ class SplashPage extends React.Component {
             <div className='carculator-top-text'>ask the</div>
             <div className='carculator-middle-text'>Carculator</div>
             <div className='carculator-ending-text'>Find out how much your car could earn for you.</div>
-            <button className='splash-green-button estimate' >Get an Estimate</button>
+            {/* <button className='splash-green-button estimate' >Get an Estimate</button> */}
           </div>
           <div className='good-good'>
             <div className='carculator-top-text'>read up on</div>
             <div className='carculator-middle-text'>That good-good</div>
             <div className='carculator-ending-text'>Peruse cool cars and good stories on the Carro blog.</div>
-            <button className='splash-green-button readup'>Check it out</button>  
+            {/* <button className='splash-green-button readup'>Check it out</button>   */}
           </div>
         </div>
         <div className='purple-footer'>
@@ -156,7 +156,8 @@ class SplashPage extends React.Component {
               protected against theft and physical damage. Or bring your own commerical rental
               insurance and take a bigger piece of the pie*
             </p>
-             <button className='purple-footer-button'>List your car</button>
+             <button className='purple-footer-button'
+              onClick={() => this.props.history.push('/listings/new')}>List your car</button>
           </div>
         </div>
       </div>

@@ -15,8 +15,8 @@ class ProfileDropdown extends React.Component{
       return (
         <div className='drop-down d'>
           <div className='arrow'></div>
-          <div href='' className='drop-down-link' >Find a car</div>
-          <div href='' className='drop-down-link' >Profile</div>
+          {/* <div href='' className='drop-down-link' >Find a car</div> */}
+          {/* <div href='' className='drop-down-link' >Profile</div> */}
           <div href='' className='drop-down-link logout' onClick={() => this.props.logout()} >Log out</div>
         </div>
       )

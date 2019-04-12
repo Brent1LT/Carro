@@ -8,12 +8,12 @@ const LoggedInNav = () => {
       <Link to={`/listings/new`} className="nav-user-links">
         List Your Car
       </Link>
-      <a href="" className="nav-user-links">
+      {/* <a href="" className="nav-user-links">
         Trips
-      </a>
-      <a href="" className="nav-user-links">
+      </a> */}
+      {/* <a href="" className="nav-user-links">
         Messages
-      </a>
+      </a> */}
       <a href="https://github.com/Brent1LT/Carro" target='_blank' className="nav-user-links">
         Learn More
       </a>
