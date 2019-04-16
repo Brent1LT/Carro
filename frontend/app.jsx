@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { createCar, deleteCar } from './actions/car_actions';
 import { createListing, updateListing, fetchListings, fetchListing } from './actions/listing_actions';
+import "react-dates/lib/css/_datepicker.css";
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
