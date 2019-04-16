@@ -1,11 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
-import "react-dates/initialize";
-import "react-dates/lib/css/_datepicker.css";
-import { DateRangePicker } from "react-dates";
-import Moment from "moment";
-import { extendMoment } from "moment-range";
+import BookingFormContainer from '../booking/booking_form_container';
 
 class ListingShow extends React.Component{
   constructor(props){
@@ -182,27 +177,7 @@ class ListingShow extends React.Component{
           </div>
           </div>
         </div>
-
-        <form className='form-booking' >
-          <DateRangePicker
-            required={false}
-            small={true}
-            startDate={null}
-            startDateId="start-date-field"
-            startDatePlaceholderText="Start Date"
-            endDate={null}
-            endDateId="end-date-field"
-            endDatePlaceholderText="End Date"
-            onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
-            showClearDates={true}
-            isDayBlocked={null}
-            focusedInput={null}
-            onFocusChange={focusedInput => this.setState({ focusedInput })}
-            hideKeyboardShortcutsPanel={true}
-          />
-          <button className="booking-button">Book Me!</button>
-        </form>
-        
+        <BookingFormContainer />        
       </div>
     )
   }

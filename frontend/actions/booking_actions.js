@@ -25,7 +25,7 @@ export const fetchBookings = () => dispatch => (
 );
 
 export const createBooking = booking => dispatch => (
-  BookingApiUtil.createBooking()
+  BookingApiUtil.createBooking(booking)
     .then(booking => dispatch(receiveBooking(booking)))
 );
 
