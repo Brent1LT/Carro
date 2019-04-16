@@ -14,9 +14,9 @@ const receiveBooking = booking => ({
   booking
 });
 
-const removeBooking = id => ({
+const removeBooking = bookingId => ({
   type: REMOVE_BOOKING,
-  id
+  bookingId
 });
 
 export const fetchBookings = () => dispatch => (
