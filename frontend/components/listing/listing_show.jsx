@@ -146,6 +146,7 @@ class ListingShow extends React.Component{
               <div className='inner-price'>{listing.price}</div>
               <div className='inner-day'>per day</div>
             </div>
+            <BookingFormContainer /> 
             <div className='mileage-section'>
               <div className='mileage'>
                 <div>Distance included</div>
@@ -176,8 +177,7 @@ class ListingShow extends React.Component{
             {this.authComponents()}
           </div>
           </div>
-        </div>
-        <BookingFormContainer />        
+        </div>       
       </div>
     )
   }

@@ -231,7 +231,7 @@
 
 .show-user-info{
   display: grid;
-  grid-template-columns: 65% 45%;
+  grid-template-columns: 55% 45%;
   grid-template-rows: 150px;
 }
 
@@ -322,3 +322,20 @@
   font-family: BasisGrotesq, Avenir, Helvetica Neue, Helvetica, sans-serif;
   cursor: pointer;
 }
+
+.booking-form{
+  display: flex;
+  flex-direction: column
+}
+
+
+.divider{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+// #start-date{
+//   padding-bottom: 40px;
+//   box-sizing: border-box;
+// }
