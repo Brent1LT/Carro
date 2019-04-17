@@ -48,8 +48,6 @@ class BookingForm extends React.Component{
             focusedInput={this.state.focusedInput}
             onFocusChange={focusedInput => this.setState({ focusedInput })}
             hideKeyboardShortcutsPanel={true}
-            startDateAreaLabel="Trip start"
-            endDateAreaLabel="Trip end"
             numberOfMonths={1}
         />
         <button >Submit</button>

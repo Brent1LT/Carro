@@ -28,6 +28,7 @@ class Api::BookingsController < ApplicationController
     end_dates = end_dates[2..3].map {|el| el.to_i}
     start_date = DateTime.new(start_dates[1], start_month, start_dates[0])
     end_date = DateTime.new(end_dates[1], end_month, end_dates[0])
+    debugger
     @booking = Booking.new(start_time: start_date, end_time: end_date)
     if(!@booking.is_valid?(params[:listing_id]))
       render json: "Overlap in booking schedule"
