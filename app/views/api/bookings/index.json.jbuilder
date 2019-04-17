@@ -1,3 +1,3 @@
-@booking.each do |booking|
+@bookings.each do |booking|
   json.partial! 'booking', booking: booking
 end 

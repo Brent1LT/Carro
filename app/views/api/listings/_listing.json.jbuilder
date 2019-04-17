@@ -12,7 +12,8 @@ json.listings do
       json.profile_picture url_for(user.photo)
     else
       json.profile_picture false
-    end 
+    end
+    json.bookings listing.booking_ids 
   end
 end 
 

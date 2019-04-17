@@ -16,6 +16,10 @@ class BookingForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    this.props.fetchBookings(this.props.listingId);
+  }
+
   handleSubmit(e){
     e.preventDefault();
     let booking = {
@@ -28,6 +32,7 @@ class BookingForm extends React.Component{
 
   render(){
     let moment = extendMoment(Moment);
+    
     return (
       <div className='booking-container'>
         <form className='booking-form' onSubmit={this.handleSubmit}>

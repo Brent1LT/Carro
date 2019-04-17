@@ -15,7 +15,7 @@ class Api::BookingsController < ApplicationController
   }
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(listing_id: params[:listing_id])
   end 
 
   def create

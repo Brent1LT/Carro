@@ -19,8 +19,8 @@ const removeBooking = bookingId => ({
   bookingId
 });
 
-export const fetchBookings = () => dispatch => (
-  BookingApiUtil.fetchBookings()
+export const fetchBookings = (id) => dispatch => (
+  BookingApiUtil.fetchBookings(id)
     .then(bookings => dispatch(receiveBookings(bookings)))
 );
 
