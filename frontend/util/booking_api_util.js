@@ -9,7 +9,12 @@ export const createBooking = (booking) => (
   $.ajax({
     method: 'post',
     url: `/api/listings/${booking.listingId}/bookings`,
-    data: booking
+    data: {
+      booking: {
+        start_date: booking.start_date,
+        end_date: booking.end_date
+      }
+    }
   })
 );
 

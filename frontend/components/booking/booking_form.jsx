@@ -13,15 +13,29 @@ class BookingForm extends React.Component{
       endDate: null,
       focusedInput: null
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    let booking = {
+      start_date: this.state.startDate._d,
+      end_date: this.state.endDate._d,
+      listingId: this.props.listingId
+    };
+    debugger
+    this.props.createBooking(booking);
   }
 
   render(){
+    let moment = extendMoment(Moment);
+    // debugger
     return (
       <div>
-        <form className='booking-form'>
+        <form className='booking-form' onSubmit={this.handleSubmit}>
           <DateRangePicker
             required={false}
-            // small={false}
+            small={true}
             startDate={this.state.startDate}
             startDateId="start-date-field"
             startDatePlaceholderText="Start Date"
@@ -34,10 +48,11 @@ class BookingForm extends React.Component{
             focusedInput={this.state.focusedInput}
             onFocusChange={focusedInput => this.setState({ focusedInput })}
             hideKeyboardShortcutsPanel={true}
-            startDateAreaLabel= 'Trip start'
-            endDateAreaLabel= 'Trip end'
+            startDateAreaLabel="Trip start"
+            endDateAreaLabel="Trip end"
+            numberOfMonths={1}
         />
-    
+        <button >Submit</button>
         </form>
       </div>
     )

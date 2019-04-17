@@ -146,7 +146,7 @@ class ListingShow extends React.Component{
               <div className='inner-price'>{listing.price}</div>
               <div className='inner-day'>per day</div>
             </div>
-            <BookingFormContainer /> 
+            <BookingFormContainer listingId={this.props.listing.id} /> 
             <div className='mileage-section'>
               <div className='mileage'>
                 <div>Distance included</div>

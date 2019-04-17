@@ -6,6 +6,7 @@ class Api::BookingsController < ApplicationController
 
   def create
     # will probably need to fix once react/ajax is sending down info
+    debugger
     start_dates = booking_params[:start_date].split(',')
     end_dates = booking_params[:end_date].split(',')
     start_dates = start_dates.map {|el| el.to_i}
