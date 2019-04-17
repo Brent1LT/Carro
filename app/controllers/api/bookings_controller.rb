@@ -19,15 +19,12 @@ class Api::BookingsController < ApplicationController
   end 
 
   def create
-    # will probably need to fix once react/ajax is sending down info
     start_dates = booking_params[:start_date].split(' ')
     end_dates = booking_params[:end_date].split(' ')
     start_month = MONTHS[start_dates[1].to_sym]
     end_month = MONTHS[end_dates[1].to_sym]
-    start_dates = start_dates[2..3].map {|el| el.to_i}
-    end_dates = end_dates[2..3].map {|el| el.to_i}
-    start_date = DateTime.new(start_dates[1], start_month, start_dates[0])
-    end_date = DateTime.new(end_dates[1], end_month, end_dates[0])
+    start_date = create_date(start_dates, start_month)
+    end_date = create_date(end_dates, end_month)
     debugger
     @booking = Booking.new(start_time: start_date, end_time: end_date)
     if(!@booking.is_valid?(params[:listing_id]))
@@ -35,7 +32,6 @@ class Api::BookingsController < ApplicationController
     else
       @booking.user_id = current_user.id
       @booking.listing_id = params[:listing_id].to_i
-      debugger
       if(@booking.save)
         # might need to change in jbuilder to have user id on outside of booking state
         render :create
@@ -61,5 +57,10 @@ class Api::BookingsController < ApplicationController
     # params[:booking][:end_date] ||= []
 
     params.require(:booking).permit(:start_date, :end_date)
+  end 
+
+  def create_date(dates, month)
+    result = dates[2..3].map {|el| el.to_i}
+    start_date = DateTime.new(result[1], month, result[0])
   end 
 end

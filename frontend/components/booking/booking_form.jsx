@@ -23,15 +23,13 @@ class BookingForm extends React.Component{
       end_date: this.state.endDate._d,
       listingId: this.props.listingId
     };
-    debugger
     this.props.createBooking(booking);
   }
 
   render(){
     let moment = extendMoment(Moment);
-    // debugger
     return (
-      <div>
+      <div className='booking-container'>
         <form className='booking-form' onSubmit={this.handleSubmit}>
           <DateRangePicker
             required={false}
@@ -49,8 +47,8 @@ class BookingForm extends React.Component{
             onFocusChange={focusedInput => this.setState({ focusedInput })}
             hideKeyboardShortcutsPanel={true}
             numberOfMonths={1}
-        />
-        <button >Submit</button>
+          />
+          <button >Submit</button>
         </form>
       </div>
     )
