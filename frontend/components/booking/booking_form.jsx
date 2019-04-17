@@ -31,7 +31,22 @@ class BookingForm extends React.Component{
   }
 
   render(){
-    let moment = extendMoment(Moment);
+    let bookings = Object.values(this.props.bookings).filter(el => this.props.listing.bookings.includes(el.id));
+    debugger
+    const BAD_DATES = [];
+    const moment = extendMoment(Moment);
+
+    Object.values(this.props.bookings).map(booking =>
+      BAD_DATES.push(
+        moment.range(
+          moment(booking.startTime, "YYYY-MM-DD"),
+          moment(booking.endTime, "YYYY-MM-DD")
+        )
+      )
+    );
+
+    const isBlocked = day =>
+      BAD_DATES.filter(d => d.contains(day, "day")).length > 0;
     
     return (
       <div className='booking-container'>
@@ -47,7 +62,7 @@ class BookingForm extends React.Component{
             endDatePlaceholderText="End Date"
             onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
             showClearDates={true}
-            // isDayBlocked={isBlocked}
+            isDayBlocked={isBlocked}
             focusedInput={this.state.focusedInput}
             onFocusChange={focusedInput => this.setState({ focusedInput })}
             hideKeyboardShortcutsPanel={true}

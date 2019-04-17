@@ -4,7 +4,8 @@ import {createBooking, fetchBookings} from '../../actions/booking_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    listingId: ownProps.listingId,
+    listing: ownProps.listing,
+    listingId: ownProps.listing.id,
     bookings: state.entities.bookings
   });
 };
