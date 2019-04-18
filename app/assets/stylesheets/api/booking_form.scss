@@ -1,0 +1,44 @@
+.booking-container{
+  padding-top: 20px;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 20px
+}
+
+.booking-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-button{
+  width: 100%;
+  height: 40px;
+  border-radius: 0px;
+  background: #59D389;
+  color: #ffffff;
+  font-family: BasisGrotesq, Avenir, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+//calendar styling
+.DateRangePickerInput__showClearDates {
+  padding-right: 0px !important;
+}
+
+.DateInput{
+  position: inherit !important;
+}
+
+.DateInput_input{
+  width: 70% !important;
+}
+
+.DateInput_input{
+  margin-left: 30px !important;
+}
+
+.DateInput__small{
+  width: 49% !important;
+}

@@ -32,11 +32,11 @@ class BookingForm extends React.Component{
 
   render(){
     let bookings = Object.values(this.props.bookings).filter(el => this.props.listing.bookings.includes(el.id));
-    debugger
+    
     const BAD_DATES = [];
     const moment = extendMoment(Moment);
-
-    Object.values(this.props.bookings).map(booking =>
+    
+    bookings.map(booking =>
       BAD_DATES.push(
         moment.range(
           moment(booking.startTime, "YYYY-MM-DD"),
@@ -45,21 +45,23 @@ class BookingForm extends React.Component{
       )
     );
 
+    
     const isBlocked = day =>
       BAD_DATES.filter(d => d.contains(day, "day")).length > 0;
     
     return (
       <div className='booking-container'>
         <form className='booking-form' onSubmit={this.handleSubmit}>
+          <div className='temp-container'>
           <DateRangePicker
             required={false}
             small={true}
             startDate={this.state.startDate}
             startDateId="start-date-field"
-            startDatePlaceholderText="Start Date"
+            startDatePlaceholderText="Trip start"
             endDate={this.state.endDate}
             endDateId="end-date-field"
-            endDatePlaceholderText="End Date"
+            endDatePlaceholderText="Trip end"
             onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
             showClearDates={true}
             isDayBlocked={isBlocked}
@@ -68,7 +70,9 @@ class BookingForm extends React.Component{
             hideKeyboardShortcutsPanel={true}
             numberOfMonths={1}
           />
-          <button >Submit</button>
+
+          </div>
+          <button className='booking-button'>Go to checkout</button>
         </form>
       </div>
     )
