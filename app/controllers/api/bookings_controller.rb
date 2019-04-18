@@ -25,10 +25,9 @@ class Api::BookingsController < ApplicationController
     end_month = MONTHS[end_dates[1].to_sym]
     start_date = create_date(start_dates, start_month)
     end_date = create_date(end_dates, end_month)
-    debugger
     @booking = Booking.new(start_time: start_date, end_time: end_date)
     if(!@booking.is_valid?(params[:listing_id]))
-      render json: "Overlap in booking schedule"
+      render json: ["Overlap in booking schedule"], status: 422
     else
       @booking.user_id = current_user.id
       @booking.listing_id = params[:listing_id].to_i

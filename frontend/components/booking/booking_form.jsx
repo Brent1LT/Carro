@@ -11,8 +11,10 @@ class BookingForm extends React.Component{
     this.state = {
       startDate: null,
       endDate: null,
-      focusedInput: null
+      focusedInput: null, 
+      errors: 'hidden-errors'
     };
+    this.BAD_DATES = [];
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -23,12 +25,14 @@ class BookingForm extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     if (this.props.currentUser) {
+      // debugger
       let booking = {
         start_date: this.state.startDate._d,
         end_date: this.state.endDate._d,
         listingId: this.props.listingId
       };
-      this.props.createBooking(booking);
+      this.props.createBooking(booking)
+        
     }else{
       this.props.openModal("Sign up");
     }
@@ -48,7 +52,8 @@ class BookingForm extends React.Component{
         )
       )
     );
-
+    
+    this.BAD_DATES = BAD_DATES;
     
     const isBlocked = day =>
       BAD_DATES.filter(d => d.contains(day, "day")).length > 0;
@@ -56,7 +61,7 @@ class BookingForm extends React.Component{
     return (
       <div className='booking-container'>
         <form className='booking-form' onSubmit={this.handleSubmit}>
-          <div className='temp-container'>
+          <div className='range-container'>
           <DateRangePicker
             required={false}
             small={true}
@@ -74,7 +79,10 @@ class BookingForm extends React.Component{
             hideKeyboardShortcutsPanel={true}
             numberOfMonths={1}
           />
-
+          <div className={'bookings-errors ' + this.state.errors}>
+            <i className="fa fa-times-circle-o" ></i>
+            <span className='login-errors' >Car is not available at this time.</span>
+          </div>
           </div>
           <button className='booking-button'>Go to checkout</button>
         </form>

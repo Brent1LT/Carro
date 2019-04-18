@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     listing: ownProps.listing,
     listingId: ownProps.listing.id,
-    bookings: state.entities.bookings
+    bookings: state.entities.bookings,
+    currentUser: state.session.currentUserId
   });
 };
 

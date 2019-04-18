@@ -22,6 +22,14 @@
   border: none;
 }
 
+.show-errors{
+  display: inherit
+}
+
+.hidden-errors{
+  display: none;
+}
+
 //calendar styling
 .DateRangePickerInput__showClearDates {
   padding-right: 0px !important;
