@@ -31,6 +31,19 @@
   display: none;
 }
 
+.hide-confirmation{
+  display: none;
+}
+
+.show-confirmation{
+  margin-top: 20px;
+  font-size: 18px;
+  color: rgb(6, 160, 57);
+  span{
+    padding-left: 10px;
+  }
+}
+
 //calendar styling
 .DateRangePickerInput__showClearDates {
   padding-right: 0px !important;

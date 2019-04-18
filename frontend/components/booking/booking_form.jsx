@@ -11,7 +11,8 @@ class BookingForm extends React.Component{
     this.state = {
       startDate: null,
       endDate: null,
-      focusedInput: null, 
+      focusedInput: null,
+      bookingConfirmation: 'hide-confirmation' 
     };
     this.BAD_DATES = [];
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,7 +30,10 @@ class BookingForm extends React.Component{
         end_date: this.state.endDate._d,
         listingId: this.props.listingId
       };
-      this.props.createBooking(booking);
+      this.props.createBooking(booking)
+        .then(setTimeout(() => this.setState({bookingConfirmation: 'show-confirmation'}), 1000));
+          
+          // this.setState({bookingConfirmation: 'show-confirmation'}));
         
     }else{
       this.props.openModal("Sign up");
@@ -65,35 +69,45 @@ class BookingForm extends React.Component{
       BAD_DATES.filter(d => d.contains(day, "day")).length > 0;
     
     return (
-      <div className='booking-container'>
-        <form className='booking-form' onSubmit={this.handleSubmit}>
-          <div className='range-container'>
-          <DateRangePicker
-            required={false}
-            small={true}
-            startDate={this.state.startDate}
-            startDateId="start-date-field"
-            startDatePlaceholderText="Trip start"
-            endDate={this.state.endDate}
-            endDateId="end-date-field"
-            endDatePlaceholderText="Trip end"
-            onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
-            showClearDates={true}
-            isDayBlocked={isBlocked}
-            focusedInput={this.state.focusedInput}
-            onFocusChange={focusedInput => this.setState({ focusedInput })}
-            hideKeyboardShortcutsPanel={true}
-            numberOfMonths={1}
-          />
-          <div className={this.renderErrors()}>
-            <i className="fa fa-times-circle-o" ></i>
-            <span className='login-errors' >Car is not available at this time.</span>
+      <div className="booking-container">
+        <form className="booking-form" onSubmit={this.handleSubmit}>
+          <div className="range-container">
+            <DateRangePicker
+              required={false}
+              small={true}
+              startDate={this.state.startDate}
+              startDateId="start-date-field"
+              startDatePlaceholderText="Trip start"
+              endDate={this.state.endDate}
+              endDateId="end-date-field"
+              endDatePlaceholderText="Trip end"
+              onDatesChange={({ startDate, endDate }) =>
+                this.setState({ startDate, endDate })
+              }
+              showClearDates={true}
+              isDayBlocked={isBlocked}
+              focusedInput={this.state.focusedInput}
+              onFocusChange={focusedInput =>
+                this.setState({ focusedInput })
+              }
+              hideKeyboardShortcutsPanel={true}
+              numberOfMonths={1}
+            />
+            <div className={this.renderErrors()}>
+              <i className="fa fa-times-circle-o" />
+              <span className="login-errors">
+                Car is not available at this time.
+              </span>
+            </div>
+            <div className={this.state.bookingConfirmation}>
+              <i className="fas fa-check-circle" />
+              <span>Your booking has been saved!</span>
+            </div>
           </div>
-          </div>
-          <button className='booking-button'>Go to checkout</button>
+          <button className="booking-button">Go to checkout</button>
         </form>
       </div>
-    )
+    );
   }
 
 }
