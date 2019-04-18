@@ -22,12 +22,16 @@ class BookingForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    let booking = {
-      start_date: this.state.startDate._d,
-      end_date: this.state.endDate._d,
-      listingId: this.props.listingId
-    };
-    this.props.createBooking(booking);
+    if (this.props.currentUser) {
+      let booking = {
+        start_date: this.state.startDate._d,
+        end_date: this.state.endDate._d,
+        listingId: this.props.listingId
+      };
+      this.props.createBooking(booking);
+    }else{
+      this.props.openModal("Sign up");
+    }
   }
 
   render(){
