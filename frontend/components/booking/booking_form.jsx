@@ -12,7 +12,6 @@ class BookingForm extends React.Component{
       startDate: null,
       endDate: null,
       focusedInput: null, 
-      errors: 'hidden-errors'
     };
     this.BAD_DATES = [];
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,16 +24,23 @@ class BookingForm extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     if (this.props.currentUser) {
-      // debugger
       let booking = {
         start_date: this.state.startDate._d,
         end_date: this.state.endDate._d,
         listingId: this.props.listingId
       };
-      this.props.createBooking(booking)
+      this.props.createBooking(booking);
         
     }else{
       this.props.openModal("Sign up");
+    }
+  }
+
+  renderErrors(){
+    if(this.props.errors.length > 0){
+      return "show-errors";
+    }else{
+      return "hidden-errors"; 
     }
   }
 
@@ -79,7 +85,7 @@ class BookingForm extends React.Component{
             hideKeyboardShortcutsPanel={true}
             numberOfMonths={1}
           />
-          <div className={'bookings-errors ' + this.state.errors}>
+          <div className={this.renderErrors()}>
             <i className="fa fa-times-circle-o" ></i>
             <span className='login-errors' >Car is not available at this time.</span>
           </div>
