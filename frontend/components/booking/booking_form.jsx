@@ -22,6 +22,14 @@ class BookingForm extends React.Component{
     this.props.fetchBookings(this.props.listingId);
   }
 
+  componentDidUpdate(prevProps){
+    debugger
+    if(prevProps.bookings !== this.props.bookings){
+
+      // this.props.fetchBookings(this.props.listingId);
+    }
+  }
+
   handleSubmit(e){
     e.preventDefault();
     if (this.props.currentUser) {

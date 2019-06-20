@@ -10,7 +10,6 @@ class ListingCarousel extends React.Component{
 
 
   render(){
-    // debugger
     return (
       <Carousel>
         {this.props.pictures.map(photo => (
