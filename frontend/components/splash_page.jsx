@@ -6,12 +6,7 @@ class SplashPage extends React.Component {
     super(props);
 
     this.state = {
-      loading: true,
-      carousel1: 0,
-      carousel2: 1,
-      carousel3: 2,
-      start: 0,
-      end: 3
+      loading: true
     };
     
     this.slide = this.slide.bind(this);
@@ -20,38 +15,32 @@ class SplashPage extends React.Component {
 
   slide(value){
     
-    let listings = this.props.listings.length;
     let state = this.state;
-
     if(value === 'down'){
+      let newCarousel = state.carousel.slice(0);
+      newCarousel.unshift(newCarousel.pop());
       this.setState({
-        start: (listings + state.start - 1) % listings,
-        end: (listings + state.end - 1) % listings
+        carousel: newCarousel
       });
     }
 
     if(value === 'up'){
+      let newCarousel = state.carousel.slice(0);
+      newCarousel.push(newCarousel.shift());
       this.setState({
-        start: (state.start + 1) % listings,
-        end: (state.end + 1) % listings,
+        carousel: newCarousel
       });
     }
   }
 
   loadCarousel(){
-    let {listings} = this.props;
-    let carousel = listings.map(listing => (
-       <Link to={`/listings/${listing.id}`} key={`${listing.id}`} className='splash-listing-photo' >
-        <img className="splash-listing-photo"
-          src={listing.photos[0].imageUrl}
-        /></Link>
-    ))
+    
     return (
       <div className='arrow-relative' >
         <div className='splash-carousel-left' onClick={() => this.slide('down')}></div>
         <div className='splash-carousel-right' onClick={() => this.slide('up')}></div>
         <div className='relative-carousel'>
-          {carousel.slice(this.state.start, this.state.end)}
+          {this.state.carousel.slice(0, 3)}
           
         </div>
       </div>
@@ -60,9 +49,17 @@ class SplashPage extends React.Component {
 
   componentDidMount(){
     this.props.fetchListings()
-      .then(() => this.setState({
-        loading: false
-      }));
+      .then(() => {
+        let carousel = this.props.listings.map(listing => (
+          <Link to={`/listings/${listing.id}`} key={`${listing.id}`} className='splash-listing-photo' >
+            <img className="splash-listing-photo"
+              src={listing.photos[0].imageUrl}
+            /></Link>
+        ))
+        this.setState({
+        loading: false,
+        carousel
+      })});
   }
 
   render(){
