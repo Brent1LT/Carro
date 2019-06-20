@@ -9,21 +9,14 @@ class SplashPage extends React.Component {
       loading: true,
       carousel1: 0,
       carousel2: 1,
-      carousel3: 2
+      carousel3: 2,
+      start: 0,
+      end: 3
     };
     
     this.slide = this.slide.bind(this);
   }
-//    {
-//   listings.map((ele, i) => {
-//     if (i > 3) return null;
-//     return <Link to={`/listings/${ele.id}`} className='splash-listing-photo' >
-//       <img className="splash-listing-photo"
-//         src={ele.photos[0].imageUrl}
-//       />
-//     </Link>
-//   })
-// }
+
 
   slide(value){
     
@@ -32,47 +25,34 @@ class SplashPage extends React.Component {
 
     if(value === 'down'){
       this.setState({
-        carousel1: (listings + state.carousel1 - 1) % listings,
-        carousel2: (listings + state.carousel2 - 1) % listings,
-        carousel3: (listings + state.carousel3 - 1) % listings
+        start: (listings + state.start - 1) % listings,
+        end: (listings + state.end - 1) % listings
       });
     }
 
     if(value === 'up'){
       this.setState({
-        carousel1: (state.carousel1 + 1) % listings,
-        carousel2: (state.carousel2 + 1) % listings,
-        carousel3: (state.carousel3 + 1) % listings
+        start: (state.start + 1) % listings,
+        end: (state.end + 1) % listings,
       });
     }
   }
 
   loadCarousel(){
     let {listings} = this.props;
-    
+    let carousel = listings.map(listing => (
+       <Link to={`/listings/${listing.id}`} key={`${listing.id}`} className='splash-listing-photo' >
+        <img className="splash-listing-photo"
+          src={listing.photos[0].imageUrl}
+        /></Link>
+    ))
     return (
       <div className='arrow-relative' >
         <div className='splash-carousel-left' onClick={() => this.slide('down')}></div>
         <div className='splash-carousel-right' onClick={() => this.slide('up')}></div>
         <div className='relative-carousel'>
-        <Link to={`/listings/${listings[this.state.carousel1].id}`} className='splash-listing-photo' >
-          <img className="splash-listing-photo"
-            src={listings[this.state.carousel1].photos[0].imageUrl}
-          />
-        </Link>
-
-        <Link to={`/listings/${listings[this.state.carousel2].id}`} className='splash-listing-photo' >
-          <img className="splash-listing-photo"
-            src={listings[this.state.carousel2].photos[0].imageUrl}
-          />
-        </Link>
-
-        <Link to={`/listings/${listings[this.state.carousel3].id}`} className='splash-listing-photo' >
-          <img className="splash-listing-photo"
-            src={listings[this.state.carousel3].photos[0].imageUrl}
-          />
-        </Link>
-
+          {carousel.slice(this.state.start, this.state.end)}
+          
         </div>
       </div>
     )

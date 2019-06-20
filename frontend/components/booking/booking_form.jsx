@@ -23,7 +23,6 @@ class BookingForm extends React.Component{
   }
 
   componentDidUpdate(prevProps){
-    debugger
     if(prevProps.bookings !== this.props.bookings){
 
       // this.props.fetchBookings(this.props.listingId);
