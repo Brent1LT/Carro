@@ -9,8 +9,7 @@ class SplashPage extends React.Component {
       loading: true,
       carousel1: 0,
       carousel2: 1,
-      carousel3: 2,
-      carousel4: 3
+      carousel3: 2
     };
     
     this.slide = this.slide.bind(this);
@@ -35,8 +34,7 @@ class SplashPage extends React.Component {
       this.setState({
         carousel1: (listings + state.carousel1 - 1) % listings,
         carousel2: (listings + state.carousel2 - 1) % listings,
-        carousel3: (listings + state.carousel3 - 1) % listings,
-        carousel4: (listings + state.carousel4 - 1) % listings 
+        carousel3: (listings + state.carousel3 - 1) % listings
       });
     }
 
@@ -44,8 +42,7 @@ class SplashPage extends React.Component {
       this.setState({
         carousel1: (state.carousel1 + 1) % listings,
         carousel2: (state.carousel2 + 1) % listings,
-        carousel3: (state.carousel3 + 1) % listings,
-        carousel4: (state.carousel4 + 1) % listings
+        carousel3: (state.carousel3 + 1) % listings
       });
     }
   }
@@ -122,7 +119,6 @@ class SplashPage extends React.Component {
           </div>
         </div>
         <div className="book-button-container">
-          {/* <button className='book-button' >Book the perfect car</button> */}
         </div>
         <div className="porsche-program-parent">
           <div className="porsche-info">
@@ -136,7 +132,6 @@ class SplashPage extends React.Component {
               combines curated Porsche vehicles with top Turo hosts to give
               you the complete Porsche experience.
             </p>
-            {/* <button className='porsche-button'>Explore the program</button> */}
           </div>
         </div>
         <div className="book-n-go">
