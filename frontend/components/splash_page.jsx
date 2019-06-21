@@ -6,7 +6,8 @@ class SplashPage extends React.Component {
     super(props);
 
     this.state = {
-      loading: true
+      loading: true,
+      translation: 0
     };
     
     this.slide = this.slide.bind(this);
@@ -26,15 +27,13 @@ class SplashPage extends React.Component {
     }
 
     if(value === 'up'){
+      $('.splash-listing-photo').css({"transform": `translateX(-${state.translation + 60}%)`});
       let newCarousel = state.carousel.slice(0);
       newCarousel.push(newCarousel.shift());
-      let window = document.getElementsByClassName("links");
       // debugger
-      for (let i = 0; i < window.length; i++) {
-        window[i].classList.add('slide');
-      }
       this.setState({
-        carousel: newCarousel
+        carousel: newCarousel,
+        translation: state.translation + 60
       });
     }
   }
@@ -57,7 +56,7 @@ class SplashPage extends React.Component {
     this.props.fetchListings()
       .then(() => {
         let carousel = this.props.listings.map(listing => (
-          <Link to={`/listings/${listing.id}`} key={`${listing.id}`} className='splash-listing-photo links' >
+          <Link to={`/listings/${listing.id}`} key={`${listing.id}`} className='splash-listing-photo' >
             <img className="splash-listing-photo"
               src={listing.photos[0].imageUrl}
             /></Link>

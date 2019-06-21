@@ -32,7 +32,7 @@
 .splash-carousel{
   margin-top: 30px;
   margin-bottom: 60px;
-  width: 85%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -85,7 +85,7 @@
   // justify-content: center;
   // margin: auto;
   // width: 85%;
-  // overflow: hidden;
+  overflow: hidden;
   margin-left: 10%;
   width: 240%;
   height: 250px;
@@ -105,7 +105,7 @@
   height: 100%;
   max-height: 100%;
   object-fit: cover;
-  //needs transform
+  //transform: translateX(-60%)
 }
 
 // .splash-listing-photo:hover{
@@ -113,8 +113,8 @@
 // }
 
 // .slide{
-//   transform: translate(-30%);
-//   transition: 0.3s;
+//   transform: translate(-60%);
+//   // transition: 0.3s;
 // }
 
 .rental-counter{
