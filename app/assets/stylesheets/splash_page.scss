@@ -32,13 +32,14 @@
 .splash-carousel{
   margin-top: 30px;
   margin-bottom: 60px;
-  width: 100%;
+  // width: 100%;
 }
 
 .splash-carousel-child{
   a{
     margin-left: 20px;
     margin-right: 20px;
+    // width: 80%
   }
 
   overflow: hidden;
@@ -55,6 +56,7 @@
   background-size: cover;
   transform: rotate(90deg);
   cursor: pointer;
+  z-index: 1;
 }
 
 .splash-carousel-right{
@@ -67,6 +69,7 @@
   top: 50%;
   right: 5%;
   cursor: pointer;
+  z-index: 1;
 }
 
 .arrow-relative{
@@ -75,9 +78,11 @@
 
 .relative-carousel{
   display: flex;
-  justify-content: center;
-  margin: auto;
-  width: 85%;
+  // justify-content: center;
+  // margin: auto;
+  // width: 85%;
+  margin-left: 5%;
+  width: 240%;
   height: 250px;
 }
 
@@ -87,7 +92,7 @@
 }
 
 .splash-listing-photo{
-  width: 100%;
+  width: 80%; //was 100%
   margin-top: 10px;
   display: inline-block;
   overflow: hidden;
@@ -95,11 +100,18 @@
   height: 100%;
   max-height: 100%;
   object-fit: cover;
+  margin: auto; //new
+  //needs transform
 }
 
-.splash-listing-photo:hover{
-  transform: scale(1.05);
-}
+// .splash-listing-photo:hover{
+//   transform: scale(1.05);
+// }
+
+// .slide{
+//   transform: translate(-30%);
+//   transition: 0.3s;
+// }
 
 .rental-counter{
   text-align: center;

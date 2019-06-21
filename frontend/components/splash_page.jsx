@@ -19,6 +19,7 @@ class SplashPage extends React.Component {
     if(value === 'down'){
       let newCarousel = state.carousel.slice(0);
       newCarousel.unshift(newCarousel.pop());
+
       this.setState({
         carousel: newCarousel
       });
@@ -27,6 +28,11 @@ class SplashPage extends React.Component {
     if(value === 'up'){
       let newCarousel = state.carousel.slice(0);
       newCarousel.push(newCarousel.shift());
+      let window = document.getElementsByClassName("links");
+      // debugger
+      for (let i = 0; i < window.length; i++) {
+        window[i].classList.add('slide');
+      }
       this.setState({
         carousel: newCarousel
       });
@@ -40,7 +46,7 @@ class SplashPage extends React.Component {
         <div className='splash-carousel-left' onClick={() => this.slide('down')}></div>
         <div className='splash-carousel-right' onClick={() => this.slide('up')}></div>
         <div className='relative-carousel'>
-          {this.state.carousel.slice(0, 3)}
+          {this.state.carousel}
           
         </div>
       </div>
@@ -51,7 +57,7 @@ class SplashPage extends React.Component {
     this.props.fetchListings()
       .then(() => {
         let carousel = this.props.listings.map(listing => (
-          <Link to={`/listings/${listing.id}`} key={`${listing.id}`} className='splash-listing-photo' >
+          <Link to={`/listings/${listing.id}`} key={`${listing.id}`} className='splash-listing-photo links' >
             <img className="splash-listing-photo"
               src={listing.photos[0].imageUrl}
             /></Link>
