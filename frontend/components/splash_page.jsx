@@ -20,21 +20,31 @@ class SplashPage extends React.Component {
     if(value === 'down'){
       let newCarousel = state.carousel.slice(0);
       newCarousel.unshift(newCarousel.pop());
-
-      this.setState({
-        carousel: newCarousel
-      });
+      $('.splash-listing-photo').css({ "transition": "transform 0.5s" });
+      $('.splash-listing-photo').css({ "transform": `translateX(${120}%)` });
+      setTimeout(() => {
+        this.setState({
+            carousel: newCarousel
+          }, () => {
+            $(".splash-listing-photo").css({ transition: "all 0s" });
+            $(".splash-listing-photo").css({
+              transform: `translateX(-${0}%)`
+            });
+          }
+        );
+      }, 500);
     }
 
     if(value === 'up'){
       let newCarousel = state.carousel.slice(0);
       newCarousel.push(newCarousel.shift());
-      $('.splash-listing-photo').css({"transform": `translateX(-${state.translation + 120}%)`});
+      $('.splash-listing-photo').css({ "transition": "transform 0.5s"});
+      $('.splash-listing-photo').css({"transform": `translateX(-${120}%)`});
       setTimeout(() => {
         this.setState({
-          carousel: newCarousel,
-          // translation: state.translation + 120
+          carousel: newCarousel
         }, () => {
+          $('.splash-listing-photo').css({ "transition": "all 0s" });
           $('.splash-listing-photo').css({ "transform": `translateX(-${0}%)` });
         });
       }, 500);
