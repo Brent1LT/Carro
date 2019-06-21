@@ -27,15 +27,18 @@ class SplashPage extends React.Component {
     }
 
     if(value === 'up'){
-      $('.splash-listing-photo').css({"transform": `translateX(-${state.translation + 60}%)`});
-      let newCarousel = state.carousel.slice(0);
-      newCarousel.push(newCarousel.shift());
-      // debugger
-      this.setState({
-        carousel: newCarousel,
-        translation: state.translation + 60
-      });
-    }
+      new Promise(() => $('.splash-listing-photo').css({"transform": `translateX(-${state.translation + 33}%)`}))
+        .then(
+          
+          )
+          let newCarousel = state.carousel.slice(0)
+          newCarousel.push(newCarousel.shift());
+    
+          this.setState({
+            carousel: newCarousel,
+            translation: state.translation + 33
+          });
+        }
   }
 
   loadCarousel(){
@@ -57,10 +60,11 @@ class SplashPage extends React.Component {
       .then(() => {
         let carousel = this.props.listings.map(listing => (
           <Link to={`/listings/${listing.id}`} key={`${listing.id}`} className='splash-listing-photo' >
-            <img className="splash-listing-photo"
+            <img className="indiv-image"
               src={listing.photos[0].imageUrl}
             /></Link>
         ))
+        // carousel = carousel.concat(carousel).concat(carousel)
         this.setState({
         loading: false,
         carousel
