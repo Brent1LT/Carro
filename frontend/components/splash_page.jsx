@@ -27,18 +27,18 @@ class SplashPage extends React.Component {
     }
 
     if(value === 'up'){
-      new Promise(() => $('.splash-listing-photo').css({"transform": `translateX(-${state.translation + 33}%)`}))
-        .then(
-          
-          )
-          let newCarousel = state.carousel.slice(0)
-          newCarousel.push(newCarousel.shift());
-    
-          this.setState({
-            carousel: newCarousel,
-            translation: state.translation + 33
-          });
-        }
+      let newCarousel = state.carousel.slice(0);
+      newCarousel.push(newCarousel.shift());
+      $('.splash-listing-photo').css({"transform": `translateX(-${state.translation + 120}%)`});
+      setTimeout(() => {
+        this.setState({
+          carousel: newCarousel,
+          // translation: state.translation + 120
+        }, () => {
+          $('.splash-listing-photo').css({ "transform": `translateX(-${0}%)` });
+        });
+      }, 500);
+    }
   }
 
   loadCarousel(){
