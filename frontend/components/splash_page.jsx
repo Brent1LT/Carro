@@ -44,7 +44,7 @@ class SplashPage extends React.Component {
           carousel: newCarousel
         }, () => {
           $('.splash-listing-photo').css({ "transition": "all 0s" });
-          $('.splash-listing-photo').css({ "transform": `translateX(-${0}%)` });
+          $('.splash-listing-photo').css({ "transform": `translateX(${0}%)` });
         });
       }, 300);
     }
