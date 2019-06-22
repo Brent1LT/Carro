@@ -15,30 +15,29 @@ class SplashPage extends React.Component {
 
 
   slide(value){
-    
     let state = this.state;
-    if(value === 'down'){
+
+    if (value === "down") {
       let newCarousel = state.carousel.slice(0);
       newCarousel.unshift(newCarousel.pop());
-      $('.splash-listing-photo').css({ "transition": "transform 0.5s" });
-      $('.splash-listing-photo').css({ "transform": `translateX(${120}%)` });
+
+
+      this.setState({
+        carousel: newCarousel
+      }, () => {
+        $('.splash-listing-photo').css({ "transition": "transform 0s" });
+        $('.splash-listing-photo').css({ "transform": `translateX(-${120}%)` });
+      });
       setTimeout(() => {
-        this.setState({
-            carousel: newCarousel
-          }, () => {
-            $(".splash-listing-photo").css({ transition: "all 0s" });
-            $(".splash-listing-photo").css({
-              transform: `translateX(-${0}%)`
-            });
-          }
-        );
-      }, 500);
+        $('.splash-listing-photo').css({ "transition": "transform 0.5s" });
+        $('.splash-listing-photo').css({ "transform": `translateX(${0}%)` });
+      }, 0);
     }
 
     if(value === 'up'){
       let newCarousel = state.carousel.slice(0);
       newCarousel.push(newCarousel.shift());
-      $('.splash-listing-photo').css({ "transition": "transform 0.5s"});
+      $('.splash-listing-photo').css({ "transition": "transform 0.3s"});
       $('.splash-listing-photo').css({"transform": `translateX(-${120}%)`});
       setTimeout(() => {
         this.setState({
@@ -47,7 +46,7 @@ class SplashPage extends React.Component {
           $('.splash-listing-photo').css({ "transition": "all 0s" });
           $('.splash-listing-photo').css({ "transform": `translateX(-${0}%)` });
         });
-      }, 500);
+      }, 300);
     }
   }
 
