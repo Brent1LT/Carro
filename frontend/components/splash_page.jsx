@@ -16,7 +16,7 @@ class SplashPage extends React.Component {
 
   slide(value){
     let state = this.state;
-
+    debugger
     if (value === "down") {
       let newCarousel = state.carousel.slice(0);
       newCarousel.unshift(newCarousel.pop());
@@ -73,10 +73,10 @@ class SplashPage extends React.Component {
               src={listing.photos[0].imageUrl}
             /></Link>
         ))
-        // carousel = carousel.concat(carousel).concat(carousel)
+        // carousel = carousel.concat(carousel).concat(carousel) //for testing
         this.setState({
         loading: false,
-        carousel
+        carousel: carousel
       })});
   }
 
