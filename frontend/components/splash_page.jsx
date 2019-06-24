@@ -16,7 +16,7 @@ class SplashPage extends React.Component {
 
   slide(value){
     let state = this.state;
-    debugger
+    
     if (value === "down") {
       let newCarousel = state.carousel.slice(0);
       newCarousel.unshift(newCarousel.pop());
