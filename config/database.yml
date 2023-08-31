@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: Turo_Clone_production
   username: Turo_Clone
   password: <%= ENV['TURO_CLONE_DATABASE_PASSWORD'] %>
