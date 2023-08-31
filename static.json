@@ -1,8 +1,8 @@
 {
-"root": "build/",
+"root": "views/",
 "clean_urls": false,
 "routes": {
-  "/**": "index.html",
-  "*": "index.html"
+  "/**": "root.html.erb",
+  "*": "root.html.erb"
   }
 }
