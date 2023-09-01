@@ -36,8 +36,7 @@
   },
   "scripts": {
     "start": "webpack --mode=development --watch",
-    "postinstall": "webpack",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "postinstall": "webpack"
   },
   "author": "",
   "license": "ISC"
